@@ -1,0 +1,444 @@
+/*Global Attributes*/
+*{
+	margin:0;
+	padding: 0;
+}
+h1{
+ padding-top: 8px;
+ display: none;
+ text-transform: uppercase;
+ font-weight: 900;
+ font-size: 20px;
+}
+h1 a{
+color: #fff;
+ text-decoration: none;
+}
+
+h2{
+    font-family: 'Roboto', serif;
+    font-size: 20px;
+    color: #000;	
+    text-align: center;
+    margin: 59px 0px 0px 0;
+    font-weight: 700px;
+    text-transform:uppercase;
+}
+h4,h3,h2,h1,#nosotros article div a{
+font-family: 'Roboto', serif;
+font-weight: 900;
+text-transform: uppercase;
+color: #000;
+} 
+/*Global Style Button*/
+.buttons{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    border: 3px solid #000;
+    width: 154px;
+    padding: 8px;
+    font-size: 13px;
+    margin: 34px 0px 0px 15px;	
+}
+.rigth{
+	float:right;
+	padding-right: 8%;
+}
+.left{
+	float: left;
+	padding-left: 8%;
+}
+/*--------------*/
+/*Container*/
+.containerCentral{
+	width: 85%;
+	margin: 0 auto;
+}
+.container{
+    width: 32%;
+    float: left;
+    height: 400px;
+    margin: 60px 11px 0 0;
+}
+/*Parallax (effect that causes the background move)*/
+.parallax{
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;	
+	background-position: center center;
+	position: relative;
+	width: 100%	;
+    background-color: rgb(23, 23, 23);
+}
+/*Size (diferents size, aplicate to parrallax effect)*/
+.big{
+	min-height: 640px;
+}
+.medium{
+	min-height: 590px;
+}
+.small{
+	min-height: 350px;
+}
+/*--------------*/
+/*Logo*/
+.logo{
+ margin: 0 auto;
+ width: 80%;
+ min-height: 640px;
+}
+.logo div{
+	margin: 0 auto;
+	 width: 40%;
+	min-height: 640px;
+}
+.logo img{
+	width: 344px;
+	height: 450px;
+}
+/*--------------*/
+/*Images*/
+.img1{
+	background-image: url("../img/back_home.jpg");
+}
+.img2{
+
+	background-color: #FAF8EA;
+}
+.img3{
+
+	background-image: url("../img/img3.jpg");
+}
+.img4{
+	background-color: rgb(30, 30, 30);
+
+}
+/*--------------*/
+/*About us*/
+#nosotros article div img {
+	margin: 22px 0px 0px 20px;
+}
+#nosotros article div h2{
+ font-weight: 500;
+ text-transform: uppercase;
+ color: #000;
+ font-size: 14px;
+ margin: 20px 0px 0px -150px;
+}
+
+#nosotros article div h4{
+    font-size: 20px;
+    margin: 15px 0px 0px 22px;
+    width: 80%;
+    line-height: 1.4;
+}
+#nosotros article div h3{
+ font-weight: 700;
+ font-size: 18px;
+ margin: 15px 0px 0px 20px;
+}
+#nosotros article div p{
+ font-family: 'Old Standard TT', serif;
+ font-weight: 400;
+ color: #000;
+ font-size: 16px;
+ margin:11px 0px 0px 20px;	
+ width: 74%;
+ text-align: justify;
+}
+/*Stiky Menu*/
+
+section nav {
+	height:40px; 
+	padding-top:11px; 
+	position:relative; 
+	background-color: rgba(0,0,0,0.0) ;
+	z-index:1000;
+}
+ 
+section nav ul {
+	list-style: none;
+	overflow: hidden;
+}
+ 
+section nav ul li {
+	float: left;
+}
+ 
+section nav ul li a {
+	display: block;
+	padding:20px;
+	color:#fff;
+	text-decoration: none;
+	font-family: 'Old Standard TT', serif;
+	font-size: 20px;
+	padding-top: 8px;
+}
+ 
+section nav ul li a:hover {
+	color: rgb(166, 12, 0);
+}
+ 
+/* --- add class when the user scroll--- */
+.menu-fixed {
+	height: 60px;
+	position:fixed;
+	z-index:1000;
+	top: 0;
+	width:100%;
+	box-shadow:0px 4px 3px rgba(0,0,0,0.5);
+	background-color: rgb(23,23,23);
+	display: block;
+	padding-top: 8px;
+}
+.menu-fixed h1{
+	display: block;
+}
+section nav img{
+ -webkit-filter: drop-shadow(8px 8px 8px black); /* Chrome, Safari, Opera */
+  filter: drop-shadow(8px 8px 8px black);
+}
+
+/*-----------------CONTACT-------------------*/
+.contact{
+    color: #fff;
+    height: 500px;
+    width: 100%;
+}
+
+.contact h2{
+    margin: 0px 0px 20px;
+    font-family: 'Roboto', serif;
+    font-size: 20px;
+    color: #fff;
+}
+.contact-space{
+    height: 500px;
+    width: 80%;
+    margin: auto;
+}
+.contact-user, .contact-location{
+    width: 45%;
+    height: 400px;
+    margin: 20px 2.5px;
+    padding: 20px;
+}
+.contact-user{
+    float: left;
+}
+.contact-location{
+    float: right;
+}
+
+.contact-map{
+    float: left;
+   overflow: hidden;
+}  
+.contact-input label, .contact-user a{
+    width: 365px;
+    float: left;
+	font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    text-transform: none;
+  }
+.contact-input input {
+    width: 390px;
+    height: 25px;
+    margin: 0px 0px 40px;
+    background-color: rgba(255,255,255,0.0);
+    color: #fff;
+    border-color: #fff;
+ 	margin: 12px 0px 9px 0px;
+    }
+
+.contact-input textarea {
+    width: 250px;
+    width: 80%;
+    height: 80px;
+    margin: 0px 0px 40px;
+    background-color: rgba(255,255,255,0.0);
+    color: #fff;
+    border-color: #fff;
+    margin: 12px 0px 9px 0px;
+    }
+.contact-input a {
+	font-family: 'Roboto', serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+    border-color: #fff;
+    width: 105px;
+ }
+
+/*-----------------END CONTACT-------------------*/
+
+
+/*section-neuuser*/
+#newUser{
+    background: #161616;
+}
+
+#newUser label{
+    color: white;
+}
+
+#newUser input{
+   margin:  -4px 19px
+}
+
+/* Section-login*/
+#login{
+    background: #161616;
+}
+
+#containerImagen{
+    margin: 124px 0px 0px 626px;
+}
+
+#containerLogin{
+   margin: 9px 0px 0px 602px
+}
+
+#containerLogin label{
+    color: white;
+    font-family: 'Old Standard TT', sans-serif;
+    font-size: 14px;
+    text-transform: none;
+}
+
+.button{
+    margin: 10px 0px 0px 55px;
+    font-family: 'Old Standard TT', sans-serif;
+    font-size: 14px;
+    text-transform: none;
+}
+
+.section-login{
+    margin-top: -636px;
+}
+
+.section-login ul li{
+    display: inline;
+}
+
+
+.section-menu{
+    background-color: #CC9972;
+}
+
+/*User*/
+
+#newUser{
+    padding-left: 40%;
+    padding-top: 20px;
+    margin-top: 7%;
+}
+
+#newUser h2{
+    color: white;
+}
+
+#newUser input{
+    margin: 10px 0;
+}
+
+/* ---------------------------------------------------------style de reservaciones */
+.containerCenter{
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.containerReserve{
+    width: 100%;
+    height: 150px;
+    
+}
+
+.containerLeftReserve{
+    
+    width: 45%;
+    height: 325px;
+    float: left;
+}
+.containerRightReserve{
+    
+    width: 45%;
+    height: 325px;
+    float: right;
+
+}
+
+.containerReserve h2{
+    font-family: 'Old Standard TT', serif;
+    font-size: 20px;
+    padding: 40px 450px;
+}
+.containerLeftReserve h2{
+    font-family: 'Old Standard TT', serif;
+    font-size: 20px;   
+}
+.containerReserve p{
+    
+    font-family: 'Old Standard TT', serif;
+    font-size: 20px; 
+    text-align: center;
+}
+.containerRightReserve h2{
+    font-family: 'Old Standard TT', serif;
+    font-size: 20px;
+}
+.reserveLeft{
+     padding: 20px 220px;
+}
+.reserveRight{
+     padding: 20px 20px;
+}
+
+.input {
+    height: 25px;
+    border-radius:  3px;
+    border: 1px solid;
+    width: 200px;
+    border-color: dimgrey;
+    
+    
+}
+select{
+    border-radius: 3px;
+    height: 25px;
+    border: 1px solid;
+    width: 200px;
+    border-color: dimgrey;
+       
+}
+h2{
+padding: 10px 0px;  
+}
+
+#calendar{
+        
+    border-radius: 3px;
+    height: 25px;
+    border: 1px solid;
+    width: 200px;
+    border-color: dimgrey;
+}
+
+#button{
+    
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: dimgrey;
+    background-color: #2E2E2E;
+    margin: 270px 470px;
+   color: white;
+     width:110px; 
+    height:45px;
+}
+
+/* ---------------------------------------------------------style de reservaciones */
