@@ -1,8 +1,9 @@
 <?php
 
     include("../model/seguridad.php"); 
+    //include("../db/query.php");
 ?>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <title>Administar</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -25,8 +26,15 @@
 </section>
     
 <section class="section-menu parallax medium">
-     <?php
-      require '../controller/conPrincipal.php';?>
+     
+    
+</section>
+
+<section class="section-reservation"></section>
+    <?php
+   /* $query = new Consultdb();
+    $data = $query->listReservation();*/
+     ?>
          <table border="1">
            <tr><td>Name</td><td>Phone</td><td>Email</td><td>Date</td><td>Count</td><td>Options</td></tr>
          
@@ -37,11 +45,6 @@
                 }
             ?>
         </table>
-    
-</section>
-
-<section class="section-reservation"></section>
-    
 <section></section>
       
 <body>
