@@ -22,5 +22,5 @@ $(function() {
         event.preventDefault();
     });
 });
-$(".campofecha").calendarioDW();
+/*$(".campofecha").calendarioDW();*/
 });

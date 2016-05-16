@@ -15,7 +15,6 @@
      <p>
          Le ofrecemos el mejor servicio.
      </p>
-     <input id="button" type="button" value="Reservar">
 </div>
 <div class="containerLeftReserve">
     <div class="reserveLeft">
@@ -55,6 +54,7 @@
         <input class="input" type="text" size="15" maxlength="30"  placeholder="teléfono" name="telefono" >
         </div>
 </div>	
+<button id="Reserve-button">Reservar</button>
 <!-- CODIGO DE RESERVACIONES -->
 
 <!-- SCRIPT DE RESERVACIONES -->	

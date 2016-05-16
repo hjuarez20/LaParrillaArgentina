@@ -8,7 +8,6 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/calendario_dw-estilos.css">
-    <script type="text/javascript" src="../js/calendario.js"></script> 
 	
 </head>
 <body>
@@ -38,7 +37,15 @@
 	<script src="../js/main.js"></script>
     <!-- Scrolling Nav JavaScript -->
     <script src="../js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="../js/calendario.js"></script> 
+    
+    <script type="text/javascript">
+   $(document).ready(function(){
+      $(".campofecha").calendarioDW();
+   })
+   </script>  
 </body>
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

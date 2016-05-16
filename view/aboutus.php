@@ -5,20 +5,26 @@
     <body>
 <h2>Acerca de Nosotros</h2>
 
-	<article class="containerCentral medium">
+	<article class="containerCenter medium">
 		<div class="container">
 			<h2>Especialidad de la casa</h2>
 			<h4>Descubre nuestros increibles platillos</h4>
-			<p>La mejor calidad en carnes, y variedad de cortes solo los puedes conseguir con nosotros, hecha un vistazo a nuestra variedad de platillos.</p>
+			<p>La mejor calidad en carnes, y 
+			variedad de cortes solo los puedes conseguir con nosotros, 
+			hecha un vistazo a nuestra variedad de platillos.</p>
 			<a class="buttons page-scroll"href="#menu">Descubre el Menu</a>
 		</div>
 		<div class="container">
-				<img src="../img/aboutimg.jpg" alt="">
+			<div class="div-img hidden" >
+				<img class="img" src="../img/aboutimg.jpg" alt="">
+			</div>
 			<h3>Historia</h3>
 			<p>Somos un restaurante fundado desde 1987, por parrilleros locales, con gran trayectoria en Costa Rica.</p>
 		</div>
 		<div class="container">
-			<img src="../img/aboutimg1.jpg" alt="">
+			<div class="div-img hidden" >
+			<img class="img" src="../img/aboutimg1.jpg" alt="">
+			</div>
 			<h3>Premios</h3>
 			<p>Hemos sido galardonas tres anios consecutivos con el premio al mejor restaurante parrillero de Centro America</p>
 		</div>
