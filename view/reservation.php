@@ -15,6 +15,8 @@
      <p>
          Le ofrecemos el mejor servicio.
      </p>
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Reservar</button>
+
 </div>
 <div class="containerLeftReserve">
     <div class="reserveLeft">
@@ -53,8 +55,27 @@
         <h2>Telefono</h2>
         <input class="input" type="text" size="15" maxlength="30"  placeholder="teléfono" name="telefono" >
         </div>
-</div>	
-<button id="Reserve-button">Reservar</button>
+</div>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 <!-- CODIGO DE RESERVACIONES -->
 
 <!-- SCRIPT DE RESERVACIONES -->	

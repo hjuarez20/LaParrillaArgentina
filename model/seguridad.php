@@ -5,7 +5,7 @@
 */
  include ("../controller/conUser.php");
 //Validar que el usuario este logueado y exista un UID
-if ( /*! ($_SESSION['autenticado'] == 'YES' && isset($_SESSION['idUser'])) */ $usuario=='si')
+if ( ! ($_SESSION['autenticado'] == 'YES' && isset($_SESSION['idUser']))  )
 {
     //En caso de que el usuario no este autenticado, crear un formulario y redireccionar a la
     //pantalla de login, enviando un codigo de error
