@@ -387,12 +387,12 @@ section nav ul li a:hover {
 
 }
 
-.containerReserve h2{
+.containerReserve h3{
     font-family: 'Roboto', serif;
     font-size: 20px;
     padding: 40px 450px;
 }
-.containerLeftReserve h2{
+.containerLeftReserve h3{
     font-family: 'Roboto', serif;
     font-size: 20px;   
 }
@@ -402,7 +402,7 @@ section nav ul li a:hover {
     font-size: 20px; 
     text-align: center;
 }
-.containerRightReserve h2{
+.containerRightReserve h3{
     font-family: 'Roboto', serif;
     font-size: 20px;
 }

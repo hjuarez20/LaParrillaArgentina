@@ -8,7 +8,7 @@
    
     <!-- CODIGO DE RESERVACIONES -->
 <div class="containerReserve">
-     <h2>Reservaciones</h2>
+     <h3>Reservaciones</h3>
      <p>
          En la parrilla Argentina puede realizar sus reservaciones para esa fecha especial.
      </p>
@@ -20,9 +20,9 @@
 </div>
 <div class="containerLeftReserve">
     <div class="reserveLeft">
-        <h2>Nombre</h2>
+        <h3>Nombre</h3>
      <input class="input" type="text" size="15" maxlength="30"  placeholder="nombre" name="nombre" >
-        <h2>Hora</h2>
+        <h3>Hora</h3>
         <form  name=myform>
         <select name=mytextarea>
         <option name=uno value= one disabled>Hora</option>
@@ -32,7 +32,7 @@
         <option name=tres value=three> 8:00 pm </option>
         </select>
         </form>
-        <h2>Correo</h2>
+        <h3>Correo</h3>
      <input class="input" type="text" size="15" maxlength="30"  placeholder="ejemplo@gmail.com" name="correo" >
     </div>
 </div>
@@ -40,10 +40,10 @@
    <div class="reserveRight">
     <!-- FORM for calendar  -->
        <form>
-          <h2>Fecha de Reservacion</h2> <input id="calendar"type="text" placeholder="fecha de reservacion" name="fecha" class="campofecha" size="12">
+          <h3>Fecha de Reservacion</h3> <input id="calendar"type="text" placeholder="fecha de reservacion" name="fecha" class="campofecha" size="12">
        </form>
        <!-- FORM for calendar -->
-       <h2>Personas</h2>
+       <h3>Personas</h3>
         <form name=myform>
         <select name=mytextarea>
         <option name=uno value=one disabled>Cantidad de Personas</option>
@@ -52,7 +52,7 @@
         <option name=tres value=three> 8 person </option>
         </select>
         </form>
-        <h2>Telefono</h2>
+        <h3>Telefono</h3>
         <input class="input" type="text" size="15" maxlength="30"  placeholder="teléfono" name="telefono" >
         </div>
 </div>
