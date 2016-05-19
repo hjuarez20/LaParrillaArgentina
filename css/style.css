@@ -369,32 +369,33 @@ section nav ul li a:hover {
 
 .containerReserve{
     width: 100%;
-    height: 150px;
-    
+    height: 250px;
+    padding: 50px;
+}
+.containerCenterReserve{
+    width: 60%;
+    margin: 0 auto;
 }
 
 .containerLeftReserve{
     
-    width: 45%;
+    width: 40%;
     height: 325px;
     float: left;
 }
 .containerRightReserve{
     
-    width: 45%;
+    width: 33%;
     height: 325px;
     float: right;
-
 }
-
-.containerReserve h3{
-    font-family: 'Roboto', serif;
-    font-size: 20px;
-    padding: 40px 450px;
-}
-.containerLeftReserve h3{
-    font-family: 'Roboto', serif;
-    font-size: 20px;   
+.containerCenterReserveBottom{
+    
+     width: 20%;
+    height: 325px;
+    padding-top: 270px;
+    position: relative;
+    float: left;
 }
 .containerReserve p{
     
@@ -402,15 +403,18 @@ section nav ul li a:hover {
     font-size: 20px; 
     text-align: center;
 }
-.containerRightReserve h3{
-    font-family: 'Roboto', serif;
-    font-size: 20px;
+.labels {
+font-family: 'Roboto', serif;
+font-weight: 900;
+color: #000;
+font-size: 18px;
 }
+
 .reserveLeft{
-     padding: 20px 220px;
+     padding: 20px 0px;
 }
 .reserveRight{
-     padding: 20px 20px;
+     padding: 20px 0px;
 }
 
 .input {
@@ -419,8 +423,6 @@ section nav ul li a:hover {
     border: 1px solid;
     width: 200px;
     border-color: dimgrey;
-    
-    
 }
 select{
     border-radius: 3px;
@@ -439,29 +441,15 @@ select{
     border-color: dimgrey;
 }
 
-h2{
-padding: 10px 0px;  
-}
-
-#calendar{
-        
-    border-radius: 3px;
-    height: 25px;
-    border: 1px solid;
-    width: 200px;
-    border-color: dimgrey;
-}
-
-#button{
-    
+#Reserve-button{
     border-radius: 3px;
     border: 1px solid;
     border-color: dimgrey;
     background-color: #2E2E2E;
-    margin: 270px 470px;
-   color: white;
-     width:110px; 
+    color: white;
+    width:110px; 
     height:45px;
+    position: absolute;
 }
 
 /* ---------------------------------------------------------style de reservaciones */
