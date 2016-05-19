@@ -1,0 +1,144 @@
+/*General class*/
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+	background-image: url(../img/madera.jpg);
+}
+
+.containerCenter{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.rigth{
+    float:right;
+    padding-right: 8%;
+}
+.left{
+    float: left;
+}
+
+/*Parrallax mode*/
+.parallax{
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;   
+    background-position: center center;
+    position: relative;
+    width: 100% ;
+    background-color: rgb(23, 23, 23);
+}
+
+/*fonts styles*/
+.font-style_1{
+	font-family: 'Roboto', serif;
+  font-weight: 300px;
+	font-size: 20px;
+  color: rgb(255,255,255) ;
+}
+
+.font-style_2{
+  font-family: 'Old Standard TT', serif;
+  font-size: 20px;
+  
+
+}
+
+/*Stiky Menu*/
+
+section nav {
+    height:40px; 
+    padding-top:11px; 
+    position:relative; 
+    background-color: rgba(0,0,0,0.0) ;
+    z-index:1000;
+}
+ 
+section nav ul {
+    list-style: none;
+    overflow: hidden;
+}
+ 
+section nav ul li {
+    float: left;
+}
+ 
+section nav ul li a {
+    display: block;
+    padding:20px;
+    color:#fff;
+    text-decoration: none;
+    padding-top: 8px;
+}
+ 
+section nav ul li a:hover {
+    color: rgb(166, 12, 0);
+}
+
+/*Welcomen user*/
+
+.welcome{
+  padding-top: 23px;
+  position: relative
+  }
+
+
+
+/*table designe*/
+table{
+  width:100%;
+  table-layout: fixed;
+}
+.tbl-header{
+  background-color: rgba(255,255,255,0.3);
+ }
+
+ .tbl-content{
+  height:300px;
+  overflow-x:auto;
+  margin-top: 0px;
+  border: 1px solid rgba(255,255,255,0.3);}
+
+th{
+  padding: 20px 27px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+}
+td{
+  padding: 15px;
+  text-align: center;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 15px;
+  color: #fff;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+    width: 6px;
+} 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+
+/*Sizes*/
+.menuSize{
+  height: 75px;
+}
+
+.tableSize{
+  height: 500px;
+}
