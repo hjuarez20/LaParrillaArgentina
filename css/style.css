@@ -5,7 +5,7 @@
 }
 h1{
  padding-top: 8px;
- display: none;
+
  font-size: 20px;
 }
 h1 a{
@@ -68,8 +68,14 @@ color: #000;
     position: relative;
     width: 100% ;
     background-color: rgb(23, 23, 23);
+    display: inline-block;
 }
 /*Size (diferents size, aplicate to parrallax effect)*/
+.superBig{
+    min-height: 859px;
+    width: 100%;
+
+}
 .big{
     min-height: 640px;
 }
@@ -105,8 +111,7 @@ color: #000;
     background-color: #fff;
 }
 .img3{
-
-    background-image: url("../img/img3.jpg");
+  background-image: url("../img/menu.jpg");
 }
 .img4{
     background-color: rgb(30, 30, 30);
@@ -196,6 +201,8 @@ section nav ul li a:hover {
 .menu-fixed h1{
     display: block;
 }
+
+
 /*-----------------CONTACT-------------------*/
 .contact{
     color: #fff;
@@ -403,6 +410,7 @@ section nav ul li a:hover {
     font-size: 20px; 
     text-align: center;
 }
+
 .labels {
 font-family: 'Roboto', serif;
 font-weight: 900;
