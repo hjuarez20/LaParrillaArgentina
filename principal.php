@@ -42,7 +42,7 @@
 	   		  				 <article class="tbl-header">
 							    <table cellpadding="0" cellspacing="0" border="0">
 							        <tr>						      
-							          <th>Nombre</th>
+							          <th>Nombree</th>
 							          <th>Teléfono</th>
 							          <th>Email</th>
 							          <th>Fecha</th>
