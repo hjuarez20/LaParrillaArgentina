@@ -3,8 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>La Parrilla Argentina</title>
-	
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">	
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animate.css">
@@ -14,7 +13,7 @@
 	
 </head>
 <body>
-		<section id="home" class="img1 parallax medium">
+		<section id="home" class="img1 parallax big">
 			<?php include ('menu.php');?>
 		</section>
 <section  id="nosotros"class="img2 parallax">

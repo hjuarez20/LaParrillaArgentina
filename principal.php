@@ -17,7 +17,7 @@
 </head>
 <body>
     
-<div class="containerCenter menuSize">
+<div class="container menuSize">
 			<section class="rigth">
 				<p class="font-style_1 welcome">Welcome <?php echo $user; ?>, <a href="admin123.php">Cerrar sesi&oacute;n</a></p>
 			</section>
