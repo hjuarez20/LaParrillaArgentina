@@ -86,10 +86,6 @@ textarea {
  * Addresses margins handled incorrectly in IE6/7
  */
 
-body {
-    margin: 0;
-}
-
 
 /* =============================================================================
    Links
@@ -123,7 +119,7 @@ a:active {
  * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
  */
 
-h1 {
+/*h1 {
     font-size: 2em;
     margin: 0.67em 0;
 }
@@ -151,7 +147,7 @@ h5 {
 h6 {
     font-size: 0.75em;
     margin: 2.33em 0;
-}
+}*/
 
 /*
  * Addresses styling not present in IE7/8/9, S5, Chrome
@@ -280,7 +276,7 @@ sub {
 dl,
 menu,
 ol,
-ul {
+{
     margin: 1em 0;
 }
 

@@ -20,7 +20,7 @@
 			
 			<header>
 			
-				<h1>Restaurant La Parrilla Argentina Menú</h1>
+				<h1>Restaurante La Parrilla Argentina Menú</h1>
 				<h2>
 					Una Menú variado para todos los gustos, construido por nuestros Chef's profesionales.
 				</h2>

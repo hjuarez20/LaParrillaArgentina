@@ -8,11 +8,6 @@ h1{
 
  font-size: 20px;
 }
-h1 a{
-color: #fff;
- text-decoration: none;
-}
-
 h2{
     font-size: 20px;    
     text-align: center;
@@ -155,7 +150,7 @@ color: #000;
 }
 /*Stiky Menu*/
 
-section nav {
+#home section nav {
     height:40px; 
     padding-top:11px; 
     position:relative; 
@@ -163,16 +158,16 @@ section nav {
     z-index:1000;
 }
  
-section nav ul {
+#home nav ul {
     list-style: none;
     overflow: hidden;
 }
  
-section nav ul li {
+#home nav ul li {
     float: left;
 }
  
-section nav ul li a {
+#home nav ul li a {
     display: block;
     padding:20px;
     color:#fff;
@@ -182,7 +177,7 @@ section nav ul li a {
     padding-top: 8px;
 }
  
-section nav ul li a:hover {
+#home nav ul li a:hover {
     color: rgb(166, 12, 0);
 }
  
@@ -200,6 +195,10 @@ section nav ul li a:hover {
 }
 .menu-fixed h1{
     display: block;
+}
+.menu-fixed h1 a{
+    color: #fff;
+    text-decoration: none;
 }
 
 
@@ -280,7 +279,7 @@ section nav ul li a:hover {
   margin-left: auto;
   margin-right: auto;
 }
-.div-img.hidden {
+.div-img.hiddenN {
   overflow: hidden;
 }
 .div-img .img {

@@ -15,14 +15,14 @@
 			<a class="buttons page-scroll"href="#menu">Descubre el Menu</a>
 		</div>
 		<div class="container">
-			<div class="div-img hidden" >
+			<div class="div-img hiddenN" >
 				<img class="img" src="img/aboutimg.jpg" alt="">
 			</div>
 			<h3>Historia</h3>
 			<p>Somos un restaurante fundado desde 1987, por parrilleros locales, con gran trayectoria en Costa Rica.</p>
 		</div>
 		<div class="container">
-			<div class="div-img hidden" >
+			<div class="div-img hiddenN" >
 			<img class="img" src="img/aboutimg1.jpg" alt="">
 			</div>
 			<h3>Premios</h3>
