@@ -5,7 +5,7 @@
 	
 </head>
     <body>
-				<nav class="StickyMenu">
+			<nav class="StickyMenu">
 				<h1 class="left hidden show"><a class="page-scroll"href="#home">La Parrilla Argentina</a></h1>
 				<div class="rigth">
 					 <ul>
@@ -19,11 +19,13 @@
 				</div>
 				</div>
 			</nav>
-			<div class="logo">
-				<div>
-				<img  src="img/parrilla6.png" alt="">
+			<article class="container">
+				<div class="row">
+					<div class="logo col-md-12 col-lg-12">
+						<img class="img-responsive center-block" src="img/parrilla6.png" alt="">
+					</div>
 				</div>
-			</div>
+			</article>			
     </body>
         
     </html>

@@ -16,7 +16,7 @@
 </head>
 <body>
     
-<div class="containerCenter menuSize">
+<div class="container menuSize">
 			<section class="rigth">
 				<!-- <p class="font-style_1 welcome"> Welcome <?php echo $_SESSION['User'] ?>, <a href="../controller/conLogout.php">Cerrar sesi&oacute;n</a></p> -->
 				<p class="font-style_1 welcome">Welcome Andrea, Cerrar sesión</p>

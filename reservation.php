@@ -20,67 +20,67 @@ if($_POST){
 </head>
 <body>
    <!-- CODIGO DE RESERVACIONES -->
-    <div class="containerCenter">
-<div class="containerReserve">
-     <p class="labels">Reservaciones</p>
-     <p>
-         En La Parrilla Argentina puede realizar sus reservaciones para esa fecha especial.
-     </p>
-     <p>
-         Le ofrecemos el mejor servicio.
-     </p>
+<div class="container">
+  <article class="row">
+      <article class="containerReserve col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <p class="labels">Reservaciones</p>
+               <p>
+                   En La Parrilla Argentina puede realizar sus reservaciones para esa fecha especial.
+               </p>
+               <p>
+                   Le ofrecemos el mejor servicio.
+               </p>
+      </article>
+</div>     
+ <div class="container">
+  <article class="row">
+      <article class="reserve-left col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <p class="labels">Nombre</p>
+             <input class="input" type="text" size="15" maxlength="30"  placeholder="nombre" name="nombre" >
+                <br></br>
+                <p class="labels">Hora</p>
+                <form  name=myform>
+                <select name=mytextarea>
+                <option name=uno value= one disabled>Hora</option>
+                <option name=dos value=two> 3:00 pm</option>
+                <option name=tres value=three> 4:00 pm </option>
+                <option name=tres value=three> 6:00 pm </option>
+                <option name=tres value=three> 8:00 pm </option>
+                </select>
+                </form>
+                 <br></br>
+                <p class="labels">Correo</p>
+             <input class="input" type="text" size="15" maxlength="30"  placeholder="ejemplo@gmail.com" name="correo" >
+      </article>
+      <article class="reserve-right col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <!-- FORM for calendar  -->
+               <form>
+                  <p class="labels">Fecha de Reservacion</p> <input id="calendar"type="text" placeholder="fecha de reservacion" name="fecha" class="campofecha" size="12">
+                  <br></br>
+               </form> 
+               <!-- FORM for calendar -->
+               <p class="labels">Personas</p>
+                <form name=myform>
+                <select name=mytextarea>
+                <option name=uno value=one disabled>Cantidad de Personas</option>
+                <option name=dos value=two> 2 person </option>
+                <option name=tres value=three> 4 person </option>
+                <option name=tres value=three> 8 person </option>
+                </select>
+                </form>
+                 <br></br>
+                <p class="labels">Telefono</p>
+                <input class="input" type="text" size="15" maxlength="30"  placeholder="teléfono" name="telefono" >
+              </article>  
+    </article>
 </div>
-
-<div class="containerCenterReserve"> 
-<div class="containerLeftReserve">
-    <div class="reserveLeft">
-        <p class="labels">Nombre</p>
-     <input class="input" type="text" size="15" maxlength="30"  placeholder="nombre" name="nombre" >
-        <br></br>
-        <p class="labels">Hora</p>
-        <form  name=myform>
-        <select name=mytextarea>
-        <option name=uno value= one disabled>Hora</option>
-        <option name=dos value=two> 3:00 pm</option>
-        <option name=tres value=three> 4:00 pm </option>
-        <option name=tres value=three> 6:00 pm </option>
-        <option name=tres value=three> 8:00 pm </option>
-        </select>
-        </form>
-         <br></br>
-        <p class="labels">Correo</p>
-     <input class="input" type="text" size="15" maxlength="30"  placeholder="ejemplo@gmail.com" name="correo" >
-    </div>
-</div>
-<div class="containerCenterReserveBottom">
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Reservar</button>
-</div>
-<div class="containerRightReserve">
-   <div class="reserveRight">
-    <!-- FORM for calendar  -->
-       <form>
-          <p class="labels">Fecha de Reservacion</p> <input id="calendar"type="text" placeholder="fecha de reservacion" name="fecha" class="campofecha" size="12">
-          <br></br>
-       </form>
-        
-       <!-- FORM for calendar -->
-       <p class="labels">Personas</p>
-        <form name=myform>
-        <select name=mytextarea>
-        <option name=uno value=one disabled>Cantidad de Personas</option>
-        <option name=dos value=two> 2 person </option>
-        <option name=tres value=three> 4 person </option>
-        <option name=tres value=three> 8 person </option>
-        </select>
-        </form>
-         <br></br>
-        <p class="labels">Telefono</p>
-        <input class="input" type="text" size="15" maxlength="30"  placeholder="teléfono" name="telefono" >
-        </div>
-        
-        </div>
-</div>
-
+ <div class="container">
+  <article class="row">
+            <article class="reserve-button col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block">
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Reservar</button>
+           </article>
+  </article> 
+ </div>           
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
@@ -99,8 +99,7 @@ if($_POST){
       </div>
       
     </div>
-  </div>
-  </div>
+</div>
 <!-- CODIGO DE RESERVACIONES -->
 
 <!-- SCRIPT DE RESERVACIONES -->	
