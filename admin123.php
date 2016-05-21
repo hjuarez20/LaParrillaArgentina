@@ -1,9 +1,24 @@
 <?php
  require 'db/db.php';
 
+if($_POST){
  $data = $database->select("tbusers",[
-                            "AND"
-                           ]);
+                            'idUser',
+                            'name'
+                            ],["AND" => [
+                                "password" => md5($_POST['password']),
+                                "login" => $_POST['user']
+                                ]
+                            ]);
+ 
+ if(count($data) == 1){
+     $user = $data[0]["name"];
+     header('Location: principal.php?name='.$user.'');
+     //$_SESSION('name')= $data[0]['name'];
+ }else{
+     echo'fallo';
+ }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

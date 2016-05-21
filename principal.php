@@ -2,6 +2,7 @@
 
  require 'db/db.php';
  $data = $database->select("tbreservations", "*");
+ $user = $_GET['name'];
 ?>
 <html>
 <head>
@@ -18,8 +19,7 @@
     
 <div class="container menuSize">
 			<section class="rigth">
-				<!-- <p class="font-style_1 welcome"> Welcome <?php echo $_SESSION['User'] ?>, <a href="../controller/conLogout.php">Cerrar sesi&oacute;n</a></p> -->
-				<p class="font-style_1 welcome">Welcome Andrea, Cerrar sesión</p>
+				<p class="font-style_1 welcome">Welcome <?php echo $user; ?>, <a href="admin123.php">Cerrar sesi&oacute;n</a></p>
 			</section>
 
 			<section class="left ">
