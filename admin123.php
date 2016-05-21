@@ -19,6 +19,7 @@ if($_POST){
      echo'fallo';
  }
 }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
