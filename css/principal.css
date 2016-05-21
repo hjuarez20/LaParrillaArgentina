@@ -45,8 +45,11 @@ body{
 .font-style_2{
   font-family: 'Old Standard TT', serif;
   font-size: 20px;
-  
+}
 
+.font-style_3{
+  font-family: 'Roboto', serif;
+  font-size: 20px;
 }
 
 /*Stiky Menu*/
@@ -142,3 +145,64 @@ td{
 .tableSize{
   height: 500px;
 }
+
+/*login*/
+
+.background-login{
+  background-image: url(../img/login.jpg);
+  width: 100%;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.container{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-rigth{
+  float: right;
+  width: 50%;
+}
+
+.container-left{
+  float: left;
+  width: 50%;
+}
+
+.cuadrado {
+     width: 45%; 
+     height: 642px; 
+     background-color: rgba(0,0,0,0.7);
+}
+
+
+/*end login*/
+
+.containerLogin label{
+    color: white;
+    font-family: 'Roboto', serif;
+    font-size: 18px;
+    text-transform: none;
+    padding-top: 10px;
+}
+
+.button{
+    margin: 10px 0px 0px 55px;
+    font-family: 'Roboto', serif;
+    font-size: 14px;
+    text-transform: none;
+}
+
+/*User*/
+
+#newUser{
+    padding-left: 40%;
+    padding-top: 20px;
+    margin-top: 7%;
+}
+
+#newUser input{
+    margin: 10px 0;
+}
+

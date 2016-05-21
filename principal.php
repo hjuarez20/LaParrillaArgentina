@@ -19,7 +19,7 @@
     
 <div class="container menuSize">
 			<section class="rigth">
-				<p class="font-style_1 welcome">Welcome <?php echo $user; ?>, <a href="admin123.php">Cerrar sesi&oacute;n</a></p>
+				<p class="font-style_1 welcome">Welcome <?php echo $user; ?>, <a href="admin123.php">Cerrar sesión</a></p>
 			</section>
 
 			<section class="left ">
@@ -42,7 +42,7 @@
 	   		  				 <article class="tbl-header">
 							    <table cellpadding="0" cellspacing="0" border="0">
 							        <tr>						      
-							          <th>Nombree</th>
+							          <th>Nombre</th>
 							          <th>Teléfono</th>
 							          <th>Email</th>
 							          <th>Fecha</th>
