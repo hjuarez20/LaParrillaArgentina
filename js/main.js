@@ -1,15 +1,14 @@
 $(document).ready(function(){
-	var heigth = $('.menu').offset().top;
+	var heigth = $('.StickyMenu').offset().top;
 	
 	$(window).on('scroll', function(){
 		if ( $(window).scrollTop() > heigth){
-			$('.menu').addClass('menu-fixed animated slideInDown');
-			$('.logo').addClass('logo-fixed');
-
+			$('.StickyMenu').addClass('menu-fixed animated slideInDown');
+			$('.show').removeClass('hidden');
 		} else {
-			$('.menu').removeClass('menu-fixed');
-			$('.logo').removeClass('logo-fixed');
-			$('.menu').removeClass('menu-fixed animated slideInDown');
+			$('.StickyMenu').removeClass('menu-fixed animated slideInDown');
+			$('.show').addClass('hidden');
+			
 		}
 	});
 
