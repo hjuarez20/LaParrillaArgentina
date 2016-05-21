@@ -1,3 +1,10 @@
+<?php
+ require 'db/db.php';
+
+ $data = $database->select("tbusers",[
+                            "AND"
+                           ]);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

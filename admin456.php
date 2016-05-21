@@ -1,8 +1,27 @@
+<?php
+require 'db/db.php';
+if($_POST){
+
+ if($_POST['password'] == $_POST['conpassword']){
+  $database->insert("tbusers",
+                   [
+                     "login" => $_POST['username'],
+                     "password" => md5($_POST['password']),
+                     "identification" => $_POST['identification'],
+                     "name" => $_POST['name']
+                   ]);
+    
+  header('Location: admin123.php');
+}else{
+     echo'password no coincide';
+ }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
 	<link rel="stylesheet" href="../css/style.css">
 	<title>New User</title>
 </head>
@@ -10,7 +29,7 @@
     
 	<section class="login-form">
     <div>    
-	<form name= "userlogin" action="../controller/conNewUser.php" method="post">
+	<form name= "userlogin" action="admin456.php" method="post">
         <ul>
             <h2>New User</h2><br><br>
 		 <li><label for="nom_Usuario">Name<label></li>
