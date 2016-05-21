@@ -22,39 +22,38 @@ if($_POST){
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="css/principal.css">
 	<title>New User</title>
 </head>
 <body id="newUser">
     
 	<section class="login-form">
     <div>    
-	<form name= "userlogin" action="admin456.php" method="post">
+    	<form name= "userlogin" action="admin456.php" method="post">
         <ul>
-            <h2>New User</h2><br><br>
-		 <li><label for="nom_Usuario">Name<label></li>
-             <input type="text" name="name" required><br><br>
-       
-        <li><label for="correo_usu">Identification</label></li>
-            <input type="text" name="identification" required><br><br> 
 
-		<li><label for="clave_usu">UserName</label></li>
-            <input type="text" name="username" required><br><br> 
+          <h2>Crear Nuevo Usuario</h2>
+          <li><label for="nom_Usuario">Nombre<label></li>
+          <input type="text" name="name" required>
+          
+          <li><label for="correo_usu">Cédula</label></li>
+          <input type="text" name="identification" required> 
 
-		<li><label for="clave_usu">Password<label></li>
-            <input type="password" name="password" required><br><br> 
-		
-        <li><label for="clave_usu">Confirm Password<label></li>
-            <input type="password" name="conpassword" required><br> 
-        <br>
+          <li><label for="clave_usu">Nombre de Usuario</label></li>
+          <input type="text" name="username" required> 
 
-		<input type="submit" value="Add User">
-		
+          <li><label for="clave_usu">Contraseña<label></li>
+          <input type="password" name="password" required>
+          
+          <li><label for="clave_usu">Confirmar Contraseña<label></li>
+          <input type="password" name="conpassword" required><br>
+
+          <input type="submit" value="Agregar Usuario">
+
         </ul>
-
-	</form>
+    	</form>
     </div>
-    </section>
+  </section>
 
 
 </body>
