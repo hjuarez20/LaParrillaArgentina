@@ -1,17 +1,29 @@
 <?php
+/*require 'db/db.php';*/
  
+
 if($_POST){
+  
+    print_r($_POST["dateReservation"]);
+    
+    /*--------------------------------date format change for mysql date format----------------------*/
+    $fecha=date("Y-m-d",strtotime($_POST["dateReservation"]));
+    
+    /* format that accept mysql Y-m-d*/
+    
    $database->insert("tbreservations", [
+            "reservationHour"=> $_POST["time"],
             "peopleAmount" => $_POST["peopleAmount"],
-            "clientName" => $_POST["clientName"],
-            "clientPhone" => $_POST["clientPhone"],
-            "clientEmail" => $_POST["clientEmail"],
+            "clientName" => $_POST["name"],
+            "clientPhone" => $_POST["phone"],
+            "clientEmail" => $_POST["email"],
             "state" => 1,
-            "date" => $_POST["date"]
-        ]);     
+            "date" => $fecha
+        ]);    
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,55 +44,63 @@ if($_POST){
                </p>
       </article>
 </div>     
- <div class="container">
-  <article class="row">
-      <article class="reserve-left col-xs-12 col-sm-6 col-md-6 col-lg-6">
-            <p class="labels">Nombre</p>
-             <input class="input" type="text" size="15" maxlength="30"  placeholder="nombre" name="nombre" >
-                <br></br>
-                <p class="labels">Hora</p>
-                <form  name=myform>
-                <select name=mytextarea>
-                <option name=uno value= one disabled>Hora</option>
-                <option name=dos value=two> 3:00 pm</option>
-                <option name=tres value=three> 4:00 pm </option>
-                <option name=tres value=three> 6:00 pm </option>
-                <option name=tres value=three> 8:00 pm </option>
-                </select>
-                </form>
-                 <br></br>
-                <p class="labels">Correo</p>
-             <input class="input" type="text" size="15" maxlength="30"  placeholder="ejemplo@gmail.com" name="correo" >
-      </article>
-      <article class="reserve-right col-xs-12 col-sm-6 col-md-6 col-lg-6">
-        <!-- FORM for calendar  -->
-               <form>
-                  <p class="labels">Fecha de Reservacion</p> <input id="calendar"type="text" placeholder="fecha de reservacion" name="fecha" class="campofecha" size="12">
-                  <br></br>
-               </form> 
-               <!-- FORM for calendar -->
-               <p class="labels">Personas</p>
-                <form name=myform>
-                <select name=mytextarea>
-                <option name=uno value=one disabled>Cantidad de Personas</option>
-                <option name=dos value=two> 2 person </option>
-                <option name=tres value=three> 4 person </option>
-                <option name=tres value=three> 8 person </option>
-                </select>
-                </form>
-                 <br></br>
-                <p class="labels">Telefono</p>
-                <input class="input" type="text" size="15" maxlength="30"  placeholder="teléfono" name="telefono" >
-              </article>  
-    </article>
-</div>
- <div class="container">
-  <article class="row">
-            <article class="reserve-button col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block">
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Reservar</button>
-           </article>
-  </article> 
- </div>           
+<!-- *********************************************************form to add the information of reservation************************ -->
+<form method="post" action="" enctype="multipart/form-data">
+    
+     <div class="container">
+      <article class="row">
+          <article class="reserve-left col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <p class="labels">Nombre</p>
+                 <input class="input" type="text" size="15" maxlength="30"  placeholder="nombre" name="name" >
+                    <br></br>
+                    <p class="labels">Hora</p>
+                   <!-- <form  name=myform> -->
+                        <select name=time>
+                        <option name=uno value= one disabled>Hora</option>
+                        <option name=dos value='3:00 pm'> 3:00 pm</option>
+                        <option name=tres value='4:00 pm'> 4:00 pm </option>
+                        <option name=tres value='6:00 pm'> 6:00 pm </option>
+                        <option name=tres value='8:00 pm'> 8:00 pm </option>
+                    </select>
+                    <!--</form>-->
+                     <br></br>
+                    <p class="labels">Correo</p>
+                 <input class="input" type="text" size="15" maxlength="30"  placeholder="ejemplo@gmail.com" name="email" >
+          </article>
+          <article class="reserve-right col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <!-- FORM for calendar  -->
+                 <!--  <form method="post"> -->
+                      <p class="labels">Fecha de Reservacion</p> <input id="calendar"type="text" placeholder="fecha de reservacion" name="dateReservation" class="campofecha" size="12">
+                      <br></br>
+                    
+                   <!-- FORM for calendar -->
+                   <p class="labels">Personas</p>
+                     <!-- <form method="post" name=myform>  -->
+                    <select name=peopleAmount>
+                        <option name=uno value=1 disabled>Cantidad de Personas</option>
+                        <option name=dos value=2> 2 person </option>
+                        <option name=cuatro value=4> 4 person </option>
+                        <option name=ocho value=8> 8 person </option>
+                    </select>
+                   <!-- </form> -->
+                     <br></br>
+                    <p class="labels">Telefono</p>
+                    <input class="input" type="text" size="15" maxlength="30"  placeholder="teléfono" name="phone" >
+                  </article>  
+        </article>
+    </div>
+     <div class="container">
+      <article class="row">
+                <article class="reserve-button col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block">
+                <button  type="submit" name="reserv" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" >Reservar</button>
+               </article>
+      </article> 
+     </div> 
+ 
+ </form>
+ <!-- *************************************end form reservation  ************************************************************* -->
+ 
+ <!-- *************************************Muestra de dialog luego de hacer la reservacion**********************************-->          
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
