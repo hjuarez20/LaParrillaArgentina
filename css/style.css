@@ -299,13 +299,14 @@ color: #000;
 }
 /*-----------------End Animation-------------------*/
 
-/* ---------RESERVATION----------- */
+/* ----------------------------------------------RESERVATION----------------------------------------------------- */
 
 .containerReserve{
     padding: 50px;
 }
 .reserve-button{
-    padding-top: 20px;
+     padding-top: 20px;
+    margin: 40px 0 0px 494px;
 }
 .containerReserve p{
     
@@ -362,4 +363,4 @@ select{
     position: absolute;
 }
 
-/* ---------------------------------------------------------style de reservaciones */
+/* ---------------------------------------------------------end style de reservaciones --------------------------------------------- */
