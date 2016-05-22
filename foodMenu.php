@@ -1,3 +1,69 @@
+<!-- PHP CODE -->
+<?php
+ require 'db/db.php'; //<----- DATABASE INCLUDE
+
+    //DRINKS SELECTED TO CATEGORY AND STATE(ACTIVE)
+    $dataDrinks = $database->select("tbmenu", [
+                                    'nameDish',
+                                    'category',
+                                    'description',
+                                    'price',
+                                    'image'],["AND" => [
+                                              "category" => "drinks",
+                                                "state" => "active"
+                                                        ]
+                                    ]);
+    //WINES SELECTED TO CATEGORY AND STATE(ACTIVE)
+     $dataWines = $database->select("tbmenu", [
+                                    'nameDish',
+                                    'category',
+                                    'description',
+                                    'price',
+                                    'image'],["AND" => [
+                                              "category" => "wines",
+                                                "state" => "active"
+                                                        ]
+                                    ]);
+    //MAINS SELECTED TO CATEGORY AND STATE(ACTIVE)
+      $dataMains = $database->select("tbmenu", [
+                                    'nameDish',
+                                    'category',
+                                    'description',
+                                    'price',
+                                    'image'],["AND" => [
+                                              "category" => "mains",
+                                                "state" => "active"
+                                                        ]
+                                    ]);
+    //SALADS SELECTED TO CATEGORY AND STATE(ACTIVE)
+      $dataSalads = $database->select("tbmenu", [
+                                    'nameDish',
+                                    'category',
+                                    'description',
+                                    'price',
+                                    'image'],["AND" => [
+                                              "category" => "salads",
+                                                "state" => "active"
+                                                        ]
+                                    ]);
+    //DESSERTS SELECTED TO CATEGORY AND STATE(ACTIVE)
+      $dataDesserts = $database->select("tbmenu", [
+                                    'nameDish',
+                                    'category',
+                                    'description',
+                                    'price',
+                                    'image'],["AND" => [
+                                              "category" => "desserts",
+                                                "state" => "active"
+                                                        ]
+                                    ]);
+   
+
+?>
+
+
+<!-- HTML AND PHP CODE -->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,8 +81,6 @@
     </head>
     <body>
         <div class="menuContainer">
-		
-			
 			
 			<header>
 			
@@ -57,34 +121,58 @@
 
 							<div class="rm-back">
 								<div class="rm-content">
+								
+    <!-- DRINKS -->
 									<h4>Bebidas</h4>
 									<dl>
-										<dt><a class="rm-viewdetails" data-thumb="img/food/teLimon.jpg">  Té de Limón</a></dt>
-										<dd>Elaborado de los mas frescos limones. (Melocón opcional)</dd>
+									    
+										<dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataDrinks[0]["image"]; ?> >  
+										<?php echo $dataDrinks[0]["nameDish"]." $". $dataDrinks[0]["price"]; ?> </a></dt>
+										<dd><?php echo $dataDrinks[0]["description"]; ?></dd>
 
-                                        <dt><a class="rm-viewdetails" data-thumb="img/food/naranjaZanahoria.jpg">  Naranja y Zanahoria</a></dt>
-										<dd>Las mejores Naranjas del país en perfecta convinacion con la Zanahoria</dd>
-
-										<dt><a class="rm-viewdetails" data-thumb="img/food/moraLeche.jpg"> Mora en Leche</a></dt>
-										<dd>La mejores Moras traidas desde Cartago</dd>
-
-										<dt><a class="rm-viewdetails" data-thumb="img/food/frutas.jpg">  Frutas coladas</a></dt>
-										<dd>Las mejores frutas frescas, perfectamente coladas</dd>
-										
-										<dt><a class="rm-viewdetails" data-thumb="img/food/gaseosa.jpg"> Gaseosas</a></dt>
-										<dd>Todo tipo de gaseosas para ofrecerte variedad</dd>
+                                         <dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataDrinks[1]["image"]; ?> >  
+										<?php echo $dataDrinks[1]["nameDish"]." $". $dataDrinks[1]["price"]; ?> </a></dt>
+										<dd><?php echo $dataDrinks[1]["description"]; ?></dd>
+                                        
+                                        <dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataDrinks[2]["image"]; ?> >  
+										<?php echo $dataDrinks[2]["nameDish"]." $". $dataDrinks[2]["price"]; ?> </a></dt>
+										<dd><?php echo $dataDrinks[2]["description"]; ?></dd>
+                                        
+                                        <dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataDrinks[3]["image"]; ?> >  
+										<?php echo $dataDrinks[3]["nameDish"]." $". $dataDrinks[3]["price"]; ?> </a></dt>
+										<dd><?php echo $dataDrinks[3]["description"]; ?></dd>
+                                        
+                                        <dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataDrinks[4]["image"]; ?> >  
+										<?php echo $dataDrinks[4]["nameDish"]." $". $dataDrinks[4]["price"]; ?> </a></dt>
+										<dd><?php echo $dataDrinks[4]["description"]; ?></dd>
+                                         
 									</dl>
+    <!-- WINES -->        
 
 									<h4>Vinos</h4>
 									<dl>
-										<dt><a class="rm-viewdetails" data-thumb="img/food/vinoBaratheon.jpg"> Robert Baratheon Labeul 1940</a></dt>
-										<dd>Perfectamente conservado 1940</dd>
-
-										<dt><a class="rm-viewdetails" data-thumb="img/food/vinoGarnis.jpg">Garnis Laprel 1970</a></dt>
-										<dd>El Laprel finamente añejado pero con un toque de amargura</dd>
-
-										<dt><a class="rm-viewdetails" data-thumb="img/food/vinoParis.jpg"> Paris de Gustavs 1960</a></dt>
-										<dd>Suave y espectacular al gusto</dd>
+										<dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataWines[0]["image"]; ?> >  
+										<?php echo $dataWines[0]["nameDish"]." $". $dataWines[0]["price"]; ?> </a></dt>
+										<dd><?php echo $dataWines[0]["description"]; ?></dd>
+										
+										<dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataWines[1]["image"]; ?> >  
+										<?php echo $dataWines[1]["nameDish"]." $". $dataWines[1]["price"]; ?> </a></dt>
+										<dd><?php echo $dataWines[1]["description"]; ?></dd>
+										
+										<dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataWines[2]["image"]; ?> >  
+										<?php echo $dataWines[2]["nameDish"]." $". $dataWines[2]["price"]; ?> </a></dt>
+										<dd><?php echo $dataWines[2]["description"]; ?></dd>
+										
+										
+										
 									</dl>
 								</div><!-- /rm-content -->
 								<div class="rm-overlay"></div>
@@ -96,31 +184,53 @@
 						<div class="rm-middle">
 							<div class="rm-inner">
 								<div class="rm-content">
+    <!-- MAINS -->
 									<h4>Platos Principales</h4>
 									<dl>
-										<dt><a class="rm-viewdetails" data-thumb="img/food/nySteak.jpg">New York Steak</a></dt>
-										<dd>Pan-fried potato gnocchi with arugula salad</dd>
+									    
+									    	<dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataMains[0]["image"]; ?> >  
+										<?php echo $dataMains[0]["nameDish"]." $". $dataMains[0]["price"]; ?> </a></dt>
+										<dd><?php echo $dataMains[0]["description"]; ?></dd>
+                                    
+                                        <dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataMains[1]["image"]; ?> >  
+										<?php echo $dataMains[1]["nameDish"]." $". $dataMains[1]["price"]; ?> </a></dt>
+										<dd><?php echo $dataMains[1]["description"]; ?></dd>
+                                        
+                                               <dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataMains[2]["image"]; ?> >  
+										<?php echo $dataMains[2]["nameDish"]." $". $dataMains[2]["price"]; ?> </a></dt>
+										<dd><?php echo $dataMains[2]["description"]; ?></dd>
 
-										<dt><a class="rm-viewdetails" data-thumb="img/food/mignon.jpg"> Filet Mignom 3/4 </a></dt>
-										<dd>Tender sea palm noodles, seasoned vegetables, spicy peanut curry and tempeh fenel croquettes</dd>
+                                               <dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataMains[3]["image"]; ?> >  
+										<?php echo $dataMains[3]["nameDish"]." $". $dataMains[3]["price"]; ?> </a></dt>
+										<dd><?php echo $dataMains[3]["description"]; ?></dd>
 
-										<dt><a class="rm-viewdetails" data-thumb="img/food/cordonBlue.jpg">Gordon Blue Premiun</a></dt>
-										<dd>Black lentil curry with arugula salad, caramelized shallots and roasted garlic</dd>
+                                               <dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataMains[4]["image"]; ?> >  
+										<?php echo $dataMains[4]["nameDish"]." $". $dataMains[4]["price"]; ?> </a></dt>
+										<dd><?php echo $dataMains[4]["description"]; ?></dd>
+                                               <dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataMains[5]["image"]; ?> >  
+										<?php echo $dataMains[5]["nameDish"]." $". $dataMains[5]["price"]; ?> </a></dt>
+										<dd><?php echo $dataMains[5]["description"]; ?></dd>
 
-										<dt><a class="rm-viewdetails" data-thumb="img/food/salmon.jpg"> Salmon a la parrilla</a></dt>
-										<dd>Wasabi emulsion, sesame seeds and scallions</dd>
+                                               <dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataMains[6]["image"]; ?> >  
+										<?php echo $dataMains[6]["nameDish"]." $". $dataMains[6]["price"]; ?> </a></dt>
+										<dd><?php echo $dataMains[6]["description"]; ?></dd>
 
-										<dt><a class="rm-viewdetails" data-thumb="img/food/polloRelleno.jpg"> Pollo relleno a las brazas </a></dt>
-										<dd>Grilled marinated tofu, maple barbeque sauce, tahini slaw, grilled seasonal vegetables and mashed potatoes</dd>
-																													
-										<dt><a  class="rm-viewdetails" data-thumb="img/food/bifeChorizo.jpg">Bife de Chorizo</a></dt>
-										<dd>King oyster mushroom with roasted cherries and sage</dd>
-										
-										<dt><a  class="rm-viewdetails" data-thumb="img/food/entrecot.jpg">Entrecot Origen Argentina</a></dt>
-										<dd>Rigatoni with roasted cauliflower and spicy tomato sauce</dd>
-										
-										<dt><a  class="rm-viewdetails" data-thumb="img/food/patatas.jpg">Patatas rellenas al horno</a></dt>
-										<dd>Saffron chickpea stew with grilled porcini mushrooms</dd>
+                                               <dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataMains[7]["image"]; ?> >  
+										<?php echo $dataMains[7]["nameDish"]." $". $dataMains[7]["price"]; ?> </a></dt>
+										<dd><?php echo $dataMains[7]["description"]; ?></dd>
+
+                                                
+
+                                    
+									    
 									</dl>
 								</div><!-- /rm-content -->
 								<div class="rm-overlay"></div>
@@ -136,31 +246,44 @@
 							<div class="rm-back">
 								<span class="rm-close">Close</span>
 								<div class="rm-content">
+								
+    <!-- SALADS -->
 									<h4>Ensaladas</h4>
 									<dl>
-										<dt><a  class="rm-viewdetails" data-thumb="img/food/ensaladaPatata.jpg">Ensalada de patata o ‘kartoffelsalat’</a></dt>
-										<dd>Prueba la mejor ensalada de patatas</dd>
-										
-										<dt><a class="rm-viewdetails" data-thumb="img/food/ensaladaRusa.jpg">Ensalada Rusa/Olivier</a></dt>
-										<dd>Tenes que probarla</dd>
-										
-										<dt><a  class="rm-viewdetails" data-thumb="img/food/ensaladaMixta.jpg">Ensalada Mixta</a></dt>
-										<dd>No te quedes sin probar nuestra ensalada Mixta</dd>
+										  <dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataSalads[0]["image"]; ?> >  
+										<?php echo $dataSalads[0]["nameDish"]." $". $dataSalads[0]["price"]; ?> </a></dt>
+										<dd><?php echo $dataSalads[0]["description"]; ?></dd>
+                                      
+										  <dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataSalads[1]["image"]; ?> >  
+										<?php echo $dataSalads[1]["nameDish"]." $". $dataSalads[1]["price"]; ?> </a></dt>
+										<dd><?php echo $dataSalads[1]["description"]; ?></dd>
+                                      
+										  <dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataSalads[2]["image"]; ?> >  
+										<?php echo $dataSalads[2]["nameDish"]." $". $dataSalads[2]["price"]; ?> </a></dt>
+										<dd><?php echo $dataSalads[2]["description"]; ?></dd>
 										
 									</dl>
-									
+    <!-- DESSERTS -->	
 									<h4>Postres</h4>
 									<dl>
-										<dt><a  class="rm-viewdetails" data-thumb="img/food/FlanVainilla.jpg">Flan de Vainilla</a></dt>
-										<dd>Este flan te dejara sin aliento</dd>
-
-										<dt><a  class="rm-viewdetails" data-thumb="img/food/piePiña.jpg">Pie de Piña</a></dt>
-										<dd>Bañado en dulce de leche que complementa perfectamente el sabor</dd>
-
-										<dt><a  class="rm-viewdetails" data-thumb="img/food/cheesecake.jpg">Cheese Cake </a></dt>
-										<dd>Puedes pedirlo con Frutas</dd>
-									</dl>
-									
+										 <dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataDesserts[0]["image"]; ?> >  
+										<?php echo $dataDesserts[0]["nameDish"]." $". $dataDesserts[0]["price"]; ?> </a></dt>
+										<dd><?php echo $dataDesserts[0]["description"]; ?></dd>
+                                      
+										  <dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataDesserts[1]["image"]; ?> >  
+										<?php echo $dataDesserts[1]["nameDish"]." $". $dataDesserts[1]["price"]; ?> </a></dt>
+										<dd><?php echo $dataDesserts[1]["description"]; ?></dd>
+                                      
+										  <dt><a class="rm-viewdetails" 
+										data-thumb = <?php echo $dataDesserts[2]["image"]; ?> >  
+										<?php echo $dataDesserts[2]["nameDish"]." $". $dataDesserts[2]["price"]; ?> </a></dt>
+										<dd><?php echo $dataDesserts[2]["description"]; ?></dd>
+    <!-- CONTACT -->	
 									<div class="rm-order">
 										<p><strong>Deseas que nos encarguemos de tu fiesta o evento?</strong> Contactanos y te ayudaremos a organizar tu evento: <strong>626.511.1170</strong></p>
 									</div>
