@@ -20,6 +20,21 @@ font-weight: 900;
 text-transform: uppercase;
 color: #000;
 } 
+/*BACKGROUND VIDEO STEAK*/
+.video-js{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
 /*Global Style Button*/
 .buttons{
     display: block;
@@ -62,7 +77,7 @@ color: #000;
     min-height: 859px;
 }
 .big{
-    min-height: 640px;
+    height: 800px;
 }
 .medium{
     min-height: 590px;
@@ -75,6 +90,8 @@ color: #000;
 .logo img{
     width: 344px;
     height: 450px;
+    -webkit-filter: drop-shadow(8px 8px 8px black);
+    filter: drop-shadow(8px 8px 8px black);
 }
 /*--------------*/
 /*Images*/
@@ -82,47 +99,20 @@ color: #000;
     background-image: url("../img/back_home.jpg");
 }
 .img2{
-
-    background-color: #fff;
-}
-.img3{
   background-image: url("../img/menu.jpg");
 }
-.img4{
-    background-color: rgb(30, 30, 30);
+/*Colors*/
+.color1{
+    background-color: rgb(250, 248, 234);
+}
+.color2{
+    background-color: rgb(255, 255, 255);
+}
+.color3{
+  background-color: rgb(30, 30, 30);
 
 }
 /*--------------*/
-/*About us*/
-#nosotros article div h2{
-     font-weight: 500;
-     text-transform: uppercase;
-     color: #000;
-     font-size: 14px;
-     padding: 20px 0px 0px 22px;
-     text-align: inherit;
-}
-
-#nosotros article div h4{
-    font-size: 20px;
-    padding: 15px 0px 0px 22px;
-    width: 80%;
-    line-height: 1.4;
-}
-#nosotros article div h3{
-     font-weight: 700;
-     font-size: 18px;
-     padding: 15px 0px 0px 20px;
-}
-#nosotros article div p{
-     font-family: 'Old Standard TT', serif;
-     font-weight: 400;
-     color: #000;
-     font-size: 16px;
-     padding:11px 0px 0px 20px; 
-     width: 74%;
-     text-align: justify;
-}
 /*Stiky Menu*/
 
 #home section nav {
@@ -155,7 +145,6 @@ color: #000;
 #home nav ul li a:hover {
     color: rgb(166, 12, 0);
 }
- 
 /* --- add class when the user scroll--- */
 .menu-fixed {
     height: 60px;
@@ -175,6 +164,38 @@ color: #000;
     color: #fff;
     text-decoration: none;
 }
+/*------------About us-------------------*/
+#nosotros article div h2{
+     font-weight: 500;
+     text-transform: uppercase;
+     color: #000;
+     font-size: 14px;
+     padding: 20px 0px 0px 22px;
+     text-align: inherit;
+}
+
+#nosotros article div h4{
+    font-size: 20px;
+    padding: 15px 0px 0px 22px;
+    width: 80%;
+    line-height: 1.4;
+}
+#nosotros article div h3{
+     font-weight: 700;
+     font-size: 18px;
+     padding: 15px 0px 0px 20px;
+}
+#nosotros article div p{
+     font-family: 'Old Standard TT', serif;
+     font-weight: 400;
+     color: #000;
+     font-size: 16px;
+     padding:11px 0px 0px 20px; 
+     width: 74%;
+     text-align: justify;
+}
+ 
+
 
 
 /*-----------------CONTACT-------------------*/

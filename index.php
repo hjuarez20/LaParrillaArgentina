@@ -13,25 +13,25 @@
 	
 </head>
 <body>
-		<section id="home" class="img1 parallax big">
+		<section id="home" class="big">
 			<?php include ('menu.php');?>
 		</section>
-<section  id="nosotros"class="img2 parallax">
+<section  id="nosotros"class="color1 parallax">
 	<?php include ('aboutus.php');?>
 </section>
 
-<section  id="menu"class="img3 parallax superBig">
+<section  id="menu"class="img2 parallax superBig">
 <?php include ('foodMenu.php');?>
 	
 </section>	
 
-<section  id="reservaciones" class="img2 parallax medium ">
+<section  id="reservaciones" class="color2 parallax medium ">
 	<article>
 		<?php include ('reservation.php');?>
 	</article>
 </section>	
 
-<section  id="contacto" class="contact parallax medium img4 ">
+<section  id="contacto" class="color3 contact parallax medium ">
      <?php include ('contact.php');?>
 </section>
 	<script src="js/jquery-latest.js"></script>
