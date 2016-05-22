@@ -2,68 +2,17 @@
 <?php
  require 'db/db.php'; //<----- DATABASE INCLUDE
 
-    //DRINKS SELECTED TO CATEGORY AND STATE(ACTIVE)
-    $dataDrinks = $database->select("tbmenu", [
+    //MENU SELECTED STATE(ACTIVE)
+    $data = $database->select("tbmenu", [
                                     'nameDish',
                                     'category',
                                     'description',
                                     'price',
-                                    'image'],["AND" => [
-                                              "category" => "drinks",
-                                                "state" => "active"
-                                                        ]
+                                    'image'],[
+                                    "state" => "active"
                                     ]);
-    //WINES SELECTED TO CATEGORY AND STATE(ACTIVE)
-     $dataWines = $database->select("tbmenu", [
-                                    'nameDish',
-                                    'category',
-                                    'description',
-                                    'price',
-                                    'image'],["AND" => [
-                                              "category" => "wines",
-                                                "state" => "active"
-                                                        ]
-                                    ]);
-    //MAINS SELECTED TO CATEGORY AND STATE(ACTIVE)
-      $dataMains = $database->select("tbmenu", [
-                                    'nameDish',
-                                    'category',
-                                    'description',
-                                    'price',
-                                    'image'],["AND" => [
-                                              "category" => "mains",
-                                                "state" => "active"
-                                                        ]
-                                    ]);
-    //SALADS SELECTED TO CATEGORY AND STATE(ACTIVE)
-      $dataSalads = $database->select("tbmenu", [
-                                    'nameDish',
-                                    'category',
-                                    'description',
-                                    'price',
-                                    'image'],["AND" => [
-                                              "category" => "salads",
-                                                "state" => "active"
-                                                        ]
-                                    ]);
-    //DESSERTS SELECTED TO CATEGORY AND STATE(ACTIVE)
-      $dataDesserts = $database->select("tbmenu", [
-                                    'nameDish',
-                                    'category',
-                                    'description',
-                                    'price',
-                                    'image'],["AND" => [
-                                              "category" => "desserts",
-                                                "state" => "active"
-                                                        ]
-                                    ]);
-   
-
 ?>
-
-
 <!-- HTML AND PHP CODE -->
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -125,54 +74,27 @@
     <!-- DRINKS -->
 									<h4>Bebidas</h4>
 									<dl>
-									    
-										<dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataDrinks[0]["image"]; ?> >  
-										<?php echo $dataDrinks[0]["nameDish"]." $". $dataDrinks[0]["price"]; ?> </a></dt>
-										<dd><?php echo $dataDrinks[0]["description"]; ?></dd>
-
-                                         <dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataDrinks[1]["image"]; ?> >  
-										<?php echo $dataDrinks[1]["nameDish"]." $". $dataDrinks[1]["price"]; ?> </a></dt>
-										<dd><?php echo $dataDrinks[1]["description"]; ?></dd>
-                                        
-                                        <dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataDrinks[2]["image"]; ?> >  
-										<?php echo $dataDrinks[2]["nameDish"]." $". $dataDrinks[2]["price"]; ?> </a></dt>
-										<dd><?php echo $dataDrinks[2]["description"]; ?></dd>
-                                        
-                                        <dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataDrinks[3]["image"]; ?> >  
-										<?php echo $dataDrinks[3]["nameDish"]." $". $dataDrinks[3]["price"]; ?> </a></dt>
-										<dd><?php echo $dataDrinks[3]["description"]; ?></dd>
-                                        
-                                        <dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataDrinks[4]["image"]; ?> >  
-										<?php echo $dataDrinks[4]["nameDish"]." $". $dataDrinks[4]["price"]; ?> </a></dt>
-										<dd><?php echo $dataDrinks[4]["description"]; ?></dd>
-                                         
+									    <?php
+                                          for($a=0; $a<count($data); $a++){
+                                              if($data[$a]["category"] == "drinks"){
+                                           echo   "<dt><a class='rm-viewdetails' 
+										data-thumb =".$data[$a]["image"].">".$data[$a]["nameDish"]." $".$data[$a]["price"]."</a></dt>"."
+                                         <dd>".$data[$a]["description"]."</dd>";
+                                          }}
+                                        ?>
 									</dl>
     <!-- WINES -->        
 
 									<h4>Vinos</h4>
 									<dl>
-										<dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataWines[0]["image"]; ?> >  
-										<?php echo $dataWines[0]["nameDish"]." $". $dataWines[0]["price"]; ?> </a></dt>
-										<dd><?php echo $dataWines[0]["description"]; ?></dd>
-										
-										<dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataWines[1]["image"]; ?> >  
-										<?php echo $dataWines[1]["nameDish"]." $". $dataWines[1]["price"]; ?> </a></dt>
-										<dd><?php echo $dataWines[1]["description"]; ?></dd>
-										
-										<dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataWines[2]["image"]; ?> >  
-										<?php echo $dataWines[2]["nameDish"]." $". $dataWines[2]["price"]; ?> </a></dt>
-										<dd><?php echo $dataWines[2]["description"]; ?></dd>
-										
-										
-										
+									  <?php
+                                          for($a=0; $a<count($data); $a++){
+                                              if($data[$a]["category"] == "wines"){
+                                           echo   "<dt><a class='rm-viewdetails' 
+										data-thumb =".$data[$a]["image"].">".$data[$a]["nameDish"]." $".$data[$a]["price"]."</a></dt>"."
+                                         <dd>".$data[$a]["description"]."</dd>";
+                                          }}
+                                        ?>
 									</dl>
 								</div><!-- /rm-content -->
 								<div class="rm-overlay"></div>
@@ -187,50 +109,14 @@
     <!-- MAINS -->
 									<h4>Platos Principales</h4>
 									<dl>
-									    
-									    	<dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataMains[0]["image"]; ?> >  
-										<?php echo $dataMains[0]["nameDish"]." $". $dataMains[0]["price"]; ?> </a></dt>
-										<dd><?php echo $dataMains[0]["description"]; ?></dd>
-                                    
-                                        <dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataMains[1]["image"]; ?> >  
-										<?php echo $dataMains[1]["nameDish"]." $". $dataMains[1]["price"]; ?> </a></dt>
-										<dd><?php echo $dataMains[1]["description"]; ?></dd>
-                                        
-                                               <dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataMains[2]["image"]; ?> >  
-										<?php echo $dataMains[2]["nameDish"]." $". $dataMains[2]["price"]; ?> </a></dt>
-										<dd><?php echo $dataMains[2]["description"]; ?></dd>
-
-                                               <dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataMains[3]["image"]; ?> >  
-										<?php echo $dataMains[3]["nameDish"]." $". $dataMains[3]["price"]; ?> </a></dt>
-										<dd><?php echo $dataMains[3]["description"]; ?></dd>
-
-                                               <dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataMains[4]["image"]; ?> >  
-										<?php echo $dataMains[4]["nameDish"]." $". $dataMains[4]["price"]; ?> </a></dt>
-										<dd><?php echo $dataMains[4]["description"]; ?></dd>
-                                               <dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataMains[5]["image"]; ?> >  
-										<?php echo $dataMains[5]["nameDish"]." $". $dataMains[5]["price"]; ?> </a></dt>
-										<dd><?php echo $dataMains[5]["description"]; ?></dd>
-
-                                               <dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataMains[6]["image"]; ?> >  
-										<?php echo $dataMains[6]["nameDish"]." $". $dataMains[6]["price"]; ?> </a></dt>
-										<dd><?php echo $dataMains[6]["description"]; ?></dd>
-
-                                               <dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataMains[7]["image"]; ?> >  
-										<?php echo $dataMains[7]["nameDish"]." $". $dataMains[7]["price"]; ?> </a></dt>
-										<dd><?php echo $dataMains[7]["description"]; ?></dd>
-
-                                                
-
-                                    
-									    
+									    <?php
+                                          for($a=0; $a<count($data); $a++){
+                                              if($data[$a]["category"] == "mains"){
+                                           echo   "<dt><a class='rm-viewdetails' 
+										data-thumb =".$data[$a]["image"].">".$data[$a]["nameDish"]." $".$data[$a]["price"]."</a></dt>"."
+                                         <dd>".$data[$a]["description"]."</dd>";
+                                          }}
+                                        ?>
 									</dl>
 								</div><!-- /rm-content -->
 								<div class="rm-overlay"></div>
@@ -250,39 +136,26 @@
     <!-- SALADS -->
 									<h4>Ensaladas</h4>
 									<dl>
-										  <dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataSalads[0]["image"]; ?> >  
-										<?php echo $dataSalads[0]["nameDish"]." $". $dataSalads[0]["price"]; ?> </a></dt>
-										<dd><?php echo $dataSalads[0]["description"]; ?></dd>
-                                      
-										  <dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataSalads[1]["image"]; ?> >  
-										<?php echo $dataSalads[1]["nameDish"]." $". $dataSalads[1]["price"]; ?> </a></dt>
-										<dd><?php echo $dataSalads[1]["description"]; ?></dd>
-                                      
-										  <dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataSalads[2]["image"]; ?> >  
-										<?php echo $dataSalads[2]["nameDish"]." $". $dataSalads[2]["price"]; ?> </a></dt>
-										<dd><?php echo $dataSalads[2]["description"]; ?></dd>
-										
+                                      <?php
+                                          for($a=0; $a<count($data); $a++){
+                                              if($data[$a]["category"] == "salads"){
+                                           echo   "<dt><a class='rm-viewdetails' 
+										data-thumb =".$data[$a]["image"].">".$data[$a]["nameDish"]." $".$data[$a]["price"]."</a></dt>"."
+                                         <dd>".$data[$a]["description"]."</dd>";
+                                          }}
+                                        ?>
 									</dl>
     <!-- DESSERTS -->	
 									<h4>Postres</h4>
 									<dl>
-										 <dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataDesserts[0]["image"]; ?> >  
-										<?php echo $dataDesserts[0]["nameDish"]." $". $dataDesserts[0]["price"]; ?> </a></dt>
-										<dd><?php echo $dataDesserts[0]["description"]; ?></dd>
-                                      
-										  <dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataDesserts[1]["image"]; ?> >  
-										<?php echo $dataDesserts[1]["nameDish"]." $". $dataDesserts[1]["price"]; ?> </a></dt>
-										<dd><?php echo $dataDesserts[1]["description"]; ?></dd>
-                                      
-										  <dt><a class="rm-viewdetails" 
-										data-thumb = <?php echo $dataDesserts[2]["image"]; ?> >  
-										<?php echo $dataDesserts[2]["nameDish"]." $". $dataDesserts[2]["price"]; ?> </a></dt>
-										<dd><?php echo $dataDesserts[2]["description"]; ?></dd>
+                                     <?php
+                                          for($a=0; $a<count($data); $a++){
+                                              if($data[$a]["category"] == "desserts"){
+                                           echo   "<dt><a class='rm-viewdetails' 
+										data-thumb =".$data[$a]["image"].">".$data[$a]["nameDish"]." $".$data[$a]["price"]."</a></dt>"."
+                                         <dd>".$data[$a]["description"]."</dd>";
+                                          }}
+                                        ?>
     <!-- CONTACT -->	
 									<div class="rm-order">
 										<p><strong>Deseas que nos encarguemos de tu fiesta o evento?</strong> Contactanos y te ayudaremos a organizar tu evento: <strong>626.511.1170</strong></p>

@@ -2,6 +2,9 @@
 
  require 'db/db.php';
  $data = $database->select("tbreservations", "*");
+ $dataFood = $database->select("tbmenu", "*",[
+                                            "ORDER" => "category"
+                                            ]);
  $user = $_GET['name'];
 ?>
 <html>
@@ -59,6 +62,51 @@
                                     echo  "<tr><td>".$data[$i]["clientName"]."</td><td>".$data[$i]["clientPhone"]."</td><td>".$data[$i]["clientEmail"]."</td><td>".$data[$i]["date"]."</td><td>".$data[$i]["peopleAmount"]."</td><td><a href='editar.php?id=".$data[$i]["idReservation"]."'>Editar</a> <a href='delete.php?id=".$data[$i]["idReservation"]."'>Eliminar</a></td></tr>";
                 }
             ?>
+							    </table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		
+		
+		
+		<div class="containerCenter tableSize ">
+			<section>			 	 
+  				<div class="row">
+    				<div class="col-xs-12">
+   		  				 <div class="table-responsive">
+	   		  				 <article class="tbl-header">
+							    <table cellpadding="0" cellspacing="0" border="0">
+							        <tr>						      
+							          <th>Platillo</th>
+							          <th>Categoria</th>
+							          <th>Descripcion</th>
+							          <th>Precio<br>(dolar)</th>
+							          <th>Estado<br>(active/Inactive)</th>
+                                      <th>Imagen</th>
+                                      <th>Opciones</th>
+							        </tr>
+							    </table>
+							  </article>
+							  <div class="tbl-content">
+							      <table cellpadding="0" cellspacing="0" border="0">
+			
+                             <?php
+                                    $len = count($dataFood);
+                                    for($e=0; $e<$len; $e++){
+                                    echo  "<tr>
+                                    <td>".$dataFood[$e]["nameDish"]."</td>
+                                    <td>".$dataFood[$e]["category"]."</td>
+                                    <td>".$dataFood[$e]["description"]."</td><td>".$dataFood[$e]["price"]."</td>
+                                    <td>".$dataFood[$e]["state"]."</td>
+                                    <td>".$dataFood[$e]["image"]."</td>
+                                    <td><a href='editar.php?id=".$dataFood[$e]["idDish"]."'>Editar</a> <a href='delete.php?id=".$dataFood[$e]["idDish"]."'>Eliminar</a></td></tr>";
+                }
+            ?>
+                            
+                            
 							    </table>
 							</div>
 						</div>

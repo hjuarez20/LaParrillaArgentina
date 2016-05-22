@@ -13,22 +13,22 @@
 	
 </head>
 <body>
-		<section id="home" class="big">
-			<?php include ('menu.php');?>
-		</section>
+<section id="home" class="big">
+    <?php include ('menu.php');?>
+</section>
+
 <section  id="nosotros"class="color1 parallax">
 	<?php include ('aboutus.php');?>
 </section>
 
 <section  id="menu"class="img2 parallax superBig">
-<?php include ('foodMenu.php');?>
-	
+     <?php include ('foodMenu.php');?>
 </section>	
 
 <section  id="reservaciones" class="color2 parallax medium ">
-	<article>
+<article>
 		<?php include ('reservation.php');?>
-	</article>
+</article>
 </section>	
 
 <section  id="contacto" class="color3 contact parallax medium ">
