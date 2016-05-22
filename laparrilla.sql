@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: May 21, 2016 at 11:47 PM
--- Server version: 5.7.9
--- PHP Version: 5.6.16
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 22-05-2016 a las 07:52:56
+-- Versión del servidor: 10.1.10-MariaDB
+-- Versión de PHP: 5.6.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,32 +17,29 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `laparrilla`
+-- Base de datos: `laparrilla`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbcontact`
+-- Estructura de tabla para la tabla `tbcontact`
 --
 
-DROP TABLE IF EXISTS `tbcontact`;
-CREATE TABLE IF NOT EXISTS `tbcontact` (
-  `idContact` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbcontact` (
+  `idContact` int(11) NOT NULL,
   `name` varchar(45) NOT NULL,
-  `email` varchar(45) NOT NULL,
-  PRIMARY KEY (`idContact`)
+  `email` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbmenu`
+-- Estructura de tabla para la tabla `tbmenu`
 --
 
-DROP TABLE IF EXISTS `tbmenu`;
-CREATE TABLE IF NOT EXISTS `tbmenu` (
-  `idDish` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbmenu` (
+  `idDish` int(11) NOT NULL,
   `idUserMod` int(11) NOT NULL,
   `nameDish` varchar(45) NOT NULL,
   `category` varchar(45) NOT NULL,
@@ -50,13 +47,11 @@ CREATE TABLE IF NOT EXISTS `tbmenu` (
   `price` int(11) NOT NULL,
   `state` varchar(45) NOT NULL,
   `dayMod` date NOT NULL,
-  `image` varchar(45) NOT NULL,
-  PRIMARY KEY (`idDish`),
-  KEY `idUserMod_idx` (`idUserMod`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+  `image` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbmenu`
+-- Volcado de datos para la tabla `tbmenu`
 --
 
 INSERT INTO `tbmenu` (`idDish`, `idUserMod`, `nameDish`, `category`, `description`, `price`, `state`, `dayMod`, `image`) VALUES
@@ -86,24 +81,22 @@ INSERT INTO `tbmenu` (`idDish`, `idUserMod`, `nameDish`, `category`, `descriptio
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbreservations`
+-- Estructura de tabla para la tabla `tbreservations`
 --
 
-DROP TABLE IF EXISTS `tbreservations`;
-CREATE TABLE IF NOT EXISTS `tbreservations` (
-  `idReservation` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbreservations` (
+  `idReservation` int(11) NOT NULL,
   `reservationHour` time(6) NOT NULL,
   `peopleAmount` int(11) NOT NULL,
   `clientName` varchar(45) NOT NULL,
   `clientPhone` varchar(45) NOT NULL,
   `clientEmail` varchar(45) NOT NULL,
   `state` varchar(45) NOT NULL,
-  `date` date NOT NULL,
-  PRIMARY KEY (`idReservation`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbreservations`
+-- Volcado de datos para la tabla `tbreservations`
 --
 
 INSERT INTO `tbreservations` (`idReservation`, `reservationHour`, `peopleAmount`, `clientName`, `clientPhone`, `clientEmail`, `state`, `date`) VALUES
@@ -113,51 +106,77 @@ INSERT INTO `tbreservations` (`idReservation`, `reservationHour`, `peopleAmount`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbtables`
+-- Estructura de tabla para la tabla `tbtables`
 --
 
-DROP TABLE IF EXISTS `tbtables`;
-CREATE TABLE IF NOT EXISTS `tbtables` (
-  `idTable` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbtables` (
+  `idTable` int(11) NOT NULL,
   `category` varchar(45) NOT NULL,
   `state` varchar(45) NOT NULL,
-  `chairsNum` int(11) NOT NULL,
-  PRIMARY KEY (`idTable`)
+  `chairsNum` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbtablesreservations`
+-- Estructura de tabla para la tabla `tbtablesreservations`
 --
 
-DROP TABLE IF EXISTS `tbtablesreservations`;
-CREATE TABLE IF NOT EXISTS `tbtablesreservations` (
+CREATE TABLE `tbtablesreservations` (
   `idReservation` int(11) NOT NULL,
   `idTable` int(11) NOT NULL,
-  `state` varchar(45) NOT NULL,
-  KEY `idReservation_idx` (`idReservation`),
-  KEY `idTable_idx` (`idTable`)
+  `state` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbusers`
+-- Estructura de tabla para la tabla `tbtime`
 --
 
-DROP TABLE IF EXISTS `tbusers`;
-CREATE TABLE IF NOT EXISTS `tbusers` (
-  `idUser` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbtime` (
+  `idTime` int(100) NOT NULL,
+  `nameTime` varchar(45) NOT NULL,
+  `time` time NOT NULL,
+  `state` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `tbtime`
+--
+
+INSERT INTO `tbtime` (`idTime`, `nameTime`, `time`, `state`) VALUES
+(1, 'nueve', '09:00:00', 'int'),
+(2, 'diez', '10:00:00', 'int'),
+(3, 'once', '11:00:00', 'int'),
+(4, 'doce', '12:00:00', 'int'),
+(5, 'trece', '13:00:00', 'int'),
+(6, 'catorce', '14:00:00', 'int'),
+(7, 'quince', '15:00:00', 'int'),
+(8, 'dieciseis', '16:00:00', 'int'),
+(9, 'diecisiete', '17:00:00', 'int'),
+(10, 'dieciocho', '18:00:00', 'int'),
+(11, 'diecinueve', '19:00:00', 'int'),
+(12, 'veinte', '20:00:00', 'int'),
+(13, 'veintiuno', '21:00:00', 'int'),
+(14, 'veintidos', '22:00:00', 'int');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tbusers`
+--
+
+CREATE TABLE `tbusers` (
+  `idUser` int(11) NOT NULL,
   `login` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
   `identification` varchar(45) NOT NULL,
-  `name` varchar(45) NOT NULL,
-  PRIMARY KEY (`idUser`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  `name` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbusers`
+-- Volcado de datos para la tabla `tbusers`
 --
 
 INSERT INTO `tbusers` (`idUser`, `login`, `password`, `identification`, `name`) VALUES
@@ -166,17 +185,99 @@ INSERT INTO `tbusers` (`idUser`, `login`, `password`, `identification`, `name`) 
 (5, 'Oscar Noguera', 'e10adc3949ba59abbe56e057f20f883e', '604200925', 'Oscar');
 
 --
--- Constraints for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Constraints for table `tbmenu`
+-- Indices de la tabla `tbcontact`
+--
+ALTER TABLE `tbcontact`
+  ADD PRIMARY KEY (`idContact`);
+
+--
+-- Indices de la tabla `tbmenu`
+--
+ALTER TABLE `tbmenu`
+  ADD PRIMARY KEY (`idDish`),
+  ADD KEY `idUserMod_idx` (`idUserMod`);
+
+--
+-- Indices de la tabla `tbreservations`
+--
+ALTER TABLE `tbreservations`
+  ADD PRIMARY KEY (`idReservation`);
+
+--
+-- Indices de la tabla `tbtables`
+--
+ALTER TABLE `tbtables`
+  ADD PRIMARY KEY (`idTable`);
+
+--
+-- Indices de la tabla `tbtablesreservations`
+--
+ALTER TABLE `tbtablesreservations`
+  ADD KEY `idReservation_idx` (`idReservation`),
+  ADD KEY `idTable_idx` (`idTable`);
+
+--
+-- Indices de la tabla `tbtime`
+--
+ALTER TABLE `tbtime`
+  ADD PRIMARY KEY (`idTime`);
+
+--
+-- Indices de la tabla `tbusers`
+--
+ALTER TABLE `tbusers`
+  ADD PRIMARY KEY (`idUser`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `tbcontact`
+--
+ALTER TABLE `tbcontact`
+  MODIFY `idContact` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `tbmenu`
+--
+ALTER TABLE `tbmenu`
+  MODIFY `idDish` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+--
+-- AUTO_INCREMENT de la tabla `tbreservations`
+--
+ALTER TABLE `tbreservations`
+  MODIFY `idReservation` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `tbtables`
+--
+ALTER TABLE `tbtables`
+  MODIFY `idTable` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `tbtime`
+--
+ALTER TABLE `tbtime`
+  MODIFY `idTime` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT de la tabla `tbusers`
+--
+ALTER TABLE `tbusers`
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `tbmenu`
 --
 ALTER TABLE `tbmenu`
   ADD CONSTRAINT `idUserMod` FOREIGN KEY (`idUserMod`) REFERENCES `tbusers` (`idUser`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `tbtablesreservations`
+-- Filtros para la tabla `tbtablesreservations`
 --
 ALTER TABLE `tbtablesreservations`
   ADD CONSTRAINT `idReservation` FOREIGN KEY (`idReservation`) REFERENCES `tbreservations` (`idReservation`) ON DELETE NO ACTION ON UPDATE NO ACTION,

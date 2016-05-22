@@ -1,6 +1,13 @@
 <?php
 /*require 'db/db.php';*/
- 
+
+$time = $database->select("tbtime",[
+                        "nameTime",
+                        "time",
+                        "state"
+                        ],[
+                        "state" => "int"
+                        ]);
 
 if($_POST){
   
@@ -56,11 +63,12 @@ if($_POST){
                     <p class="labels">Hora</p>
                    <!-- <form  name=myform> -->
                         <select name=time>
-                        <option name=uno value= one disabled>Hora</option>
-                        <option name=dos value='3:00 pm'> 3:00 pm</option>
-                        <option name=tres value='4:00 pm'> 4:00 pm </option>
-                        <option name=tres value='6:00 pm'> 6:00 pm </option>
-                        <option name=tres value='8:00 pm'> 8:00 pm </option>
+                        <option name=default value='default'> Seleccione la hora </option>
+                        <?php
+                        for($i=0; $i<count($time); $i++){
+                         echo   "<option name=".$time[$i]["nameTime"].">".$time[$i]["time"]."</option>";
+                        }    
+                        ?>
                     </select>
                     <!--</form>-->
                      <br></br>
