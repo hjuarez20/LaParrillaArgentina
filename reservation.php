@@ -1,6 +1,6 @@
 <?php
 /*require 'db/db.php';*/
- 
+    
 
 if($_POST){
   
