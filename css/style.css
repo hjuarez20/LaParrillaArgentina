@@ -1,27 +1,37 @@
 /*Global Attributes*/
-*{
-    margin:0;
+
+* {
+    margin: 0;
     padding: 0;
 }
-h1{
- padding-top: 8px;
 
- font-size: 20px;
+h1 {
+    padding-top: 8px;
+    font-size: 20px;
 }
-h2{
-    font-size: 20px;    
+
+h2 {
+    font-size: 20px;
     text-align: center;
     padding: 59px 0px 0px 0;
     font-weight: 700px;
 }
-h4,h3,h2,h1,#nosotros article div a{
-font-family: 'Roboto', serif;
-font-weight: 900;
-text-transform: uppercase;
-color: #000;
-} 
+
+h4,
+h3,
+h2,
+h1,
+#nosotros article div a {
+    font-family: 'Roboto', serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #000;
+}
+
+
 /*BACKGROUND VIDEO STEAK*/
-.video-js{
+
+.video-js {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -35,8 +45,11 @@ color: #000;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
 }
+
+
 /*Global Style Button*/
-.buttons{
+
+.buttons {
     display: block;
     text-align: center;
     text-decoration: none;
@@ -44,222 +57,273 @@ color: #000;
     width: 154px;
     padding: 8px;
     font-size: 13px;
-    margin: 34px 0px 0px 15px;  
+    margin: 34px 0px 0px 15px;
 }
-.rigth{
-    float:right;
+
+.rigth {
+    float: right;
     padding-right: 8%;
 }
-.left{
+
+.left {
     float: left;
     padding-left: 8%;
 }
+
+
 /*--------------*/
-.padding-columns{
+
+.padding-columns {
     padding: 35px 0 0 0;
 }
+
+
 /*Parallax (effect that causes the background move)*/
-.parallax{
+
+.parallax {
     -moz-background-size: cover;
     -o-background-size: cover;
     -webkit-background-size: cover;
     background-size: cover;
     background-attachment: fixed;
-    background-repeat: no-repeat;   
+    background-repeat: no-repeat;
     background-position: center center;
     position: relative;
-    width: 100% ;
+    width: 100%;
     background-color: rgb(23, 23, 23);
     display: inline-block;
 }
+
+
 /*Size (diferents size, aplicate to parrallax effect)*/
-.superBig{
+
+.superBig {
     min-height: 859px;
 }
-.big{
+
+.big {
     height: 800px;
 }
-.medium{
+
+.medium {
     min-height: 590px;
 }
-.small{
+
+.small {
     min-height: 350px;
 }
+
+
 /*--------------*/
+
+
 /*Logo*/
-.logo img{
+
+.logo img {
     width: 344px;
     height: 450px;
     -webkit-filter: drop-shadow(8px 8px 8px black);
     filter: drop-shadow(8px 8px 8px black);
 }
+
+
 /*--------------*/
+
+
 /*Images*/
-.img1{
+
+.img1 {
     background-image: url("../img/back_home.jpg");
 }
-.img2{
-  background-image: url("../img/menu.jpg");
+
+.img2 {
+    background-image: url("../img/menu2.jpg");
 }
+
+
 /*Colors*/
-.color1{
+
+.color1 {
     background-color: rgb(250, 248, 234);
 }
-.color2{
+
+.color2 {
     background-color: rgb(255, 255, 255);
 }
-.color3{
-  background-color: rgb(30, 30, 30);
 
+.color3 {
+    background-color: rgb(30, 30, 30);
 }
+
+
 /*--------------*/
+
+
 /*Stiky Menu*/
 
 #home section nav {
-    height:40px; 
-    padding-top:11px; 
-    position:relative; 
-    background-color: rgba(0,0,0,0.0) ;
-    z-index:1000;
+    height: 40px;
+    padding-top: 11px;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.0);
+    z-index: 1000;
 }
- 
+
 #home nav ul {
     list-style: none;
     overflow: hidden;
 }
- 
+
 #home nav ul li {
     float: left;
 }
- 
+
 #home nav ul li a {
     display: block;
-    padding:20px;
-    color:#fff;
+    padding: 20px;
+    color: #fff;
     text-decoration: none;
     font-family: 'Old Standard TT', serif;
     font-size: 20px;
     padding-top: 8px;
 }
- 
+
 #home nav ul li a:hover {
     color: rgb(166, 12, 0);
 }
+
+
 /* --- add class when the user scroll--- */
+
 .menu-fixed {
     height: 60px;
-    position:fixed;
-    z-index:1000;
+    position: fixed;
+    z-index: 1000;
     top: 0;
-    width:100%;
-    box-shadow:0px 4px 3px rgba(0,0,0,0.5);
-    background-color: rgb(23,23,23);
+    width: 100%;
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.5);
+    background-color: rgb(23, 23, 23);
     display: block;
     padding-top: 8px;
 }
-.menu-fixed h1{
+
+.menu-fixed h1 {
     display: block;
 }
-.menu-fixed h1 a{
+
+.menu-fixed h1 a {
     color: #fff;
     text-decoration: none;
 }
+
+
 /*------------About us-------------------*/
-#nosotros article div h2{
-     font-weight: 500;
-     text-transform: uppercase;
-     color: #000;
-     font-size: 14px;
-     padding: 20px 0px 0px 22px;
-     text-align: inherit;
+
+#nosotros article div h2 {
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #000;
+    font-size: 14px;
+    padding: 20px 0px 0px 22px;
+    text-align: inherit;
 }
 
-#nosotros article div h4{
+#nosotros article div h4 {
     font-size: 20px;
     padding: 15px 0px 0px 22px;
     width: 80%;
     line-height: 1.4;
 }
-#nosotros article div h3{
-     font-weight: 700;
-     font-size: 18px;
-     padding: 15px 0px 0px 20px;
-}
-#nosotros article div p{
-     font-family: 'Old Standard TT', serif;
-     font-weight: 400;
-     color: #000;
-     font-size: 16px;
-     padding:11px 0px 0px 20px; 
-     width: 74%;
-     text-align: justify;
-}
- 
 
+#nosotros article div h3 {
+    font-weight: 700;
+    font-size: 18px;
+    padding: 15px 0px 0px 20px;
+}
+
+#nosotros article div p {
+    font-family: 'Old Standard TT', serif;
+    font-weight: 400;
+    color: #000;
+    font-size: 16px;
+    padding: 11px 0px 0px 20px;
+    width: 74%;
+    text-align: justify;
+}
 
 
 /*-----------------CONTACT-------------------*/
-.contact{
+
+.contact {
     color: #fff;
     height: 500px;
     width: 100%;
 }
 
-.contact h2{
+.contact h2 {
     margin: 0px 0px 20px;
     font-family: 'Roboto', serif;
     font-size: 20px;
     color: #fff;
 }
-.contact-space{
+
+.contact-space {
     height: 500px;
     width: 80%;
     margin: auto;
 }
-.contact-user, .contact-location{
+
+.contact-user,
+.contact-location {
     width: 45%;
     height: 400px;
     margin: 20px 2.5px;
     padding: 20px;
 }
-.contact-user{
+
+.contact-user {
     float: left;
 }
-.contact-location{
+
+.contact-location {
     float: right;
 }
 
-.contact-map{
+.contact-map {
     float: left;
     overflow: hidden;
-}  
-.contact-input label, .contact-user a{
+}
+
+.contact-input label,
+.contact-user a {
     width: 365px;
     float: left;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     text-transform: none;
-  }
+}
+
 .contact-input input {
     width: 390px;
     height: 25px;
     margin: 0px 0px 40px;
-    background-color: rgba(255,255,255,0.0);
+    background-color: rgba(255, 255, 255, 0.0);
     color: #fff;
     border-color: #fff;
     margin: 12px 0px 9px 0px;
-    }
+}
 
 .contact-input textarea {
     width: 250px;
     width: 80%;
     height: 80px;
     margin: 0px 0px 40px;
-    background-color: rgba(255,255,255,0.0);
+    background-color: rgba(255, 255, 255, 0.0);
     color: #fff;
     border-color: #fff;
     margin: 12px 0px 9px 0px;
-    }
+}
+
 .contact-input a {
     font-family: 'Roboto', serif;
     font-weight: 500;
@@ -267,84 +331,89 @@ color: #000;
     color: #fff;
     border-color: #fff;
     width: 105px;
- }
+}
+
 
 /*-----------------END CONTACT-------------------*/
+
+
 /*Animation Images*/
+
 .div-img {
-  margin-left: auto;
-  margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 .div-img.hiddenN {
-  overflow: hidden;
+    overflow: hidden;
 }
+
 .div-img .img {
-  width: 100%;
-  transform: scale(1.4);
-  -ms-transform: scale(1.4);
-  -moz-transform: scale(1.4);
-  -webkit-transform: scale(1.4);
-  -o-transform: scale(1.4);
-  -webkit-transition: all 500ms ease-in-out;
-  -moz-transition: all 500ms ease-in-out;
-  -ms-transition: all 500ms ease-in-out;
-  -o-transition: all 500ms ease-in-out;
+    width: 100%;
+    transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    -moz-transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+    -o-transform: scale(1.4);
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
 }
+
 .div-img:hover .img {
-  transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  -o-transform: scale(1.2);
+    transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
 }
+
+
 /*-----------------End Animation-------------------*/
+
 
 /* ----------------------------------------------RESERVATION----------------------------------------------------- */
 
-.containerReserve{
+.containerReserve {
     padding: 50px;
 }
-.reserve-button{
-     padding-top: 20px;
+
+.reserve-button {
+    padding-top: 20px;
     margin: 40px 0 0px 494px;
 }
-.containerReserve p{
-    
+
+.containerReserve p {
     font-family: 'Roboto', serif;
-    font-size: 20px; 
+    font-size: 20px;
     text-align: center;
 }
+
 .labels {
-font-family: 'Roboto', serif;
-font-weight: 900;
-color: #000;
-font-size: 18px;
+    font-family: 'Roboto', serif;
+    font-weight: 900;
+    color: #000;
+    font-size: 18px;
 }
 
-.reserve-left{
-     padding: 0 0 0 20%;
+.reserve-left {
+    padding: 0 0 0 20%;
 }
-.reserve-right{
-     padding: 0 0 0 10%;
+
+.reserve-right {
+    padding: 0 0 0 10%;
 }
 
 .input {
     height: 25px;
-    border-radius:  3px;
-    border: 1px solid;
-    width: 200px;
-    border-color: dimgrey;
-}
-select{
     border-radius: 3px;
-    height: 25px;
     border: 1px solid;
     width: 200px;
     border-color: dimgrey;
-       
 }
-#calendar{
-        
+
+select {
     border-radius: 3px;
     height: 25px;
     border: 1px solid;
@@ -352,15 +421,24 @@ select{
     border-color: dimgrey;
 }
 
-#Reserve-button{
+#calendar {
+    border-radius: 3px;
+    height: 25px;
+    border: 1px solid;
+    width: 200px;
+    border-color: dimgrey;
+}
+
+#Reserve-button {
     border-radius: 3px;
     border: 1px solid;
     border-color: dimgrey;
     background-color: #2E2E2E;
     color: white;
-    width:110px; 
-    height:45px;
+    width: 110px;
+    height: 45px;
     position: absolute;
 }
+
 
 /* ---------------------------------------------------------end style de reservaciones --------------------------------------------- */
