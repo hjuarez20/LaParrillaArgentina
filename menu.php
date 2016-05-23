@@ -7,18 +7,32 @@
 </head>
 
 <body>
-    <nav class="StickyMenu">
-        <h1 class="left hidden show"><a class="page-scroll"href="#home">La Parrilla Argentina</a></h1>
-        <div class="rigth">
-            <ul>
-                <li><a class="page-scroll" href="#home">Home</a></li>
-                <li><a class="page-scroll" href="#nosotros">Nosotros</a></li>
-                <li><a class="page-scroll" href="#menu">Menu</a></li>
-                <li><a class="page-scroll" href="#reservaciones">Reservacion</a></li>
-                <li><a class="page-scroll" href="#contacto">Contacto</a></li>
-            </ul>
+    <nav class="StickyMenu navbar navbar-inverse">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1 class="left hidden show"><a class="page-scroll"href="#home">La Parrilla Argentina</a></h1>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="page-scroll" href="#home">Home</a></li>
+                    <li><a class="page-scroll" href="#nosotros">Nosotros</a></li>
+                    <li><a class="page-scroll" href="#menu">Menu</a></li>
+                    <li><a class="page-scroll" href="#reservaciones">Reservacion</a></li>
+                    <li><a class="page-scroll" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-        </div>
+        <!-- /.container-fluid -->
     </nav>
     <video class="video-js" controls autoplay loop src="img/video/steakfooter-small.mp4">
         <source src="img/video/steakfooter-small.mp4" type="video/mp4"></source>
