@@ -54,7 +54,7 @@ strong {
     font-weight: 700;
     text-transform: uppercase;
     font-family: 'Arvo', Arial, sans-serif;
-    color: #a60c00;
+    color: #FF8728;
     
     text-shadow: 4px 4px 6px rgba(0, 0, 0, 1);
 }
@@ -75,7 +75,7 @@ strong {
 }
 
 .menuContainer > header h2 a:hover {
-    color: #a60c00;
+    color: #FF8728;
 }
 
 /* Header Style */
@@ -126,7 +126,7 @@ strong {
 
 .support-note span,
 .demo-note {
-    color: #e07870;
+    color: #FF8728;
     font-size: 16px;
     display: none;
     font-weight: 500;
