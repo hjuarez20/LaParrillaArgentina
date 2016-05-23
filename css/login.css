@@ -262,7 +262,7 @@ footer img:hover { opacity: .83; }
 footer img:focus , footer a:focus { outline: none; }
 
 .background-login{
-  background-image: url(../img/login.jpg);
+  background-color: #bdc3c7;
   width: 100%;
   background-attachment: fixed;
   background-size: cover;
