@@ -1,4 +1,7 @@
-* { box-sizing:border-box; }
+* { box-sizing:border-box; 
+margin: 0px;
+}
+
 
 body {
 	font-family: Helvetica;
@@ -262,7 +265,7 @@ footer img:hover { opacity: .83; }
 footer img:focus , footer a:focus { outline: none; }
 
 .background-login{
-  background-color: #bdc3c7;
+  background-color: rgb(61, 86, 110);
   width: 100%;
   background-attachment: fixed;
   background-size: cover;
