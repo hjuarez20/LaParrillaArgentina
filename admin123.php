@@ -1,6 +1,5 @@
 <?php
  require 'db/db.php';
-
 if($_POST){
  $data = $database->select("tbusers",[
                             'idUser',
@@ -26,48 +25,36 @@ if($_POST){
     <head>
         <meta charset="UTF-8">
         <title>La Parrilla Argentina</title>
-        <link rel="stylesheet" href="css/principal.css">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500' rel='stylesheet' type='text/css'>
-
-
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script src="js/main.js"></script>
+        <link rel="stylesheet" href="css/login.css">
 
     </head>
 
     <body class="background-login">
-        <section class="container">
+       
 
-            <div class="container-left">
-            </div>
-
-            <div class="container-rigth cuadrado">
-
-                <div id="containerImagen">
-                    <img src="img/user.png">
-                </div>
-
-                <div class="containerLogin ">
+                <div>
                     <form name="useLogin" action="" method="post">
-                        <label> Name</label>
-                        <br>
-                        <br>
-                        <input type="name" name="user" placeholder=" Input your username" required></input>
-                        <br>
-                        <br>
-                        <label> Password</label>
-                        <br>
-                        <br>
-                        <input type="password" name="password" placeholder=" Input your password" required> </input>
-                        <br>
-                        <br>
-                        <input class="button" type="submit" value="Ingresar">
+                        
+                        <div class="group">
+                        <input type="name" name="user"  required></input>
+                        <span class="bar"></span>
+                        <label>Usuario</label>
+                        </div>
+                       
+                        <div class="group">
+                        <input type="password" name="password"  required> </input>
+                        <span class="bar"></span>
+                        <label>Contraseña</label>
+                        </div>
+                        
+                        <button type="input" class="button buttonBlue" value="Ingresar">Ingresar<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div></button>
                     </form>
                 </div>
 
-            </div>
-        </section>
+                 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+        <script src="js/login.js"></script>
+
     </body>
 
     <script>
@@ -82,9 +69,8 @@ if($_POST){
             a.src = g;
             m.parentNode.insertBefore(a, m)
         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
         ga('create', 'UA-77610408-2', 'auto');
         ga('send', 'pageview');
     </script>
 
-    </html>
+    </html
