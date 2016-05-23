@@ -31,6 +31,11 @@ if($_POST){
     </head>
 
     <body class="background-login">
+
+    <div class="header animated fadeInDown">
+        <h2>La Parrilla Argentina</h1>
+        <h4>Administración de la página</h2>
+    </div>
        
 
                 <div class="animated fadeInUp" >

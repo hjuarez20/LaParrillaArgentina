@@ -22,7 +22,7 @@ h3 { color: #4a89dc; }
 
 form {
 	width: 400px;
-	margin: 8em auto;
+	margin: 4em auto;
 	padding: 3em 2em 2em 2em;
 	background: rgba(0,0,0,0.5);
 	
@@ -265,8 +265,22 @@ footer img:hover { opacity: .83; }
 footer img:focus , footer a:focus { outline: none; }
 
 .background-login{
-  background-color: rgb(61, 86, 110);
+  background-color: #7f8c8d
   width: 100%;
   background-attachment: fixed;
   background-size: cover;
+}
+
+.header{
+	text-align: center;
+}
+
+.header h2{
+	color: #a60c00;
+	font-size: 50px;
+	padding: 25px 0px 0px 10px;
+}
+
+.header h4{
+	font-size: 20px;
 }
