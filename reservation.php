@@ -1,6 +1,26 @@
 <?php
 //require 'db/db.php';
 
+/*-----------------------------------method for aviable time to reserv------------------------ */
+$time ="";
+
+function mSerchSpaceToReserv(){
+    
+    print_r("hace el llamado al metodo para buscar disponibilidad");
+    
+    $database->select("tbtime",[
+                        "nameTime",
+                        "time",
+                        "state"
+                        ],[
+                        "state" => "int"
+                        ]); 
+}
+
+/*--------------------------------------------END method--------------------------------------*/
+
+
+/*---------------------------------------time for reservation from database--------------------------*/
 $time = $database->select("tbtime",[
                         "nameTime",
                         "time",
@@ -9,9 +29,7 @@ $time = $database->select("tbtime",[
                         "state" => "int"
                         ]);
 
-if($_POST){
-  
-    print_r($_POST["dateReservation"]);
+if($_POST){ 
     
     /*--------------------------------date format change for mysql date format----------------------*/
     $fecha=date("Y-m-d",strtotime($_POST["dateReservation"]));
@@ -62,27 +80,41 @@ if($_POST){
                         <p class="labels">Nombre</p>
                         <input class="input" type="text" size="15" maxlength="30" placeholder="nombre" name="name">
                         <br></br>
-                        <p class="labels">Hora</p>
-                        <!-- <form  name=myform> -->
-                        <select name=time>
-                            <option name=default value='default'> Seleccione la hora </option>
-                            <?php
-                        for($i=0; $i<count($time); $i++){
-                         echo   "<option name=".$time[$i]["nameTime"].">".$time[$i]["time"]."</option>";
-                        }    
-                        ?>
-                        </select>
-                        <!--</form>-->
+                        
+                         <!-- *************************************position for the DATE************************ -->
+                         
+                          <p class="labels">Fecha de Reservacion</p>
+                        <input onChange="" id="calendar" type="text" placeholder="fecha de reservacion" name="dateReservation" class="campofecha" size="12">
+                        <!-- <br></br>  -->
+                        
+                        
+                       
+                        
+                         <!-- *************************************END position for the DATE************************ -->
+                        
                         <br></br>
                         <p class="labels">Correo</p>
                         <input class="input" type="text" size="15" maxlength="30" placeholder="ejemplo@gmail.com" name="email">
                     </article>
                     <article class="reserve-right col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <!-- FORM for calendar  -->
-                        <!--  <form method="post"> -->
-                        <p class="labels">Fecha de Reservacion</p>
-                        <input id="calendar" type="text" placeholder="fecha de reservacion" name="dateReservation" class="campofecha" size="12">
+                        
+                         <!-- *************************************position for the HOUR************************ -->
+                        
+                         <p class="labels">Hora</p>
+                        <!-- <form  name=myform> -->
+                         <select name=time>
+                            <option name=default value='default'> Seleccione la hora </option>
+                        <?php
+                            for($i=0; $i<count($time); $i++){
+                             echo   "<option name=".$time[$i]["nameTime"].">".$time[$i]["time"]."</option>";
+                            }    
+                        ?> 
+                        </select> 
                         <br></br>
+                        <!--</form>-->
+                       
+                         <!-- *************************************END position for the HOUR************************ -->
 
                         <!-- FORM for calendar -->
                         <p class="labels">Personas</p>
@@ -103,7 +135,7 @@ if($_POST){
             <div class="container">
                 <article class="row">
                     <article class="reserve-button col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block">
-                        <button type="submit" name="reserv" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Reservar</button>
+                        <button id="button-Reserv" type="submit" name="reserv" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Reservar</button>
                     </article>
                 </article>
             </div>
@@ -111,7 +143,8 @@ if($_POST){
         </form>
         <!-- *************************************end form reservation  ************************************************************* -->
 
-        <!-- *************************************Muestra de dialog luego de hacer la reservacion**********************************-->
+       
+        <!-- *************************************show the dialog after making the reservation **********************************-->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
 
