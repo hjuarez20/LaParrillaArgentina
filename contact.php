@@ -22,7 +22,7 @@
                 <label for="">Mensaje </label>
                 <br>
                 <textarea name="" id="" cols="30" rows="10" placeholder="Su opinión es muy importante para nosotros."></textarea>
-                <a href="#">Send</a>
+                <a href="#">Enviar</a>
             </div>
         </div>
         <!--end contact-user-->
