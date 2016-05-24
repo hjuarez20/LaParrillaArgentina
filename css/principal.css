@@ -206,3 +206,12 @@ td{
     margin: 10px 0;
 }
 
+/* Client */
+
+#name{
+width: 24%;    
+}
+
+#id{
+width: 22%;    
+}
