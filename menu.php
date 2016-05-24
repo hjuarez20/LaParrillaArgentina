@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <nav class="StickyMenu navbar navbar-inverse">
+    <nav class="StickyMenu navbar navbar-inverse colorBlackMenu">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -17,11 +17,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <h1 class="left hidden show"><a class="page-scroll"href="#home">La Parrilla Argentina</a></h1>
+                <h1 class="navbar-brand hidden show"><a class="page-scroll"href="#home">La Parrilla Argentina</a></h1>
             </div>
-
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse colorBlackMenu" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a class="page-scroll" href="#home">Home</a></li>
                     <li><a class="page-scroll" href="#nosotros">Nosotros</a></li>
