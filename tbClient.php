@@ -1,42 +1,14 @@
 <?php
 
- require 'db/db.php';
+ //require 'db/db.php';
  $data = $database->select("tbusers", "*");
- $dataFood = $database->select("tbmenu", "*",[
-                                            "ORDER" => "category"
-                                            ]);
- $user = $_GET['name'];
+
 ?>
     <html>
 
-        <head>
-        <title>Clientes</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <!--Importar hojas de estilo -->
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-        <link href="css/principal.css" rel="stylesheet" type="text/css">
-        <script src="js/backend.js"></script>
-        <script src="js/jquery.min.js"></script>
-        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500' rel='stylesheet' type='text/css'>
-        </head>
+        <head>        </head>
         
         <body>
-            
-             <div class="container menuSize">
-            <section class="rigth">
-                <p class="font-style_1 welcome">Welcome
-                    <?php echo $user; ?>, <a href="admin123.php">Cerrar sesión</a></p>
-            </section>
-
-            <section class="left ">
-                <nav>
-                    <ul class="font-style_1">
-                        <li><a href="">Inicio</a></li>
-                        <li><a href="reservation.php">Reservación</a></li>
-                    </ul>
-                </nav>
-            </section>
-        </div>
             
         <div class="containerCenter tableSize ">
             <section>

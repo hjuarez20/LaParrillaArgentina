@@ -1,10 +1,7 @@
 <?php
 
  require 'db/db.php';
- $data = $database->select("tbreservations", "*");
- $dataFood = $database->select("tbmenu", "*",[
-                                            "ORDER" => "category"
-                                            ]);
+
  $user = $_GET['name'];
 ?>
     <html>
@@ -31,99 +28,38 @@
             <section class="left ">
                 <nav>
                     <ul class="font-style_1">
-                        <li><a href="">Inicio</a></li>
-                        <li><a href="">Reservación</a></li>
-                        <li><a href="">Clientes</a></li>
+                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="#contReservation">Reservación</a></li>
+                        <li><a href="#contClient">Clientes</a></li>
+                        <li><a href="#contMenu">Menú</a></li>
                     </ul>
                 </nav>
             </section>
         </div>
 
 
-        <div class="containerCenter tableSize ">
-            <section>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="table-responsive">
-                            <article class="tbl-header">
-                                <table cellpadding="0" cellspacing="0" border="0">
-                                    <tr>
-                                        <th>Nombre</th>
-                                        <th>Teléfono</th>
-                                        <th>Email</th>
-                                        <th>Fecha</th>
-                                        <th>Cantidad de Personas</th>
-                                        <th>Opciones</th>
-                                    </tr>
-                                </table>
-                            </article>
-                            <div class="tbl-content">
-                                <table cellpadding="0" cellspacing="0" border="0">
-                                    <?php
-                                    $len = count($data);
-                                    for($i=0; $i<$len; $i++){
-                                    echo  "<tr><td>".$data[$i]["clientName"]."</td><td>".$data[$i]["clientPhone"]."</td><td>".$data[$i]["clientEmail"]."</td><td>".$data[$i]["date"]."</td><td>".$data[$i]["peopleAmount"]."</td><td><a href='editar.php?id=".$data[$i]["idReservation"]."'>Editar</a> <a href='delete.php?id=".$data[$i]["idReservation"]."'>Eliminar</a></td></tr>";
-                }
+        <div class="containerCenter tableSize " id="contReservation">
+           <?php
+            include ("tbReservation.php");
             ?>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
 
-
-
-        <div class="containerCenter tableSize ">
-            <section>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="table-responsive">
-                            <article class="tbl-header">
-                                <table cellpadding="0" cellspacing="0" border="0">
-                                    <tr>
-                                        <th>Platillo</th>
-                                        <th>Categoria</th>
-                                        <th>Descripcion</th>
-                                        <th>Precio
-                                            <br>(dolar)</th>
-                                        <th>Estado
-                                            <br>(active/Inactive)</th>
-                                        <th>Imagen</th>
-                                        <th>Opciones</th>
-                                    </tr>
-                                </table>
-                            </article>
-                            <div class="tbl-content">
-                                <table cellpadding="0" cellspacing="0" border="0">
-
-                                    <?php
-                                    $len = count($dataFood);
-                                    for($e=0; $e<$len; $e++){
-                                    echo  "<tr>
-                                    <td>".$dataFood[$e]["nameDish"]."</td>
-                                    <td>".$dataFood[$e]["category"]."</td>
-                                    <td>".$dataFood[$e]["description"]."</td><td>".$dataFood[$e]["price"]."</td>
-                                    <td>".$dataFood[$e]["state"]."</td>
-                                    <td>".$dataFood[$e]["image"]."</td>
-                                    <td><a href='editar.php?id=".$dataFood[$e]["idDish"]."'>Editar</a> <a href='delete.php?id=".$dataFood[$e]["idDish"]."'>Eliminar</a></td></tr>";
-                }
+        <div class="containerCenter tableSize " id="contMenu">
+            <?php
+            include ("tbMenu.php");
             ?>
-
-
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        </div>
+        
+        <div class="containerCenter tableSize " id="contClient">
+            <?php
+            include ("tbClient.php");
+            ?>
         </div>
 
 
         <section></section>
 
-        <body>
+        </body>
             <script>
                 (function (i, s, o, g, r, a, m) {
                     i['GoogleAnalyticsObject'] = r;
