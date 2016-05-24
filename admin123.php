@@ -26,14 +26,15 @@ if($_POST){
         <meta charset="UTF-8">
         <title>La Parrilla Argentina</title>
         <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/animate.css">
 
     </head>
 
     <body class="background-login">
        
 
-                <div>
-                    <form name="useLogin" action="" method="post">
+                <div class="animated fadeInUp" >
+                    <form  name="useLogin" action="" method="post">
                         
                         <div class="group">
                         <input type="name" name="user"  required></input>
