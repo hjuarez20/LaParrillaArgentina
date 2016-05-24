@@ -92,8 +92,7 @@ h1,
     width: 100%;
     background-color: rgb(23, 23, 23);
 }
-
-
+ 
 /*Size (diferents size, aplicate to parrallax effect)*/
 
 .superBig {
@@ -381,9 +380,15 @@ h1,
     padding: 50px;
 }
 
+#button-Reserv{
+    margin: 0% 0% 0% 42%;
+    background-color: #000;
+    border-bottom-color: #fff;
+    border-color: #fff;       
+}
+
 .reserve-button {
     padding-top: 20px;
-    margin: 40px 0 0px 494px;
 }
 
 .containerReserve p {
