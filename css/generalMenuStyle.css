@@ -35,6 +35,7 @@ strong {
     width: 95%;
     margin: 0 auto;
     position: relative;
+    display: -webkit-inline-box;
 }
 
 .menuContainer > header {
