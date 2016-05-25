@@ -245,7 +245,7 @@ h1,
 #nosotros article div p {
     font-family: 'Old Standard TT', serif;
     font-weight: 400;
-    color: #000;
+    color: #0050
     font-size: 16px;
     padding: 11px 0px 0px 20px;
     width: 74%;
@@ -280,7 +280,7 @@ h1,
 }
 
 .contact-input input {
-    width: 390px;
+    width: 350px;
     height: 25px;
     margin: 0px 0px 40px;
     background-color: rgba(255, 255, 255, 0.0);
@@ -290,7 +290,7 @@ h1,
 }
 
 .contact-input textarea {
-    width: 390px;
+    width: 350px;
     height: 80px;
     margin: 0px 0px 40px;
     background-color: rgba(255, 255, 255, 0.0);
