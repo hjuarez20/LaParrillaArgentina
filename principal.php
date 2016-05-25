@@ -6,6 +6,27 @@
                                             "ORDER" => "category"
                                             ]);
  $user = $_GET['name'];
+
+
+
+
+/*  Administracion de Platillos */
+if($_POST){
+    
+    $database->insert("tbmenu", [
+        "userMod" => "Oscar", /*$user*/
+        "nameDish" => $_POST["nameDish"],
+        "category" => $_POST["category"],
+        "description" => $_POST["description"],
+        "price" => $_POST["price"],
+        "state" => $_POST["state"],
+        "dayMod" => date("Y/m/d"),
+        "image" => $_POST["image"],
+    ]);
+}
+
+
+
 ?>
     <html>
 
@@ -34,7 +55,7 @@
         <div class="container menuSize">
             <section class="rigth">
                 <p class="font-style_1 welcome">Welcome
-                    <?php echo $user; ?>, <a href="admin123.php">Cerrar sesión</a></p>
+                  <?php echo $user?>, <a href="admin123.php">Cerrar sesión</a></p>
             </section>
 
             <section class="left ">
@@ -85,8 +106,8 @@
 
 
 
-        <div class="containerCenter tableSize ">
-           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalInsert">Insertar</button>
+        <div id="AdministrationDishes" class="containerCenter tableSize ">
+           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalInserDish">Insertar</button>
             <section>
                 <div class="row">
                     <div class="col-xs-12">
@@ -139,17 +160,132 @@
         </div>
 
             
-            <div id="modalInsert" class="modal fade" role="dialog">
+            <div id="modalInserDish" class="modal fade" role="dialog">
   <div class="modal-dialog">
-
-    <!-- Modal Insertar content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+         <h4 class="modal-title">Panel Administracion de Platillos</h4>
       </div>
       <div class="modal-body">
-        <p>Some text in the modal.</p>
+    <!--INICIO DEL FORM DE INSERTAR-->   
+        <form action="" method="post">
+            <table>
+                <tr>
+                    <td><label>Nombre Platillo</label></td>
+                    <td><input type="text" name="nameDish" placeholder="Ingresa un nombre"></td>
+                </tr>
+                <tr>
+                   <td><label>Categoria</label></td>
+                    <td>
+                        <select name="category" id="" >
+                            <option value="drinks">Bebidas</option>
+                            <option value="wines">Vinos</option>
+                            <option value="mains">Plato fuerte</option>
+                            <option value="salads">Ensalada</option>
+                            <option value="desserts">Postre</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Descripcion</label></td>
+                    <td><textarea name="description" id="" cols="30" rows="5" placeholder="Coloca una descripcion"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Precio ($ USDolar)</td>
+                    <td><input type="text" name="price" placeholder="0"></td>
+                </tr>
+                <tr>
+                    <td><label>Estado</label></td>
+                    <td>
+                        <select name="state" id="">
+                            <option value="active">Activo</option>
+                            <option value="inactive">Inactivo</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Imagen</label></td>
+                    <td><input type="text" name="image" placeholder="img/food/example.jpg"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit" class="btn btn-default">Agregar</button>  
+                    </td>
+                </tr>
+            </table>
+        </form>
+      </div>
+      <div class="modal-footer">
+            
+     
+      </div>
+    </div>
+
+  </div>
+</div> <!--FIN DEL POPUP DE INSERTAR-->
+
+   
+             <div id="modalEdit" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal Editar content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Panel Administracion de Platillos</h4>
+      </div>
+      <div class="modal-body">
+        
+         <form action="" method="post">
+            <table>
+                <tr>
+                    <td><label>Nombre Platillo</label></td>
+                    <td><input type="text" name="nameDish" placeholder="Ingresa un nombre"></td>
+                </tr>
+                <tr>
+                   <td><label>Categoria</label></td>
+                    <td>
+                        <select name="category" id="" >
+                            <option value="drinks">Bebidas</option>
+                            <option value="wines">Vinos</option>
+                            <option value="mains">Plato fuerte</option>
+                            <option value="salads">Ensalada</option>
+                            <option value="desserts">Postre</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Descripcion</label></td>
+                    <td><textarea name="description" id="" cols="30" rows="5" placeholder="Coloca una descripcion"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Precio ($ USDolar)</td>
+                    <td><input type="text" name="price" placeholder="0"></td>
+                </tr>
+                <tr>
+                    <td><label>Estado</label></td>
+                    <td>
+                        <select name="state" id="">
+                            <option value="active">Activo</option>
+                            <option value="inactive">Inactivo</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Imagen</label></td>
+                    <td><input type="text" name="image" placeholder="img/food/example.jpg"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit" class="btn btn-default">Editar</button>  
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -157,47 +293,28 @@
     </div>
 
   </div>
-</div>
-
-            <div id="modalEdit" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal Insertar content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
+</div> <!--FIN DEL POPUP EDITAR-->
         
             <div id="modalDelete" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
-    <!-- Modal Insertar content-->
+    <!-- Modal Eliminar content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <h4 class="modal-title">Panel Administracion de Platillos</h4>
       </div>
       <div class="modal-body">
-        <p>Some text in the modal.</p>
+        <label>Si esta seguro que desea eliminar este elemento, porfavor confirme.</label>
       </div>
       <div class="modal-footer">
+       <button type="button" class="btn btn-default" data-dismiss="modal">Eliminar</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
 
   </div>
-</div>
+</div> <!--FIN POPUP ELIMINAR-->
 
         <section></section>
 
