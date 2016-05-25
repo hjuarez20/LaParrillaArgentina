@@ -15,14 +15,14 @@
                 <br>
                 <input type="text" size="30" name="contact-name" value="" aria-required="true" aria-invalid="false">
                 <br>
-                <label for="">Email(*)</label>
+          <label for="">Email(*)</label><!--      h-->
                 <br>
                 <input type="email" size="30" name="contact-name" value="" aria-required="true" aria-invalid="false" placeholder="alguien@ejemplo.com">
                 <br>
                 <label for="">Mensaje </label>
                 <br>
                 <textarea name="" id="" cols="30" rows="10" placeholder="Su opinión es muy importante para nosotros."></textarea>
-                <a href="#">Send</a>
+                <a href="#">Enviar</a>
             </div>
         </div>
         <!--end contact-user-->
