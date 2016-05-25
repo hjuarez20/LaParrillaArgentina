@@ -54,7 +54,7 @@ if($_POST){
 
         <div class="container menuSize">
             <section class="rigth">
-                <p class="font-style_1 welcome">Welcome
+                <p class="font-style_1 welcome">Bienvenido,
                   <?php echo $user?>, <a href="admin123.php">Cerrar sesión</a></p>
             </section>
 

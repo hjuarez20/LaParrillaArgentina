@@ -37,7 +37,7 @@
 
                 <h1>Restaurante La Parrilla Argentina Menú</h1>
                 <h2>
-					Una Menú variado para todos los gustos, construido por nuestros Chef's profesionales.
+					Un Menú variado para todos los gustos, construido por nuestros Chef's profesionales.
 				</h2>
 
             </header>
