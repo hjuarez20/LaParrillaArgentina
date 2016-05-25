@@ -17,7 +17,7 @@
             </div>
             <div class="padding-columns col-xs-12 col-sm-6 col-md-4 ">
                 <div class="div-img hiddenN">
-                    <img class="img-responsive img" src="img/aboutimg.jpg" alt="">
+                    <img class="img-responsive img" src="img/aboutImg.jpg" alt="">
                 </div>
                 <h3>Historia</h3>
                 <p>Somos un restaurante fundado desde 1987, por parrilleros locales, con gran trayectoria en Costa Rica.</p>
