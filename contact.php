@@ -67,6 +67,7 @@ if($_POST){
                             <br>
                             <textarea name="contact-comment" id="" cols="30" rows="10" placeholder="Su opinión es muy importante para nosotros."></textarea>  
                             <br>
+                            <input  type="submit" class="buttons"></input>  
                         </form>
                     </div>
                 </div> 
