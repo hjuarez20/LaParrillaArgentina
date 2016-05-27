@@ -12,13 +12,16 @@ if($_POST){
     $messaje = nl2br($_POST['contact-comment']);
     
     if($name == "" || $email == "" || $messaje == ""):
-    echo '<div class="alert alert-danger"> Todos los campos son requeridos para enviar el mensaje</div>';
+        echo '<div class="alert alert-danger"> Todos los campos son requeridos para enviar el mensaje</div>';
+
+            header("location: index.php#contacto");
+
     else:
         $mail->From = $email;
         $mail->addAddress($to);
         $mail->Subject= $subject;
         $mail->isHtml(true);
-        $mail->Body = '<strong>'.$name.'</strong> ha enviado un mensaje desde la pagina LaParrillaArgentina.esy.es, el cual dice lo siguiente: <br><p>'.$messaje.'</p>';
+        $mail->Body = '<strong>'.$name.'</strong> ha enviado un mensaje desde la pagina LaParrillaArgentina.esy.es, el cual dice lo siguiente: <br><p>'.$messaje.'</p>. </br></br> Puedes contactarl@ mediante el siguiente correo electronico: </br>'.$email;
         $mail-> CharSetv = 'UTF-8';
         $mail->send();
     
@@ -26,7 +29,7 @@ if($_POST){
         "name" => $_POST["contact-name"],
         "email" => $_POST["contact-email"]
                             ]);
-        header("location:/");
+        header("location:index.php");
 
     endif;
     }

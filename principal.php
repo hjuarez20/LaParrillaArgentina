@@ -65,6 +65,7 @@ if($_POST){
                         <li><a href="#contReservation">Reservación</a></li>
                         <li><a href="#contClient">Clientes</a></li>
                         <li><a href="#contMenu">Menu</a></li>
+                        <li><a href="#contContact">Contactenos</a></li>
                     </ul>
                 </nav>
             </section>
@@ -73,7 +74,7 @@ if($_POST){
 
          <div class="containerCenter tableSize " id="contReservation">
            <?php
-            include ("tbReservation.php");
+            include ("tbReservation.php"); 
             ?>
         </div>
 
@@ -91,6 +92,12 @@ if($_POST){
 
 
 
+        <div class="containerCenter tableSize " id="contContact">
+           <?php
+            include('tbContact.php');
+            ?>
+            
+            
         <section></section>
 
         <body>
