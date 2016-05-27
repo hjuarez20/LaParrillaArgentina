@@ -1,9 +1,11 @@
 <?php
 require 'db/db.php';
 if($_POST){
-
- if($_POST['password'] == $_POST['conpassword']){
-  $database->insert("tbusers",
+    $data = $database->select('tbusers',['login'],['login'=>$_POST["username"]]);
+    
+    if(count($data) == 0){
+            if($_POST['password'] == $_POST['conpassword']){
+                $database->insert("tbusers",
                    [
                      "login" => $_POST['username'],
                      "password" => md5($_POST['password']),
@@ -15,6 +17,13 @@ if($_POST){
 }else{
      echo'password no coincide';
  }
+        }
+        else{
+            echo'Usuario ya existente';
+
+
+           }
+    
 }
 
 ?>
