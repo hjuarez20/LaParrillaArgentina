@@ -284,3 +284,17 @@ footer img:focus , footer a:focus { outline: none; }
 .header h4{
 	font-size: 20px;
 }
+
+.otherButton{
+    margin: -4% 35%;
+}
+
+.otherButton, .home{
+    float: left;
+    width: 32%;
+}
+
+.otherButton, .user{
+    float: right;
+    width: 31%;
+}

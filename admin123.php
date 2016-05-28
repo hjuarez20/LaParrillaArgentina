@@ -11,9 +11,11 @@ if($_POST){
                             ]);
  
  if(count($data) == 1){
-     $user = $data[0]["name"];
-     header('Location: principal.php?name='.$user.'');
-     //$_SESSION('name')= $data[0]['name'];
+     session_start();
+     $_SESSION['user']=$data[0]["name"];
+     $_SESSION['idUser']=$data[0]["idUser"];
+     header('Location: principal.php');
+     
  }else{
      echo'fallo';
  }
@@ -55,8 +57,16 @@ if($_POST){
                         
                         <button type="input" class="button buttonBlue" value="Ingresar">Ingresar<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div></button>
                     </form>
+                    
+               
+                      
                 </div>
+                <div class="otherButton" >
+                 <input class="home" type="button" value="Regresar home" onClick=" window.location.href='index.php' ">
 
+                <input class="user" type="button" value="Nuevo usuario" onClick=" window.location.href='admin456.php' ">    
+                   
+               </div>
                  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
         <script src="js/login.js"></script>
