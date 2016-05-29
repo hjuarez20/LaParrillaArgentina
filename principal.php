@@ -96,7 +96,8 @@ if($_POST){
            <?php
             include('tbContact.php');
             ?>
-            
+         </div>
+           
             
         <section></section>
 
