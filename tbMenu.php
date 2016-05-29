@@ -10,12 +10,13 @@
     
     <head>
     <meta charset="UTF-8">
+  
 </head>
 
     <body>
 
                 <div id="AdministrationDishes" class="containerCenter tableSize ">
-           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalInserDish">Insertar</button>
+           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalInsertDish">Insertar</button>
             <section>
                 <div class="row">
                     <div class="col-xs-12">
@@ -68,7 +69,7 @@
         </div>
 
             
-            <div id="modalInserDish" class="modal fade" role="dialog">
+            <div id="modalInsertDish" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -77,7 +78,7 @@
       </div>
       <div class="modal-body">
     <!--INICIO DEL FORM DE INSERTAR-->   
-        <form action="" method="post">
+        <form id="insert-form" action="" method="post">
             <table>
                 <tr>
                     <td><label>Nombre Platillo</label></td>
@@ -224,7 +225,7 @@
   </div>
 </div> <!--FIN POPUP ELIMINAR-->
 
-
+    
 
 </body>
 

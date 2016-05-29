@@ -2,27 +2,44 @@
 session_start();
  require 'db/db.php';
  $data = $database->select("tbreservations", "*");
- $dataFood = $database->select("tbmenu", "*",[
-                                            "ORDER" => "category"
-                                            ]);
- $user = $_GET['name'];
+
+
 
 
 
 
 /*  Administracion de Platillos */
+
+//$dataFood = $database->select("tbmenu", "*",[
+//                                            "ORDER" => "category"
+//                                            ]);
+
 if($_POST){
+      if(isset($_POST['nameDish']) && ($_POST['nameDish'])!=null && 
+         isset($_POST['category']) && ($_POST['category'])!=null && 
+         isset($_POST['description']) && ($_POST['description'])!=null && 
+         isset($_POST['price']) && ($_POST['price'])!=null && 
+         isset($_POST['state']) && ($_POST['state'])!=null && 
+         isset($_POST['image']) && ($_POST['image'])!=null
+        ){
+     
     
     $database->insert("tbmenu", [
-        "userMod" => "Oscar", /*$user*/
+        "idUserMod" => $_SESSION['idUser'],
         "nameDish" => $_POST["nameDish"],
         "category" => $_POST["category"],
         "description" => $_POST["description"],
         "price" => $_POST["price"],
         "state" => $_POST["state"],
         "dayMod" => date("Y/m/d"),
-        "image" => $_POST["image"],
+        "image" => $_POST["image"]
     ]);
+          
+        echo '<script>alert("Se ha insertado un elemento.!");</script>';
+         
+      }else{
+        echo '<script>alert("Debe llenar todos los campos con la informacion requerida.!");</script>';
+      }//FIN DEL ISSET
 }
 
 
@@ -96,11 +113,14 @@ if($_POST){
            <?php
             include('tbContact.php');
             ?>
+        </div>
             
             
         <section></section>
+        
+        <script type="text/javascript" src="js/principal.js"></script>
 
-        <body>
+       
             <script>
                 (function (i, s, o, g, r, a, m) {
                     i['GoogleAnalyticsObject'] = r;
