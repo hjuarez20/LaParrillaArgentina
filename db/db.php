@@ -7,7 +7,7 @@
             'database_name' => 'laparrilla',
             'server' => 'localhost',
             'username' => 'root',
-            'password' => 'priscilla1234',
+            'password' => '',
             'charset' => 'utf8'
         ]);
 ?>
