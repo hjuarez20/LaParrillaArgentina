@@ -1,3 +1,47 @@
+<?php
+require 'PHPMailer/PHPMailerAutoload.php';
+$mail = new PHPMailer;
+$to = "nelguaro@gmail.com";
+
+if($_POST){
+    require 'db/db.php';
+    
+    $name = $_POST['contact-name'];
+    $email = $_POST['contact-email'];
+    $subject = $_POST['LaParrillaArgentina email'];
+    $messaje = nl2br($_POST['contact-comment']);
+    
+    if($name == "" || $email == "" || $messaje == ""):
+        echo '<div class="alert alert-danger"> Todos los campos son requeridos para enviar el mensaje</div>';
+
+            header("location: index.php#contacto");
+
+    else:
+        $mail->From = $email;
+        $mail->addAddress($to);
+        $mail->Subject= $subject;
+        $mail->isHtml(true);
+        $mail->Body = '<strong>'.$name.'</strong> ha enviado un mensaje desde la pagina LaParrillaArgentina.esy.es, el cual dice lo siguiente: <br><p>'.$messaje.'</p>. </br></br> Puedes contactarl@ mediante el siguiente correo electronico: </br>'.$email;
+        $mail-> CharSetv = 'UTF-8';
+        $mail->send();
+    
+        $database->insert("tbcontact",[
+        "name" => $_POST["contact-name"],
+        "email" => $_POST["contact-email"]
+                            ]);
+        header("location:index.php");
+
+    endif;
+    }
+
+    
+
+
+    
+
+
+?>
+
 <html lang="en">
 
 <head>
@@ -11,22 +55,25 @@
 
                     <h2>Contactenos</h2>
                     <div class="contact-input">
-                        <label for="">Nombre (*) </label>
-                        <br>
-                        <input type="text" size="30" name="contact-name" value="" aria-required="true" aria-invalid="false">
-                        <br>
-                        <label for="">Email(*)</label>
-                        <!--      h-->
-                        <br>
-                        <input type="email" size="30" name="contact-name" value="" aria-required="true" aria-invalid="false" placeholder="alguien@ejemplo.com">
-                        <br>
-                        <label for="">Mensaje </label>
-                        <br>
-                        <textarea name="" id="" cols="30" rows="10" placeholder="Su opinión es muy importante para nosotros."></textarea>
-                        <br>
-                        <a class="buttons" href="#">Enviar</a>
+                       <form action="contact.php" method="post">
+                            <label for="">Nombre (*) </label>
+                            <br>
+                            <input type="text" size="30" name="contact-name" value=""  aria-required="true" aria-invalid="false">
+                             <br>
+                            <br>
+                            <label for="">Email(*)</label>
+                            <!--      h-->
+                            <br>
+                            <input type="email" size="30" name="contact-email" value=""  aria-required="true" aria-invalid="false" placeholder="alguien@ejemplo.com"> 
+                            <br>
+                            <label for="">Mensaje </label>
+                            <br>
+                            <textarea name="contact-comment" id="" cols="30" rows="10" placeholder="Su opinión es muy importante para nosotros."></textarea>  
+                            <br>
+                            <input  type="submit" class="buttons"></input>  
+                        </form>
                     </div>
-                </div>
+                </div> 
                 <!--end contact-user-->
 
                 <div class="contact-location hidden-sm hidden-xs col-md-6">

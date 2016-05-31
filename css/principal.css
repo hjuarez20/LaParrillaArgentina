@@ -215,3 +215,70 @@ width: 24%;
 #id{
 width: 22%;    
 }
+
+/* Menu de comidas */
+#AdministrationDishes{
+    
+}
+
+#AdministrationDishes .btn-info{
+    color: white;
+    background-color: #FF8728;
+    border-color: black;
+}
+
+#AdministrationDishes .btn-info:hover{
+    color: white;
+    background-color: #FFAD27;
+    border-color: black;
+}
+
+/* Modal-PopUp */
+
+.modal-body{
+    background-color: gray;
+    color: white;
+}
+
+.modal-body input{
+    border-style: ridge;
+    border-color: silver;
+ background-color: gray;
+    color: white;
+    
+}
+
+.modal-body textarea{
+    color: white;
+    background-color: gray;
+}
+
+.modal-body select{
+    background-color: gray;
+    color: white;
+}
+
+.modal-body button{
+    color: white;
+    background-color: #FF8728;
+    border-color: black;
+}
+
+.modal-body button:hover{
+    color: white;
+    background-color: #FFAD27;
+    border-color: black;
+}
+
+.modal-footer button{
+    color: white;
+    background-color: #FF8728;
+    border-color: black;
+}
+
+.modal-footer button:hover{
+    color: white;
+    background-color: #FFAD27;
+    border-color: black;
+}
+

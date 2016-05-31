@@ -1,11 +1,32 @@
 <?php
-
+session_start();
  require 'db/db.php';
  $data = $database->select("tbreservations", "*");
  $dataFood = $database->select("tbmenu", "*",[
                                             "ORDER" => "category"
                                             ]);
  $user = $_GET['name'];
+
+
+
+
+/*  Administracion de Platillos */
+if($_POST){
+    
+    $database->insert("tbmenu", [
+        "userMod" => "Oscar", /*$user*/
+        "nameDish" => $_POST["nameDish"],
+        "category" => $_POST["category"],
+        "description" => $_POST["description"],
+        "price" => $_POST["price"],
+        "state" => $_POST["state"],
+        "dayMod" => date("Y/m/d"),
+        "image" => $_POST["image"],
+    ]);
+}
+
+
+
 ?>
     <html>
 
@@ -33,172 +54,51 @@
 
         <div class="container menuSize">
             <section class="rigth">
-                <p class="font-style_1 welcome">Welcome
-                    <?php echo $user; ?>, <a href="admin123.php">Cerrar sesión</a></p>
+                <p class="font-style_1 welcome">Bienvenido,
+                  <?php echo $_SESSION['user'] ?>, <a href="admin123.php">Cerrar sesión</a></p>
             </section>
 
             <section class="left ">
                 <nav>
                     <ul class="font-style_1">
-                        <li><a href="">Inicio</a></li>
-                        <li><a href="">Reservación</a></li>
-                        <li><a href="">Clientes</a></li>
+                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="#contReservation">Reservación</a></li>
+                        <li><a href="#contClient">Clientes</a></li>
+                        <li><a href="#contMenu">Menu</a></li>
+                        <li><a href="#contContact">Contactenos</a></li>
                     </ul>
                 </nav>
             </section>
         </div>
 
 
-        <div class="containerCenter tableSize ">
-           
-            <section>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="table-responsive">
-                            <article class="tbl-header">
-                                <table cellpadding="0" cellspacing="0" border="0">
-                                    <tr>
-                                        <th>Nombre</th>
-                                        <th>Teléfono</th>
-                                        <th>Email</th>
-                                        <th>Fecha</th>
-                                        <th>Cantidad de Personas</th>
-                                        <th>Opciones</th>
-                                    </tr>
-                                </table>
-                            </article>
-                            <div class="tbl-content">
-                                <table cellpadding="0" cellspacing="0" border="0">
-                                    <?php
-                                    $len = count($data);
-                                    for($i=0; $i<$len; $i++){
-                                    echo  "<tr><td>".$data[$i]["clientName"]."</td><td>".$data[$i]["clientPhone"]."</td><td>".$data[$i]["clientEmail"]."</td><td>".$data[$i]["date"]."</td><td>".$data[$i]["peopleAmount"]."</td><td><a href='editar.php?id=".$data[$i]["idReservation"]."'>Editar</a> <a href='delete.php?id=".$data[$i]["idReservation"]."'>Eliminar</a></td></tr>";
-                }
+         <div class="containerCenter tableSize " id="contReservation">
+           <?php
+            include ("tbReservation.php"); 
             ?>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
 
-
-
-        <div class="containerCenter tableSize ">
-           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalInsert">Insertar</button>
-            <section>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="table-responsive">
-                            <article class="tbl-header">
-                                <table cellpadding="0" cellspacing="0" border="0">
-                                    <tr>
-                                        <th>Platillo</th>
-                                        <th>Categoria</th>
-                                        <th>Descripcion</th>
-                                        <th>Precio
-                                            <br>(dolar)</th>
-                                        <th>Estado
-                                            <br>(active/Inactive)</th>
-                                        <th>Imagen</th>
-                                        <th>Opciones</th>
-                                    </tr>
-                                </table>
-                            </article>
-                            <div class="tbl-content">
-                                <table cellpadding="0" cellspacing="0" border="0">
-
-                                    <?php
-                                    $len = count($dataFood);
-                                    for($e=0; $e<$len; $e++){
-                                    echo  "<tr>
-                                    <td>".$dataFood[$e]["nameDish"]."</td>
-                                    <td>".$dataFood[$e]["category"]."</td>
-                                    <td>".$dataFood[$e]["description"]."</td><td>".$dataFood[$e]["price"]."</td>
-                                    <td>".$dataFood[$e]["state"]."</td>
-                                    <td>".$dataFood[$e]["image"]."</td>
-                                    <td>
-                                    
-                                    <a data-toggle='modal' data-target='#modalEdit' id=".$dataFood[$e]["idDish"]."'>Editar</a> 
-                                    
-                                    <a data-toggle='modal' data-target='#modalDelete'
-                                    id=".$dataFood[$e]["idDish"]."'>Eliminar</a>
-                                    
-                                    </td></tr>";
-                }
+        <div class="containerCenter tableSize " id="contMenu">
+            <?php
+            include ("tbMenu.php");
             ?>
-
-
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
-
-            
-            <div id="modalInsert" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal Insertar content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-            <div id="modalEdit" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal Insertar content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
         
-            <div id="modalDelete" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+        <div class="containerCenter tableSize " id="contClient">
+            <?php
+            include ("tbClient.php");
+            ?>
+        </div>
 
-    <!-- Modal Insertar content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
 
-  </div>
-</div>
 
+        <div class="containerCenter tableSize " id="contContact">
+           <?php
+            include('tbContact.php');
+            ?>
+         </div>
+           
+            
         <section></section>
 
         <body>
@@ -218,5 +118,6 @@
                 ga('create', 'UA-77610408-2', 'auto');
                 ga('send', 'pageview');
             </script>
+        </body>
 
     </html>

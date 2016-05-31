@@ -423,3 +423,23 @@ select {
 
 
 /* ---------------------------------------------------------end style de reservaciones --------------------------------------------- */
+
+.footer{
+    height: 100px;
+    padding-top: 30px;
+    text-align: center;
+}
+#pie p{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 13px;
+    margin: 10px 0px;
+}
+
+.icons{
+    margin: 10px;
+     transition: all 2s ease;
+}
+
+    
