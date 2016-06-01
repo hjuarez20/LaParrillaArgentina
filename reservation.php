@@ -1,24 +1,6 @@
 <?php
 //require 'db/db.php';
 
-/*-----------------------------------method for aviable time to reserv------------------------ */
-$time ="";
-
-function mSerchSpaceToReserv(){
-    
-    print_r("hace el llamado al metodo para buscar disponibilidad");
-    
-    $database->select("tbtime",[
-                        "nameTime",
-                        "time",
-                        "state"
-                        ],[
-                        "state" => "int"
-                        ]); 
-}
-
-/*--------------------------------------------END method--------------------------------------*/
-
 
 /*---------------------------------------time for reservation from database--------------------------*/
 $time = $database->select("tbtime",[
