@@ -1,7 +1,6 @@
 <?php
 //require 'db/db.php';
 
-
 /*---------------------------------------time for reservation from database--------------------------*/
 $time = $database->select("tbtime",[
                         "nameTime",
@@ -14,8 +13,12 @@ $time = $database->select("tbtime",[
 if($_POST){ 
     
     /*--------------------------------date format change for mysql date format----------------------*/
-    $fecha=date("Y-m-d",strtotime($_POST["dateReservation"]));
+    //$fecha=date("Y-m-d",strtotime($_POST["date"]));
+    //$fecha=$_POST["date"];
     
+   // $fecha= $_POST["date"] 
+    //$fecha=date("Y-m-d");
+    $fecha=date("Y-m-d",strtotime($_POST["date"] ));
     /* format that accept mysql Y-m-d*/
     
    $database->insert("tbreservations", [
@@ -30,7 +33,7 @@ if($_POST){
 }
 
 ?>
-
+   
     <!DOCTYPE html>
     <html lang="en">
 
@@ -65,12 +68,12 @@ if($_POST){
                         
                          <!-- *************************************position for the DATE************************ -->
                          
-                          <p class="labels">Fecha de Reservacion</p>
-                        <input onChange="" id="calendar" type="text" placeholder="fecha de reservacion" name="dateReservation" class="campofecha" size="12">
-                        <!-- <br></br>  -->
+                       <!--  <p class="labels">Fecha de Reservacion</p>
+                        <input onchange="serch()" id="calendar" type="text" placeholder="fecha de reservacion" name="dateReservation" class="campofecha" size="12">
+                        <!-- <br></br>  -->  
                         
-                        
-                                      
+                        <label class="labels"> Ingresar Fecha</label><br/>
+                        <input name="date" onchange="mDate(date.value);" class="input"  type="date"/>          
                         
                          <!-- *************************************END position for the DATE************************ -->
                         
@@ -85,13 +88,13 @@ if($_POST){
                         
                          <p class="labels">Hora</p>
                         <!-- <form  name=myform> -->
-                         <select name=time>
+                         <select name=time id="hour-list">
                             <option name=default value='default'> Seleccione la hora </option>
                         <?php
                             for($i=0; $i<count($time); $i++){
                              echo   "<option name=".$time[$i]["nameTime"].">".$time[$i]["time"]."</option>";
                             }    
-                        ?> 
+                        ?>   
                         </select> 
                         <br></br>
                         <!--</form>-->
@@ -124,8 +127,7 @@ if($_POST){
 
         </form>
         <!-- *************************************end form reservation  ************************************************************* -->
-
-       
+         
         <!-- *************************************show the dialog after making the reservation **********************************-->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
@@ -146,17 +148,47 @@ if($_POST){
 
             </div>
         </div>
-        <!-- CODIGO DE RESERVACIONES -->
+<script src="js/jquery-2.2.4.min.js"></script>
 
-        <!-- SCRIPT DE RESERVACIONES -->
-        <!--<script type="text/javascript">
-   $(document).ready(function(){
-      $(".campofecha").calendarioDW();
-   })
-   </script> -->
-        <!-- SCRIPT DE RESERVACIONES -->
-    </body>
     <script>
+
+        function clearItems(){
+        //    $("#hour-list").hide();
+            $("#hour-list").find('option').remove();
+            //alert("Ha limpiado la lista de horas");
+        }
+
+        function mDate(selectedDate){
+                
+            clearItems();
+
+            $.ajax({
+                method: "POST",
+                url: "hourReserv.php",
+                data: { param: selectedDate },
+                dataType: "text"
+            })
+                .done(function( items ) {
+                  //  console.log( "Data: " + items.length );
+                  // alert("Data: " + items.length);
+                    items= JSON.parse(items);
+                    
+                    $("#hour-list").show();
+                    var len = items.length;
+                    alert(len);
+                    for(var i=0; i<len; i++){
+                         $("#hour-list").append("<option value='"+items[i].name+"'>"+items[i].name+"</option>");
+                       //$("#hour-list").append("<option value='"+(i+1)+"'>"+items[i].name+"</option>");
+                    }
+            });
+        }
+
+</script>
+        
+</body>
+    
+    
+    <script>   
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function () {
