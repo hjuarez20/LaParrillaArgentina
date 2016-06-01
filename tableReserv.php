@@ -1,18 +1,23 @@
 <?php 
-require 'db/db.php';
+    require 'db/db.php';
 
-     if($_POST){
+  if($_POST){
          
          $fecha=date("Y-m-d",strtotime($_POST["param"] ));
      
-          $dbHours=$database->query("select time from tbtime where 
-         tbtime.time not in(select tbreservations.reservationHour from tbreservations where tbreservations.date='".$fecha."');")->fetchAll(PDO::FETCH_ASSOC);
+         $hour="08:00";
          
-        //$dbPeople= $database->query("")->fetchAll(PDO::FETCH_ASSOC);
+        $dbPeople= $database->query("select count(peopleAmount) mesas from tbreservations
+                    where reservationHour='".$hour."' and
+                    tbreservations.date='".$fecha."';")->fetchAll(PDO::FETCH_ASSOC);
          
             createJSON($dbHours);
       
      }
+
+
+
+
 /*------------this is a method that make the list of the hours to reserv-------------------*/
 function createJSON($data){
         $len = count($data);
@@ -26,4 +31,5 @@ function createJSON($data){
         echo json_encode($items);
     }
 
+?>
 ?>
