@@ -13,13 +13,8 @@ $time = $database->select("tbtime",[
 if($_POST){ 
     
     /*--------------------------------date format change for mysql date format----------------------*/
-    //$fecha=date("Y-m-d",strtotime($_POST["date"]));
-    //$fecha=$_POST["date"];
-    
-   // $fecha= $_POST["date"] 
-    //$fecha=date("Y-m-d");
     $fecha=date("Y-m-d",strtotime($_POST["date"] ));
-    /* format that accept mysql Y-m-d*/
+    
     
    $database->insert("tbreservations", [
             "reservationHour"=> $_POST["time"],
@@ -153,9 +148,8 @@ if($_POST){
     <script>
 
         function clearItems(){
-        //    $("#hour-list").hide();
             $("#hour-list").find('option').remove();
-            //alert("Ha limpiado la lista de horas");
+            
         }
 
         function mDate(selectedDate){
@@ -169,16 +163,12 @@ if($_POST){
                 dataType: "text"
             })
                 .done(function( items ) {
-                  //  console.log( "Data: " + items.length );
-                  // alert("Data: " + items.length);
                     items= JSON.parse(items);
-                    
                     $("#hour-list").show();
                     var len = items.length;
-                    alert(len);
+                    
                     for(var i=0; i<len; i++){
                          $("#hour-list").append("<option value='"+items[i].name+"'>"+items[i].name+"</option>");
-                       //$("#hour-list").append("<option value='"+(i+1)+"'>"+items[i].name+"</option>");
                     }
             });
         }
@@ -186,8 +176,6 @@ if($_POST){
 </script>
         
 </body>
-    
-    
     <script>   
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
