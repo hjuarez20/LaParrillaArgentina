@@ -1,8 +1,11 @@
 <?php
-//require 'db/db.php';
-
+if($database == null){ 
+  require 'db/db.php';  
+}
+   
 /*---------------------------------------time for reservation from database--------------------------*/
-$time = $database->select("tbtime",[
+    
+    $time = $database->select("tbtime",[
                         "nameTime",
                         "time",
                         "state"
@@ -10,9 +13,9 @@ $time = $database->select("tbtime",[
                         "state" => "int"
                         ]);
 
-if($_POST){ 
-    
+
     /*--------------------------------date format change for mysql date format----------------------*/
+if($_POST){
     $fecha=date("Y-m-d",strtotime($_POST["date"] ));
     
     
@@ -24,9 +27,10 @@ if($_POST){
             "clientEmail" => $_POST["email"],
             "state" => 1,
             "date" => $fecha
-        ]);    
-}
-
+        ]);  
+ header ("Location: index.php#reservaciones");       
+ }
+   
 ?>
    
     <!DOCTYPE html>
@@ -52,7 +56,7 @@ if($_POST){
                 </article>
         </div>
         <!-- *********************************************************form to add the information of reservation************************ -->
-        <form method="post" action="" enctype="multipart/form-data">
+        <form method="post" action="reservation.php" enctype="multipart/form-data">
 
             <div class="container">
                 <article class="row">
