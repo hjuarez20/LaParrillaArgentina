@@ -20,7 +20,7 @@
 	position: relative;
 	-webkit-perspective: 1600px;
 	perspective: 1600px;
-	color: #000;
+	color: #FFF;
 }
 
 .rm-wrapper,
@@ -62,17 +62,18 @@
 }
 
 .rm-wrapper > div > div {
-	background: #fff url(../img/white_paperboard.jpg);
+	background: gray url(../img/gray_paperboard.jpg);
 	width: 100%;
 	height: 100%;
 	position: absolute;
 	padding: 30px;
 	box-shadow: 
-		inset 0 0 0 16px #fff, 
+        
+        inset 0 0 0 16px #5F5959,
 		inset 0 0 0 17px #FF8728, 
-		inset 0 0 0 18px #fff, 
+		inset 0 0 0 18px #5F5959, 
 		inset 0 0 0 19px #FF8728, 
-		inset 0 0 0 20px #fff, 
+		inset 0 0 0 20px #5F5959, 
 		inset 0 0 0 21px #FF8728;
 
 }
@@ -133,39 +134,40 @@ a.rm-button-open,
 	border-radius: 50%;
 	margin: 20px auto;
 	box-shadow: 
-		0 0 0 3px #fff, 
+		0 0 0 3px #5F5959, 
 		0 0 0 4px #FF8728, 
-		0 0 0 5px #fff, 
+		0 0 0 5px #5F5959, 
 		0 0 0 6px #FF8728, 
-		0 0 0 7px #fff, 
+		0 0 0 7px #5F5959, 
 		0 0 0 8px #FF8728;
 }
 
 .rm-content h2 {
 	letter-spacing: 2px;
 	font-size: 26px;
-	text-shadow: 1px 1px 0 #fff, 2px 2px 0 #a60c00;
+    color: #fff;
+	text-shadow: 1px 1px 0 #000, 2px 2px 0 #FF8728;
 }
 
 .rm-content h3 {
 	font-size: 13px;
 	margin: 40px 0;
 	padding: 20px 40px;
-	color: #000;
+	color: #FF8728;
 	font-weight: 500;
 	border-top: 4px double #000;
 	text-transform: uppercase;
 	line-height: 20px;
-	text-shadow: 1px 1px 0 rgba(255,255,255,0.8);
+	text-shadow: 1px 1px 0 #000;
 }
 
 .rm-content h4 {
 	margin: 0 0 20px 0;
 	font-size: 16px;
 	padding-bottom: 10px;
-	color: #000;
+	color: #FFF;
 	border-bottom: 4px double #FF8728;
-	text-shadow: 1px 1px 0 #fff, 2px 2px 0 #FF8728;
+	text-shadow: 1px 1px 0 #000, 2px 2px 0 #FF8728;
 	letter-spacing: 2px;
 }
 
@@ -174,12 +176,12 @@ a.rm-button-open,
 }
 
 a.rm-button-open {
-	color: #000;	
+	color: #fff;	
 	font-size: 16px;
 	line-height: 45px;
 	margin: 10px auto;
 	display: block;
-	text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+	text-shadow: 0 1px 0 #000;
 }
 
 a.rm-button-open:hover {
@@ -209,7 +211,7 @@ a.rm-button-open:hover {
 	font-size: 13px;
 	padding: 4px 5px 15px;
 	line-height: 15px;
-	color: #333;
+	color: #FFF;
 }
 
 .rm-order p{
@@ -241,13 +243,13 @@ a.rm-viewdetails:before{
 	margin-left: -10%;
 	top: 50%;
 	padding: 40px;
-    background: #fff url(../img/white_paperboard.jpg);
+    background: #fff url(../img/gray_paperboard.jpg);
 	box-shadow: 
-		inset 0 0 0 16px #fff, 
+		inset 0 0 0 16px #5F5959, 
 		inset 0 0 0 17px #FF8728, 
-		inset 0 0 0 18px #fff, 
+		inset 0 0 0 18px #5F5959, 
 		inset 0 0 0 19px #FF8728, 
-		inset 0 0 0 20px #fff, 
+		inset 0 0 0 20px #5F5959, 
 		inset 0 0 0 21px #FF8728,
 		0 4px 20px rgba(0,0,0,0.4);
 	opacity: 0;
@@ -259,8 +261,8 @@ a.rm-viewdetails:before{
 .rm-modal h5 {
 	margin: 0;
 	font-size: 20px;
-	text-shadow: 1px 1px 0 #fff, 2px 2px 0 #FF8728;
-}
+	text-shadow: 1px 1px 0 #000, 2px 2px 0 #FF8728;
+}    
 
 .rm-modal .rm-thumb {
 	width: 100px;
@@ -429,11 +431,11 @@ a.rm-viewdetails:hover,
 .no-csstransforms3d .rm-wrapper > div > div{
 	margin-bottom: 10px;
 	box-shadow: 
-		inset 0 0 0 16px #fff, 
+		inset 0 0 0 16px #5F5959, 
 		inset 0 0 0 17px #FF8728, 
-		inset 0 0 0 18px #fff, 
+		inset 0 0 0 18px #5F5959, 
 		inset 0 0 0 19px #FF8728, 
-		inset 0 0 0 20px #fff, 
+		inset 0 0 0 20px #5F5959, 
 		inset 0 0 0 21px #FF8728,
 		0 3px 5px rgba(0,0,0,0.2);
 }
@@ -506,11 +508,11 @@ a.rm-viewdetails:hover,
 	.rm-wrapper > div > div{
 		margin-bottom: 10px;
 		box-shadow: 
-			inset 0 0 0 16px #fff, 
+			inset 0 0 0 16px #5F5959, 
 			inset 0 0 0 17px #FF8728, 
-			inset 0 0 0 18px #fff, 
+			inset 0 0 0 18px #5F5959, 
 			inset 0 0 0 19px #FF8728, 
-			inset 0 0 0 20px #fff, 
+			inset 0 0 0 20px #5F5959, 
 			inset 0 0 0 21px #FF8728,
 			0 3px 5px rgba(0,0,0,0.2);
 	}
