@@ -1,6 +1,5 @@
 <?php
      
-   //  require 'db/db.php';
     $dataFood = $database->select("tbmenu", "*",[
                                             "ORDER" => "category"
                                             ]);
@@ -15,7 +14,9 @@
     <body>
 
                 <div id="AdministrationDishes" class="containerCenter tableSize ">
-           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalInserDish">Insertar</button>
+    <!--ESTE ES EL BOTON PARA ABRIR EL POPUP DE AGREGAR-->
+           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalInsertDish">Insertar</button>
+    <!---->
             <section>
                 <div class="row">
                     <div class="col-xs-12">
@@ -48,14 +49,28 @@
                                     <td>".$dataFood[$e]["state"]."</td>
                                     <td>".$dataFood[$e]["image"]."</td>
                                     <td>
-                                    
-                                    <a data-toggle='modal' data-target='#modalEdit' id=".$dataFood[$e]["idDish"]."'>Editar</a> 
+          
+                                    <a data-toggle='modal' data-target='#modalEdit' href='principal.php?id=".$dataFood[$e]["idDish"]."'>Editar</a> 
                                     
                                     <a data-toggle='modal' data-target='#modalDelete'
                                     id=".$dataFood[$e]["idDish"]."'>Eliminar</a>
                                     
                                     </td></tr>";
                 }
+                    /*EN LOS DOS BOTONES ANTERIORES ES DONDE RESIDE EL PRINCIPAL PROBLEMA
+                        QUE DEBEN CUMPLIR ELLOS?
+                            -REFRESCAR LA PAGINA
+                            -ENVIAR EL ID DEL PLATILLO
+                            -Y ABRIR EL POPUP DE EDITAR,(ABRIR ES MUY DIFERENTE DE IR A UNA SECCION).
+                            
+                    NOTA> SE PUEDE INTENTAR 
+                        data-target='#popupID'
+                        target='#popupID'
+                        href='ejemplo.php#seccion'
+                        
+                        
+                    CON LO LOGRADO EL <a> DE editar SE PASA EL ID, SE ABRE EL POPUP PERO LA PAGINA ES CARGADA DENTRO DEL MISMO, LO QUE NO ESTA CORRECTO.
+                    */
             ?>
 
 
@@ -67,8 +82,8 @@
             </section>
         </div>
 
-            
-            <div id="modalInserDish" class="modal fade" role="dialog">
+  <!--MODAL DE INSERTAR-->          
+            <div id="modalInsertDish" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -119,7 +134,8 @@
                 <tr>
                     <td></td>
                     <td>
-                        <button type="submit" class="btn btn-default">Agregar</button>  
+                               
+                        <button name="insert" value="agregar" type="submit" class="btn btn-default">Agregar</button>  
                     </td>
                 </tr>
             </table>
@@ -134,7 +150,8 @@
   </div>
 </div> <!--FIN DEL POPUP DE INSERTAR-->
 
-   
+                 
+    <!--MODAL DE EDITAR-->              
              <div id="modalEdit" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
@@ -202,7 +219,9 @@
 
   </div>
 </div> <!--FIN DEL POPUP EDITAR-->
-        
+   
+   
+    <!--MODAL DE ELIMINAR-->
             <div id="modalDelete" class="modal fade" role="dialog">
   <div class="modal-dialog">
 

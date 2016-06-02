@@ -29,21 +29,43 @@ h1,
 }
 
 
-/*BACKGROUND VIDEO STEAK*/
+/*CAROUSEL SLIDER IMAGES*/
 
-.video-js {
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 100%;
+    height: 750px;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.fill img {
+    width: 100%;
+    height: 750px;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.slider-img {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 750px;
     z-index: -1;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
+    padding-left: 0px;
+    padding-right: 0px;
+    -o-background-size: cover;
 }
 
 
@@ -92,7 +114,8 @@ h1,
     width: 100%;
     background-color: rgb(23, 23, 23);
 }
- 
+
+
 /*Size (diferents size, aplicate to parrallax effect)*/
 
 .superBig {
@@ -149,11 +172,13 @@ h1,
     background-color: rgb(255, 255, 255);
 }
 
-.color3 {
+.colorBlack {
     background-color: rgb(30, 30, 30);
 }
-.colorBlackMenu{
-    background-color: rgb(23, 23, 23);
+
+.colorBlackMenu {
+    background-color: rgba(23, 23, 23, 0.0);
+    border: none;
 }
 
 
@@ -163,7 +188,7 @@ h1,
 /*Stiky Menu*/
 
 #home section nav {
-    height: 40px;
+    height: 50px;
     padding-top: 11px;
     position: relative;
     background-color: rgba(0, 0, 0, 0.0);
@@ -185,19 +210,25 @@ h1,
     color: #fff;
     text-decoration: none;
     font-family: 'Old Standard TT', serif;
-    font-size: 20px;
-    padding-top: 8px;
+    font-size: 23px;
+    text-shadow: 4px 2px 9px rgba(0, 0, 0, 1);
 }
 
-#home nav ul li a:hover {
-    color: rgb(166, 12, 0);
+#home nav ul li:hover {
+    color: #fff;
+    background-color: #DF3030;
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+    animation-delay: 0.2s;
+    animation-duration: 0.6s;
+    z-index: 1000;
 }
 
 
 /* --- add class when the user scroll--- */
 
 .menu-fixed {
-    height: 60px;
+    height: 70px;
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -215,6 +246,10 @@ h1,
 .menu-fixed h1 a {
     color: #fff;
     text-decoration: none;
+}
+
+.navbar-inverse .navbar-brand a:hover {
+    color: #DF3030;
 }
 
 
@@ -245,8 +280,7 @@ h1,
 #nosotros article div p {
     font-family: 'Old Standard TT', serif;
     font-weight: 400;
-    color: #000;
-    font-size: 16px;
+    color: #0050 font-size: 16px;
     padding: 11px 0px 0px 20px;
     width: 74%;
     text-align: justify;
@@ -266,10 +300,12 @@ h1,
     font-size: 20px;
     color: #fff;
 }
+
 .contact-user,
 .contact-location {
     padding: 20px;
 }
+
 .contact-input label,
 .contact-user a {
     width: 365px;
@@ -280,7 +316,7 @@ h1,
 }
 
 .contact-input input {
-    width: 390px;
+    width: 350px;
     height: 25px;
     margin: 0px 0px 40px;
     background-color: rgba(255, 255, 255, 0.0);
@@ -290,7 +326,7 @@ h1,
 }
 
 .contact-input textarea {
-    width: 390px;
+    width: 350px;
     height: 80px;
     margin: 0px 0px 40px;
     background-color: rgba(255, 255, 255, 0.0);
@@ -354,11 +390,11 @@ h1,
     padding: 50px;
 }
 
-#button-Reserv{
+#button-Reserv {
     margin: 0% 0% 0% 42%;
     background-color: #000;
     border-bottom-color: #fff;
-    border-color: #fff;       
+    border-color: #fff;
 }
 
 .reserve-button {
@@ -424,12 +460,13 @@ select {
 
 /* ---------------------------------------------------------end style de reservaciones --------------------------------------------- */
 
-.footer{
+.footer {
     height: 100px;
     padding-top: 30px;
     text-align: center;
 }
-#pie p{
+
+#pie p {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     color: white;
@@ -437,9 +474,41 @@ select {
     margin: 10px 0px;
 }
 
-.icons{
+.icons {
     margin: 10px;
-     transition: all 2s ease;
+    transition: all 2s ease;
 }
 
-    
+
+/* ---- Icon scroll down animated --------------------- */
+
+@-webkit-keyframes arrowDown {
+    from {
+        top: 50px;
+    }
+    to {
+        top: 100px;
+    }
+}
+
+@keyframes arrowDown {
+    from {
+        top: 50px;
+    }
+    to {
+        top: 100px;
+    }
+}
+
+.arrow {
+    width: 55px;
+    height: 25px;
+    position: relative;
+    -webkit-animation: arrowDown 4s infinite;
+    /* Chrome, Safari, Opera */
+    animation: arrowDown 4s infinite;
+}
+
+.arrowCenter {
+    margin: 0 0 0 48%;
+}

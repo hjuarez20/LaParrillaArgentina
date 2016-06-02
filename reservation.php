@@ -1,8 +1,11 @@
 <?php
-//require 'db/db.php';
-
+if($database == null){ 
+  require 'db/db.php';  
+}
+   
 /*---------------------------------------time for reservation from database--------------------------*/
-$time = $database->select("tbtime",[
+    
+    $time = $database->select("tbtime",[
                         "nameTime",
                         "time",
                         "state"
@@ -10,23 +13,24 @@ $time = $database->select("tbtime",[
                         "state" => "int"
                         ]);
 
-if($_POST){ 
-    
+
     /*--------------------------------date format change for mysql date format----------------------*/
+if($_POST){
     $fecha=date("Y-m-d",strtotime($_POST["date"] ));
     
     
    $database->insert("tbreservations", [
             "reservationHour"=> $_POST["time"],
-            "peopleAmount" => $_POST["peopleAmount"],
+            "peopleAmount" => $_POST["tableAmount"],
             "clientName" => $_POST["name"],
             "clientPhone" => $_POST["phone"],
             "clientEmail" => $_POST["email"],
             "state" => 1,
             "date" => $fecha
-        ]);    
-}
-
+        ]);  
+ header ("Location: index.php#reservaciones");       
+ }
+   
 ?>
    
     <!DOCTYPE html>
@@ -52,7 +56,7 @@ if($_POST){
                 </article>
         </div>
         <!-- *********************************************************form to add the information of reservation************************ -->
-        <form method="post" action="" enctype="multipart/form-data">
+        <form method="post" action="reservation.php" enctype="multipart/form-data">
 
             <div class="container">
                 <article class="row">
@@ -68,7 +72,7 @@ if($_POST){
                         <!-- <br></br>  -->  
                         
                         <label class="labels"> Ingresar Fecha</label><br/>
-                        <input name="date" onchange="mDate(date.value);" class="input"  type="date"/>          
+                        <input id="datePicker" name="date" onchange="mDate(date.value);" class="input"  type="date"/>          
                         
                          <!-- *************************************END position for the DATE************************ -->
                         
@@ -97,13 +101,14 @@ if($_POST){
                          <!-- *************************************END position for the HOUR************************ -->
 
                         <!-- FORM for calendar -->
-                        <p class="labels">Personas</p>
+                        <p class="labels">Mesas (max. personas 4)</p>
                         <!-- <form method="post" name=myform>  -->
-                        <select name=peopleAmount>
-                            <option name=uno value=1 disabled>Cantidad de Personas</option>
-                            <option name=dos value=2> 2 person </option>
-                            <option name=cuatro value=4> 4 person </option>
-                            <option name=ocho value=8> 8 person </option>
+                        <select id="tables" name=tableAmount>
+                            <option name=cero value=0 disabled>Cantidad de Mesas</option>
+                            <option name=uno value=1> 1 mesa </option>
+                            <option name=dos value=2> 2 mesas </option>
+                            <option name=tres value=3> 3 mesas </option>
+                            <option name=cuatro value=4> 4 mesas </option>
                         </select>
                         <!-- </form> -->
                         <br></br>
@@ -152,14 +157,41 @@ if($_POST){
             
         }
 
-        function mDate(selectedDate){
-                
+        function mDate(selectedDate){ 
             clearItems();
-
+            
+            var selectedHour= $('#hour-list').val();
+            var selectedDate= $('#datePicker').val();
+            
+            console.log(selectedHour,selectedDate);
+            
             $.ajax({
                 method: "POST",
                 url: "hourReserv.php",
                 data: { param: selectedDate },
+                dataType: "text"
+            })
+                .done(function( items ) {
+                    items= JSON.parse(items);
+                    $("#hour-list").show();
+                    var len = items.length;
+                    
+                    for(var i=0; i<len; i++){
+                         $("#hour-list").append("<option value='"+items[i].name+"'>"+items[i].name+"</option>");
+                    }
+            });
+        }
+        
+        function mTables(){
+            var selectedHour= $('#hour-list').val();
+            var selectedDate= $('#datePicker').val();
+            
+            console.log(selectedHour,selectedDate);
+            
+           $.ajax({
+                method: "POST",
+                url: "tableReserv.php",
+                data: { param: selectedHour,selectedDate },
                 dataType: "text"
             })
                 .done(function( items ) {

@@ -3,20 +3,24 @@ require 'PHPMailer/PHPMailerAutoload.php';
 $mail = new PHPMailer;
 $to = "nelguaro@gmail.com";
 
+
+
 if($_POST){
-    require 'db/db.php';
+  
     
     $name = $_POST['contact-name'];
     $email = $_POST['contact-email'];
     $subject = $_POST['LaParrillaArgentina email'];
     $messaje = nl2br($_POST['contact-comment']);
     
-    if($name == "" || $email == "" || $messaje == ""):
+    if($name == "" || $email == "" || $messaje == ""){
         echo '<div class="alert alert-danger"> Todos los campos son requeridos para enviar el mensaje</div>';
+        echo "puta diablo";
 
             header("location: index.php#contacto");
 
-    else:
+    }else{
+      require 'db/db.php';
         $mail->From = $email;
         $mail->addAddress($to);
         $mail->Subject= $subject;
@@ -30,16 +34,8 @@ if($_POST){
         "email" => $_POST["contact-email"]
                             ]);
         header("location:index.php");
-
-    endif;
     }
-
-    
-
-
-    
-
-
+ }
 ?>
 
 <html lang="en">

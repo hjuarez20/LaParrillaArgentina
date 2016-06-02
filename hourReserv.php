@@ -5,10 +5,12 @@ require 'db/db.php';
          
          $fecha=date("Y-m-d",strtotime($_POST["param"] ));
      
-          $db=$database->query("select time from tbtime where 
+          $dbHours=$database->query("select time from tbtime where 
          tbtime.time not in(select tbreservations.reservationHour from tbreservations where tbreservations.date='".$fecha."');")->fetchAll(PDO::FETCH_ASSOC);
          
-            createJSON($db);
+        //$dbPeople= $database->query("")->fetchAll(PDO::FETCH_ASSOC);
+         
+            createJSON($dbHours);
       
      }
 /*------------this is a method that make the list of the hours to reserv-------------------*/
