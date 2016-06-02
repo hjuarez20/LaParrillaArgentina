@@ -13,8 +13,9 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300' rel='stylesheet' type='text/css'>
 
 </head>
+
 <body>
-    <section id="home" class="big">
+    <section id="home" class=" big">
         <?php include ('menu.php');?>
     </section>
 
@@ -40,8 +41,8 @@
     </section>
     <script src="js/jquery-latest.js"></script>
     <script src="js/main.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <!-- Scrolling Nav JavaScript -->
     <script src="js/jquery.easing.min.js"></script>
     <script type="text/javascript" src="js/calendario.js"></script>
