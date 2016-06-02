@@ -1,27 +1,11 @@
 <?php
-//require 'db/db.php';
-
-/*-----------------------------------method for aviable time to reserv------------------------ */
-$time ="";
-
-function mSerchSpaceToReserv(){
-    
-    print_r("hace el llamado al metodo para buscar disponibilidad");
-    
-    $database->select("tbtime",[
-                        "nameTime",
-                        "time",
-                        "state"
-                        ],[
-                        "state" => "int"
-                        ]); 
+if($database == null){ 
+  require 'db/db.php';  
 }
-
-/*--------------------------------------------END method--------------------------------------*/
-
-
+   
 /*---------------------------------------time for reservation from database--------------------------*/
-$time = $database->select("tbtime",[
+    
+    $time = $database->select("tbtime",[
                         "nameTime",
                         "time",
                         "state"
@@ -29,26 +13,26 @@ $time = $database->select("tbtime",[
                         "state" => "int"
                         ]);
 
-if($_POST){ 
-    
+
     /*--------------------------------date format change for mysql date format----------------------*/
-    $fecha=date("Y-m-d",strtotime($_POST["dateReservation"]));
+if($_POST){
+    $fecha=date("Y-m-d",strtotime($_POST["date"] ));
     
-    /* format that accept mysql Y-m-d*/
     
    $database->insert("tbreservations", [
             "reservationHour"=> $_POST["time"],
-            "peopleAmount" => $_POST["peopleAmount"],
+            "peopleAmount" => $_POST["tableAmount"],
             "clientName" => $_POST["name"],
             "clientPhone" => $_POST["phone"],
             "clientEmail" => $_POST["email"],
             "state" => 1,
             "date" => $fecha
-        ]);    
-}
-
+        ]);  
+ header ("Location: index.php#reservaciones");       
+ }
+   
 ?>
-
+   
     <!DOCTYPE html>
     <html lang="en">
 
@@ -72,7 +56,7 @@ if($_POST){
                 </article>
         </div>
         <!-- *********************************************************form to add the information of reservation************************ -->
-        <form method="post" action="" enctype="multipart/form-data">
+        <form method="post" action="reservation.php" enctype="multipart/form-data">
 
             <div class="container">
                 <article class="row">
@@ -83,12 +67,12 @@ if($_POST){
                         
                          <!-- *************************************position for the DATE************************ -->
                          
-                          <p class="labels">Fecha de Reservacion</p>
-                        <input onChange="" id="calendar" type="text" placeholder="fecha de reservacion" name="dateReservation" class="campofecha" size="12">
-                        <!-- <br></br>  -->
+                       <!--  <p class="labels">Fecha de Reservacion</p>
+                        <input onchange="serch()" id="calendar" type="text" placeholder="fecha de reservacion" name="dateReservation" class="campofecha" size="12">
+                        <!-- <br></br>  -->  
                         
-                        
-                                      
+                        <label class="labels"> Ingresar Fecha</label><br/>
+                        <input id="datePicker" name="date" onchange="mDate(date.value);" class="input"  type="date"/>          
                         
                          <!-- *************************************END position for the DATE************************ -->
                         
@@ -103,13 +87,13 @@ if($_POST){
                         
                          <p class="labels">Hora</p>
                         <!-- <form  name=myform> -->
-                         <select name=time>
+                         <select name=time id="hour-list">
                             <option name=default value='default'> Seleccione la hora </option>
                         <?php
                             for($i=0; $i<count($time); $i++){
                              echo   "<option name=".$time[$i]["nameTime"].">".$time[$i]["time"]."</option>";
                             }    
-                        ?> 
+                        ?>   
                         </select> 
                         <br></br>
                         <!--</form>-->
@@ -117,13 +101,14 @@ if($_POST){
                          <!-- *************************************END position for the HOUR************************ -->
 
                         <!-- FORM for calendar -->
-                        <p class="labels">Personas</p>
+                        <p class="labels">Mesas (max. personas 4)</p>
                         <!-- <form method="post" name=myform>  -->
-                        <select name=peopleAmount>
-                            <option name=uno value=1 disabled>Cantidad de Personas</option>
-                            <option name=dos value=2> 2 person </option>
-                            <option name=cuatro value=4> 4 person </option>
-                            <option name=ocho value=8> 8 person </option>
+                        <select id="tables" name=tableAmount>
+                            <option name=cero value=0 disabled>Cantidad de Mesas</option>
+                            <option name=uno value=1> 1 mesa </option>
+                            <option name=dos value=2> 2 mesas </option>
+                            <option name=tres value=3> 3 mesas </option>
+                            <option name=cuatro value=4> 4 mesas </option>
                         </select>
                         <!-- </form> -->
                         <br></br>
@@ -142,8 +127,7 @@ if($_POST){
 
         </form>
         <!-- *************************************end form reservation  ************************************************************* -->
-
-       
+         
         <!-- *************************************show the dialog after making the reservation **********************************-->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
@@ -164,17 +148,67 @@ if($_POST){
 
             </div>
         </div>
-        <!-- CODIGO DE RESERVACIONES -->
+<script src="js/jquery-2.2.4.min.js"></script>
 
-        <!-- SCRIPT DE RESERVACIONES -->
-        <!--<script type="text/javascript">
-   $(document).ready(function(){
-      $(".campofecha").calendarioDW();
-   })
-   </script> -->
-        <!-- SCRIPT DE RESERVACIONES -->
-    </body>
     <script>
+
+        function clearItems(){
+            $("#hour-list").find('option').remove();
+            
+        }
+
+        function mDate(selectedDate){ 
+            clearItems();
+            
+            var selectedHour= $('#hour-list').val();
+            var selectedDate= $('#datePicker').val();
+            
+            console.log(selectedHour,selectedDate);
+            
+            $.ajax({
+                method: "POST",
+                url: "hourReserv.php",
+                data: { param: selectedDate },
+                dataType: "text"
+            })
+                .done(function( items ) {
+                    items= JSON.parse(items);
+                    $("#hour-list").show();
+                    var len = items.length;
+                    
+                    for(var i=0; i<len; i++){
+                         $("#hour-list").append("<option value='"+items[i].name+"'>"+items[i].name+"</option>");
+                    }
+            });
+        }
+        
+        function mTables(){
+            var selectedHour= $('#hour-list').val();
+            var selectedDate= $('#datePicker').val();
+            
+            console.log(selectedHour,selectedDate);
+            
+           $.ajax({
+                method: "POST",
+                url: "tableReserv.php",
+                data: { param: selectedHour,selectedDate },
+                dataType: "text"
+            })
+                .done(function( items ) {
+                    items= JSON.parse(items);
+                    $("#hour-list").show();
+                    var len = items.length;
+                    
+                    for(var i=0; i<len; i++){
+                         $("#hour-list").append("<option value='"+items[i].name+"'>"+items[i].name+"</option>");
+                    }
+            });
+        }
+
+</script>
+        
+</body>
+    <script>   
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function () {

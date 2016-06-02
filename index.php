@@ -35,6 +35,9 @@
     <section id="contacto" class="color3 contact parallax medium ">
         <?php include ('contact.php');?>
     </section>
+    <section id="pie" class="colorBlackMenu footer parallax ">
+        <?php include ('footer.php');?>
+    </section>
     <script src="js/jquery-latest.js"></script>
     <script src="js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
