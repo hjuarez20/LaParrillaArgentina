@@ -165,6 +165,10 @@ h1,
     background-color: rgb(30, 30, 30);
 }
 
+.color4 {
+    background-color: rgba(23, 23, 23);
+}
+
 .colorBlackMenu {
     background-color: rgba(23, 23, 23, 0.0);
     border: none;
