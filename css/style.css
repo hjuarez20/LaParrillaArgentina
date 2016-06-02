@@ -442,4 +442,26 @@ select {
      transition: all 2s ease;
 }
 
-    
+/* ---- Icon scroll down animated --------------------- */   
+
+@-webkit-keyframes arrowDown {
+    from {top: 50px;}
+    to {top: 100px;}
+}
+
+@keyframes arrowDown {
+    from {top: 50px;}
+    to {top: 100px;}
+}
+
+.arrow {
+    width: 55px;
+    height: 25px;
+    position: relative;
+    -webkit-animation: arrowDown 4s infinite; /* Chrome, Safari, Opera */
+    animation: arrowDown 4s infinite;
+}
+
+.arrowCenter{
+    margin: 0 0 0 48%;
+}
