@@ -33,17 +33,33 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-    <video class="video-js" controls autoplay loop src="img/video/steakfooter-small.mp4">
-        <source src="img/video/steakfooter-small.mp4" type="video/mp4"></source>
-        <source src="img/video/steakfooter-small.ogv" type="video/ogv"></source>
-    </video>
+    <div class="slider-img">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="item active fill">
+                    <img src="img/slider1.gif" alt="">
+                </div>
+                <div class="item fill">
+                    <img src="img/slider4.jpg">
+                </div>
+
+                <div class="item fill">
+                    <img src="img/slider2.jpg">
+                </div>
+
+                <div class="item fill">
+                    <img src="img/slider3.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="logo col-md-12 col-lg-12">
                 <img class="img-responsive center-block" src="img/parrilla6.png" alt="">
             </div>
         </div>
-        <a href='#nosotros' class="page-scroll arrowCenter"><img class="arrow" src="http://www.tomnod.com/public/images/icon-chevron-big-down.png" title="Ir abajo"/></a>
+        <a href='#nosotros' class="page-scroll arrowCenter"><img class="arrow" src="http://www.tomnod.com/public/images/icon-chevron-big-down.png" title="Ir abajo" /></a>
     </div>
 </body>
 

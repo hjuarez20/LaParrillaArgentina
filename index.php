@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/calendario_dw-estilos.css">
     <link href='https://fonts.googleapis.com/css?family=Old+Standard+TT:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300' rel='stylesheet' type='text/css'>
 
 </head>
+
 <body>
-    <section id="home" class="big">
+    <section id="home" class=" big">
         <?php include ('menu.php');?>
     </section>
 
@@ -35,24 +35,15 @@
     <section id="contacto" class="color3 contact parallax medium ">
         <?php include ('contact.php');?>
     </section>
-    <section id="pie" class="colorBlackMenu footer parallax ">
+    <section id="pie" class="colorBlack footer parallax ">
         <?php include ('footer.php');?>
     </section>
     <script src="js/jquery-latest.js"></script>
     <script src="js/main.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <!-- Scrolling Nav JavaScript -->
     <script src="js/jquery.easing.min.js"></script>
-    <script type="text/javascript" src="js/calendario.js"></script>
-    <!-- Menu JavaScript -->
-
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".campofecha").calendarioDW();
-        })
-    </script>
 </body>
 
 <script>

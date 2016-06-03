@@ -58,15 +58,16 @@ if($_POST){
                         <button type="input" class="button buttonBlue" value="Ingresar">Ingresar<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div></button>
                     </form>
                     
+        
+        <div class="otherButton" >
+                 <input class="home" type="button" value="Inicio" onClick=" window.location.href='index.php' ">
+
+                <input class="user" type="button" value="Nuevo usuario" onClick=" window.location.href='admin456.php' ">    
+               </div>
                
                       
                 </div>
-                <div class="otherButton" >
-                 <input class="home" type="button" value="Regresar home" onClick=" window.location.href='index.php' ">
-
-                <input class="user" type="button" value="Nuevo usuario" onClick=" window.location.href='admin456.php' ">    
-                   
-               </div>
+                
                  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
         <script src="js/login.js"></script>
@@ -89,4 +90,4 @@ if($_POST){
         ga('send', 'pageview');
     </script>
 
-    </html
+</html>

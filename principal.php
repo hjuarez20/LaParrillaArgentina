@@ -2,27 +2,47 @@
 session_start();
  require 'db/db.php';
  $data = $database->select("tbreservations", "*");
- $dataFood = $database->select("tbmenu", "*",[
-                                            "ORDER" => "category"
-                                            ]);
- $user = $_GET['name'];
+ 
+ 
 
 
 
 
 /*  Administracion de Platillos */
+/*METODO PARA INGRESAR PLATILLOS*/
 if($_POST){
+    if($_POST['insert']=="agregar"){ /*BOTON AGREGAR PRESIONADO*/
+      if(isset($_POST['nameDish']) && ($_POST['nameDish'])!=null && 
+         isset($_POST['category']) && ($_POST['category'])!=null && 
+         isset($_POST['description']) && ($_POST['description'])!=null && 
+         isset($_POST['price']) && ($_POST['price'])!=null && 
+         isset($_POST['state']) && ($_POST['state'])!=null && 
+         isset($_POST['image']) && ($_POST['image'])!=null
+        ){/*TODO ESTE IF ANTERIOR ES POR SEGURIDAD*/
+     
     
     $database->insert("tbmenu", [
-        "userMod" => "Oscar", /*$user*/
+        "idUserMod" => $_SESSION['idUser'],
         "nameDish" => $_POST["nameDish"],
         "category" => $_POST["category"],
         "description" => $_POST["description"],
         "price" => $_POST["price"],
         "state" => $_POST["state"],
         "dayMod" => date("Y/m/d"),
-        "image" => $_POST["image"],
+        "image" => $_POST["image"]
     ]);
+          
+        echo '<script>alert("Se ha insertado un elemento.!");</script>';
+          $_POST['insert']=null; /*INTENTE CON ESTO LIMPIAR EL POST PARA EN CASO DE QUE SE PRESIONARA OTRO BOTON O SE REFEFRESCARA LA PAGINA NO TUVIERA EL DATO AUN, PERO NO FUNCIONO*/
+         
+      }else{
+            if(!$_POST['insert']=null) {
+                echo '<script>alert("Debe llenar todos los campos con la informacion requerida.!");</script>';
+                  $_POST['insert']=null;/*INTENTE CON ESTO LIMPIAR EL POST PARA EN CASO DE QUE SE PRESIONARA OTRO BOTON O SE REFEFRESCARA LA PAGINA NO TUVIERA EL DATO AUN, PERO NO FUNCIONO*/
+            } 
+            
+      }//FIN DEL ISSET
+    }
 }
 
 
