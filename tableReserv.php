@@ -1,18 +1,35 @@
 <?php 
     require 'db/db.php';
 
+
+
   if($_POST){
          
-         $fecha=date("Y-m-d",strtotime($_POST["param"] ));
+         $fecha=date("Y-m-d",strtotime($_POST["H"] ));
      
-         $hour="08:00";
+         $hour=$_POST["D"];
          
-        $dbPeople= $database->query("select count(peopleAmount) mesas from tbreservations
+        $dbTables= $database->query("select 32-count(peopleAmount) mesas from tbreservations
                     where reservationHour='".$hour."' and
                     tbreservations.date='".$fecha."';")->fetchAll(PDO::FETCH_ASSOC);
-         
-            createJSON($dbHours);
       
+      $array=array();
+      
+      $size=count($dbTables);
+      
+      for($index=0;$index<$size;$index++){
+          $array[$index]=$dbTables[$index]["mesas"];
+      }
+      
+      
+      if($array[0]>4){
+          $lista=["1 Mesa","2 Mesas","3 Mesas","4 Mesas"];
+          
+        createJSON($lista);  
+      }
+      
+      
+      //createJSON($array);
      }
 
 
@@ -25,7 +42,7 @@ function createJSON($data){
         for($i=0; $i<$len; $i++) {
 
             $item = new stdClass;
-            $item->name = $data[$i]["time"];
+            $item->name = $data[$i];
             $items[] = $item;
         }
         echo json_encode($items);
