@@ -43,6 +43,7 @@
                 <img class="img-responsive center-block" src="img/parrilla6.png" alt="">
             </div>
         </div>
+        <a href='#nosotros' class="page-scroll arrowCenter"><img class="arrow" src="http://www.tomnod.com/public/images/icon-chevron-big-down.png" title="Ir abajo"/></a>
     </div>
 </body>
 
