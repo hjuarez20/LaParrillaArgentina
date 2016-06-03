@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/calendario_dw-estilos.css">
     <link href='https://fonts.googleapis.com/css?family=Old+Standard+TT:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300' rel='stylesheet' type='text/css'>
 
@@ -45,15 +44,6 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- Scrolling Nav JavaScript -->
     <script src="js/jquery.easing.min.js"></script>
-    <script type="text/javascript" src="js/calendario.js"></script>
-    <!-- Menu JavaScript -->
-
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".campofecha").calendarioDW();
-        })
-    </script>
 </body>
 
 <script>

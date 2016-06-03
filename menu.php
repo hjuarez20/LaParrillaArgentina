@@ -36,18 +36,18 @@
     <div class="slider-img">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner" role="listbox">
-                <div class="item active">
+                <div class="item active fill">
                     <img src="img/slider1.gif" alt="">
                 </div>
-                <div class="item">
+                <div class="item fill">
                     <img src="img/slider4.jpg">
                 </div>
 
-                <div class="item">
+                <div class="item fill">
                     <img src="img/slider2.jpg">
                 </div>
 
-                <div class="item">
+                <div class="item fill">
                     <img src="img/slider3.jpg">
                 </div>
             </div>
