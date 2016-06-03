@@ -286,15 +286,20 @@ footer img:focus , footer a:focus { outline: none; }
 }
 
 .otherButton{
-    margin: -4% 35%;
+    
+    margin: -4% 33.67%;
 }
 
-.otherButton, .home{
+.otherButton .home{
     float: left;
-    width: 32%;
+    width: 25%;
+    padding-left: 0.5%;
+    background: #FFF2F2;
 }
 
-.otherButton, .user{
+.otherButton .user{
     float: right;
-    width: 31%;
+    width: 33%;
+    padding-right: 0.5%;
+    background: #FFF2F2;
 }
