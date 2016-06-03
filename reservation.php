@@ -150,7 +150,8 @@ if($_POST){
     <script>
 
         function clearItems(){
-            $("#hour-list").find('option').remove();   
+            $("#hour-list").find('option').remove();  
+            $("#tables").find('option').remove(); //selimpia la lista
         }
 
         function mDate(selectedDate){ 
@@ -174,8 +175,6 @@ if($_POST){
         }
         
         function mTables(){
-            $("#tables").find('option').remove(); //selimpia la lista
-            
             var selectedHour= $('#hour-list').val();
             var selectedDate= $('#datePicker').val();
             
@@ -184,16 +183,16 @@ if($_POST){
            $.ajax({
                 method: "POST",
                 url: "tableReserv.php",
-                data: {H:selectedHour,D:selectedDate},
-                dataType: "json"
+                data: {H:selectedHour , D:selectedDate},
+                dataType: "text"
            })
                .done (function( items ) {
-                  //items= JSON.parse(items);
+                 items= JSON.parse(items);
                     $("#tables").show();
                     var len = items.length;
                    console.log(len);// alert(len);
                     for(var i=0; i<len; i++){
-                         $("#tables").append("<option value='"+(i+1)+"'>"+items[i].name+"</option>");
+                         $("#tables").append("<option value='"+items[i].name+"'>"+items[i].name+"</option>");
                     }
             });
         }
