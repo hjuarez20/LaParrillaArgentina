@@ -68,21 +68,14 @@ h1,
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
     width: 100%;
-<<<<<<< HEAD
     min-height: 1200px;
-=======
-    min-height: 850px;
->>>>>>> refs/remotes/harold20/master
     height: 100%;
 }
 
 .fill img {
     width: 100%;
     height: 100%;
-<<<<<<< HEAD
     min-height: 1200px;
-=======
->>>>>>> refs/remotes/harold20/master
     background-position: center;
     background-size: cover;
     -o-background-size: cover;
@@ -94,10 +87,7 @@ h1,
     left: 0%;
     width: 100%;
     height: 100%;
-<<<<<<< HEAD
     min-height: 1200px;
-=======
->>>>>>> refs/remotes/harold20/master
     z-index: -1;
     padding-left: 0px;
     padding-right: 0px;
