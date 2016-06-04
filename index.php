@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link href='https://fonts.googleapis.com/css?family=Old+Standard+TT:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/animate.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300' rel='stylesheet' type='text/css'>
 
 </head>
@@ -32,10 +31,10 @@
         </article>
     </section>
 
-    <section id="contacto" class="color3 contact parallax medium ">
+    <section id="contacto" class="color3 contact parallax small">
         <?php include ('contact.php');?>
     </section>
-    <section id="pie" class="colorBlack footer parallax ">
+    <section id="pie" class="colorBlack footer parallax tiny ">
         <?php include ('footer.php');?>
     </section>
     <script src="js/jquery-latest.js"></script>
