@@ -18,10 +18,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <h1 class="navbar-brand hidden show" style="padding: 0 0;"><a class="page-scroll"href="#home">La Parrilla Argentina</a></h1>
+                    <h1 class="navbar-brand hidden show"><a class="page-scroll"href="#home">La Parrilla Argentina</a></h1>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="collapse navbar-collapse padding-top" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a class="page-scroll" href="#home">Home</a></li>
                         <li><a class="page-scroll" href="#nosotros">Nosotros</a></li>
@@ -40,13 +40,12 @@
             <div class="item active fill slider-img1">
                 <div class="container">
                     <div class="row">
-                        <div class="logo col-md-12 col-lg-12">
+                        <div class="logo col-md-12">
                             <img class="img-responsive center-block" src="img/parrilla6.png" alt="">
                         </div>
                     </div>
                     <a href='#nosotros' class="page-scroll arrowCenter"><img class="arrow" src="http://www.tomnod.com/public/images/icon-chevron-big-down.png" title="Ir abajo" /></a>
                 </div>
-
             </div>
             <div class="item fill slider-img4">
                 <div class="container">
