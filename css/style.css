@@ -27,6 +27,7 @@ h4,
 h3,
 h2,
 h1,
+a,
 #nosotros article div a {
     font-family: 'Roboto', serif;
     font-weight: 900;
@@ -46,6 +47,7 @@ h1,
     padding: 8px;
     font-size: 13px;
     margin: 34px 0px 0px 15px;
+    background: none;
 }
 
 .rigth {
@@ -64,7 +66,7 @@ h1,
 
 .center-carousel-caption {
     width: 63%;
-    height: 80%;
+    height: 87%;
 }
 
 
@@ -124,7 +126,7 @@ h1,
 /*Size (diferents size, aplicate to parrallax effect)*/
 
 .superBig {
-    min-height: 859px;
+    min-height: 850px;
 }
 
 .big {
@@ -133,17 +135,15 @@ h1,
 }
 
 .medium {
-    min-height: 590px;
-    height: 100%;
+    min-height: 600px;
 }
 
 .small {
     min-height: 350px;
-    height: 90%;
 }
 
 .tiny {
-    min-height: 250px;
+    min-height: 170px;
 }
 
 
@@ -157,8 +157,8 @@ h1,
 }
 
 .logo img {
-    width: 400px;
-    height: 506px;
+    width: 350px;
+    height: 440px;
     -webkit-filter: drop-shadow(8px 8px 8px black);
     filter: drop-shadow(8px 8px 8px black);
 }
@@ -183,6 +183,10 @@ h1,
 
 .slider-img2 {
     background-image: url("../img/slider2.jpg");
+}
+
+.img2 {
+    background-image: url("../img/back.jpg");
 }
 
 
@@ -318,8 +322,16 @@ h1,
     text-transform: none;
 }
 
+.contact-input button {
+    margin: 0px 0px 40px;
+    background-color: rgba(255, 255, 255, 0.0);
+    color: #fff;
+    border-color: #fff;
+    margin: 12px 0px 9px 0px;
+}
+
 .contact-input input {
-    width: 350px;
+    width: 80%;
     height: 25px;
     margin: 0px 0px 40px;
     background-color: rgba(255, 255, 255, 0.0);
@@ -329,7 +341,7 @@ h1,
 }
 
 .contact-input textarea {
-    width: 350px;
+    width: 80%;
     height: 80px;
     margin: 0px 0px 40px;
     background-color: rgba(255, 255, 255, 0.0);
@@ -393,17 +405,6 @@ h1,
     padding: 10% 0 0 0;
 }
 
-#button-Reserv {
-    margin: 0% 0% 0% 42%;
-    background-color: #000;
-    border-bottom-color: #fff;
-    border-color: #fff;
-}
-
-.reserve-button {
-    padding-top: 20px;
-}
-
 .containerReserve p {
     font-family: 'Roboto', serif;
     font-size: 20px;
@@ -422,7 +423,7 @@ h1,
 }
 
 .reserve-right {
-    padding: 0 0 0 10%;
+    padding: 0 0 0 20%;
 }
 
 .input {
@@ -441,30 +442,18 @@ select {
     border-color: dimgrey;
 }
 
-#calendar {
-    border-radius: 3px;
-    height: 25px;
-    border: 1px solid;
-    width: 200px;
-    border-color: dimgrey;
-}
-
-#Reserve-button {
-    border-radius: 3px;
-    border: 1px solid;
-    border-color: dimgrey;
-    background-color: #2E2E2E;
-    color: white;
-    width: 110px;
-    height: 45px;
-    position: absolute;
+#button-Reserv {
+    margin: 0% 0% 0% 46%;
+    background-color: #000;
+    border-bottom-color: #fff;
+    border-color: #fff;
 }
 
 
 /* ---------------------------------------------------------end style de reservaciones --------------------------------------------- */
 
 .footer {
-    padding-top: 30px;
+    padding-top: 10px;
     text-align: center;
 }
 
@@ -476,10 +465,26 @@ select {
     margin: 10px 0px;
 }
 
+#pie p:hover {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #FF8728;
+    font-size: 13px;
+    margin: 10px 0px;
+}
+
 .icons {
     margin: 10px;
     -webkit-transition: all 2s ease;
     transition: all 2s ease;
+}
+
+#pie h6 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #FF8728;
+    font-size: 15px;
+    margin: 10px 0px;
 }
 
 
