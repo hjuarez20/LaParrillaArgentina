@@ -5,14 +5,15 @@
 
   if($_POST){
          /*--------------date format transform----------*/
+       $restCapacity=32;
+      
          $fecha=date("Y-m-d",strtotime($_POST["H"] ));
      
         $hour=$_POST["D"];
          
-        $dbTables= $database->query("select 2-count(peopleAmount) mesas from tbreservations
-                    where reservationHour='".$hour."' and
+        $dbTables= $database->query("select ".$restCapacity."-count(peopleAmount) mesas from tbreservations where reservationHour='".$hour."' and
                     tbreservations.date='".$fecha."';")->fetchAll(PDO::FETCH_ASSOC);
-      
+        
       $array=array();
       
       $size=count($dbTables);
