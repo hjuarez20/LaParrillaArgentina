@@ -3,12 +3,12 @@ require 'db/db.php';
 
      if($_POST){
          
+         $restCapacity=32;
+         
          $fecha=date("Y-m-d",strtotime($_POST["param"] ));
      
           $dbHours=$database->query("select time from tbtime where 
-         tbtime.time not in(select tbreservations.reservationHour from tbreservations where tbreservations.date='".$fecha."');")->fetchAll(PDO::FETCH_ASSOC);
-         
-        //$dbPeople= $database->query("")->fetchAll(PDO::FETCH_ASSOC);
+        time not in(select reservationHour from tbreservations where date='".$fecha."' and tbreservations.peopleAmount>=".$restCapacity.");")->fetchAll(PDO::FETCH_ASSOC);
          
             createJSON($dbHours);
       
