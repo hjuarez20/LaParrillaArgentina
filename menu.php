@@ -18,7 +18,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <h1 class="navbar-brand hidden show"><a class="page-scroll"href="#home">La Parrilla Argentina</a></h1>
+                    <h1 class="navbar-brand hidden show" style="padding: 0 0;"><a class="page-scroll"href="#home">La Parrilla Argentina</a></h1>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -35,57 +35,55 @@
             <!-- /.container-fluid -->
         </div>
     </nav>
-    <div class="slider-img">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner" role="listbox">
-                <div class="item active fill slider-img1">
-                    <div class="container">
-                        <div class="row">
-                            <div class="logo col-md-12 col-lg-12">
-                                <img class="img-responsive center-block" src="img/parrilla6.png" alt="">
-                            </div>
+    <div id="carousel-example-generic" class="carousel slide slider-img" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+            <div class="item active fill slider-img1">
+                <div class="container">
+                    <div class="row">
+                        <div class="logo col-md-12 col-lg-12">
+                            <img class="img-responsive center-block" src="img/parrilla6.png" alt="">
                         </div>
-                        <a href='#nosotros' class="page-scroll arrowCenter"><img class="arrow" src="http://www.tomnod.com/public/images/icon-chevron-big-down.png" title="Ir abajo" /></a>
                     </div>
-
+                    <a href='#nosotros' class="page-scroll arrowCenter"><img class="arrow" src="http://www.tomnod.com/public/images/icon-chevron-big-down.png" title="Ir abajo" /></a>
                 </div>
-                <div class="item fill slider-img4">
-                    <div class="container">
-                        <div class="carousel-caption center-carousel-caption">
-                            <h3 class="icon-container" data-animation="animated zoomInLeft">
-						<span class="glyphicon glyphicon-glass"></span>
+
+            </div>
+            <div class="item fill slider-img4">
+                <div class="container">
+                    <div class="carousel-caption center-carousel-caption ">
+                        <h3 class="icon-container" data-animation="animated zoomInLeft">
+						<span class=""></span>
 					</h3>
-                            <h3 data-animation="animated flipInX">
+                        <h3 data-animation="animated flipInX">
 						This is the caption for slide 3
 					</h3>
-                            <button class="btn btn-primary btn-lg" data-animation="animated lightSpeedIn">Button</button>
-                        </div>
+                        <button href="#nosotros" class="btn btn-primary btn-lg" data-animation="animated lightSpeedIn">Button</button>
                     </div>
                 </div>
-                <div class="item fill slider-img2">
-                    <div class="container">
-                        <div class="carousel-caption center-carousel-caption">
-                            <h3 data-animation="animated bounceInLeft">
+            </div>
+            <div class="item fill slider-img2">
+                <div class="container">
+                    <div class="carousel-caption center-carousel-caption">
+                        <h3 data-animation="animated bounceInLeft">
 						This is the caption for slide 1
 					</h3>
-                            <h3 data-animation="animated bounceInRight">
+                        <h3 data-animation="animated bounceInRight">
 						This is the caption for slide 1
 					</h3>
-                            <button class="btn btn-primary btn-lg" data-animation="animated zoomInUp">Button</button>
-                        </div>
+                        <button href="#nosotros" class="btn btn-primary btn-lg" data-animation="animated zoomInUp">Button</button>
                     </div>
                 </div>
-                <div class="item fill slider-img3">
-                    <div class="container">
-                        <div class="carousel-caption center-carousel-caption">
-                            <h3 class="icon-container" data-animation="animated bounceInDown">
-						<span class="glyphicon glyphicon-heart"></span>
+            </div>
+            <div class="item fill slider-img3">
+                <div class="container">
+                    <div class="carousel-caption center-carousel-caption ">
+                        <h3 class="icon-container" data-animation="animated bounceInDown">
+						<span class=""></span>
 					</h3>
-                            <h3 data-animation="animated bounceInUp">
+                        <h3 data-animation="animated bounceInUp">
 						This is the caption for slide 2
 					</h3>
-                            <button class="btn btn-primary btn-lg" data-animation="animated zoomInRight">Button</button>
-                        </div>
+                        <button href="#nosotros" class="btn btn-primary btn-lg" data-animation="animated zoomInRight">Button</button>
                     </div>
                 </div>
             </div>
