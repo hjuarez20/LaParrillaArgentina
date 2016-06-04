@@ -143,11 +143,7 @@ a,
 }
 
 .tiny {
-<<<<<<< HEAD
-    height: 170px;
-=======
     min-height: 170px;
->>>>>>> refs/remotes/harold20/master
 }
 
 
@@ -189,9 +185,10 @@ a,
     background-image: url("../img/slider2.jpg");
 }
 
-.img2{
+.img2 {
     background-image: url("../img/back.jpg");
 }
+
 
 /*Colors*/
 
@@ -476,22 +473,20 @@ select {
     margin: 10px 0px;
 }
 
-
-
 .icons {
     margin: 10px;
     -webkit-transition: all 2s ease;
     transition: all 2s ease;
 }
 
-
-#pie h6{
+#pie h6 {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     color: #FF8728;
     font-size: 15px;
     margin: 10px 0px;
 }
+
 
 /* ---- Icon scroll down animated --------------------- */
 
