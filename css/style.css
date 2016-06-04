@@ -5,6 +5,11 @@
     padding: 0;
 }
 
+body,
+html {
+    height: 100%;
+}
+
 h1 {
     padding-top: 8px;
     font-size: 20px;
@@ -15,6 +20,7 @@ h2 {
     text-align: center;
     padding: 59px 0px 0px 0;
     font-weight: 700px;
+    padding: 10% 0 0 0
 }
 
 h4,
@@ -26,46 +32,7 @@ h1,
     font-weight: 900;
     text-transform: uppercase;
     color: #000;
-}
-
-
-/*CAROUSEL SLIDER IMAGES*/
-
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-    width: 100%;
-    height: 750px;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-.fill img {
-    width: 100%;
-    height: 750px;
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-.slider-img {
-    position: fixed;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 750px;
-    z-index: -1;
-    padding-left: 0px;
-    padding-right: 0px;
-    -o-background-size: cover;
+    text-decoration: none;
 }
 
 
@@ -74,7 +41,6 @@ h1,
 .buttons {
     display: block;
     text-align: center;
-    text-decoration: none;
     border: 3px solid #000;
     width: 154px;
     padding: 8px;
@@ -92,20 +58,49 @@ h1,
     margin-left: 60px;
 }
 
-
-/*--------------*/
-
 .padding-columns {
     padding: 35px 0 0 0;
+}
+
+
+/*CAROUSEL SLIDER IMAGES*/
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 100%;
+    min-height: 850px;
+    height: 100%;
+}
+
+.fill img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.slider-img {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    padding-left: 0px;
+    padding-right: 0px;
+    -o-background-size: cover;
+}
+
+.time4 {
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
 }
 
 
 /*Parallax (effect that causes the background move)*/
 
 .parallax {
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -webkit-background-size: cover;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -123,15 +118,22 @@ h1,
 }
 
 .big {
-    height: 800px;
+    min-height: 800px;
+    height: 100%;
 }
 
 .medium {
     min-height: 590px;
+    height: 100%;
 }
 
 .small {
     min-height: 350px;
+    height: 90%;
+}
+
+.tiny {
+    min-height: 250px;
 }
 
 
@@ -139,6 +141,10 @@ h1,
 
 
 /*Logo*/
+
+.logo {
+    padding: 10% 0 0 0;
+}
 
 .logo img {
     width: 344px;
@@ -187,48 +193,28 @@ h1,
 
 /*Stiky Menu*/
 
-#home section nav {
-    height: 50px;
-    padding-top: 11px;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.0);
-    z-index: 1000;
-}
-
-#home nav ul {
-    list-style: none;
-    overflow: hidden;
-}
-
-#home nav ul li {
-    float: left;
-}
-
 #home nav ul li a {
     display: block;
     padding: 20px;
     color: #fff;
     text-decoration: none;
-    font-family: 'Old Standard TT', serif;
-    font-size: 23px;
+    font-family: 'Roboto', serif;
+    font-size: 17px;
     text-shadow: 4px 2px 9px rgba(0, 0, 0, 1);
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
-#home nav ul li:hover {
-    color: #fff;
-    background-color: #DF3030;
-    -webkit-animation-name: fadeInLeft;
-    animation-name: fadeInLeft;
-    animation-delay: 0.2s;
-    animation-duration: 0.6s;
-    z-index: 1000;
+#home nav ul li a:hover {
+    color: #ff4c2f;
+    -webkit-transition: color 500ms ease 0s;
+    transition: color 500ms ease 0s;
 }
 
 
 /* --- add class when the user scroll--- */
 
 .menu-fixed {
-    height: 70px;
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -236,7 +222,6 @@ h1,
     box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.5);
     background-color: rgb(23, 23, 23);
     display: block;
-    padding-top: 8px;
 }
 
 .menu-fixed h1 {
@@ -280,7 +265,8 @@ h1,
 #nosotros article div p {
     font-family: 'Old Standard TT', serif;
     font-weight: 400;
-    color: #0050 font-size: 16px;
+    color: #0050;
+    font-size: 16px;
     padding: 11px 0px 0px 20px;
     width: 74%;
     text-align: justify;
@@ -291,7 +277,6 @@ h1,
 
 .contact {
     color: #fff;
-    height: 500px;
 }
 
 .contact h2 {
@@ -387,7 +372,7 @@ h1,
 /* ----------------------------------------------RESERVATION----------------------------------------------------- */
 
 .containerReserve {
-    padding: 50px;
+    padding: 10% 0 0 0;
 }
 
 #button-Reserv {
@@ -461,7 +446,6 @@ select {
 /* ---------------------------------------------------------end style de reservaciones --------------------------------------------- */
 
 .footer {
-    height: 100px;
     padding-top: 30px;
     text-align: center;
 }
@@ -476,6 +460,7 @@ select {
 
 .icons {
     margin: 10px;
+    -webkit-transition: all 2s ease;
     transition: all 2s ease;
 }
 
