@@ -243,9 +243,9 @@ width: 22%;
 .modal-body input{
     border-style: ridge;
     border-color: silver;
- background-color: gray;
+    background-color: gray;
     color: white;
-    
+    margin: 0% 0% 0% -20%;
 }
 
 .modal-body textarea{

@@ -3,6 +3,9 @@
     $dataFood = $database->select("tbmenu", "*",[
                                             "ORDER" => "category"
                                             ]);
+    
+    
+
     ?>
     
     <html>
@@ -129,7 +132,7 @@
                 </tr>
                 <tr>
                     <td><label>Imagen</label></td>
-                    <td><input type="text" name="image" placeholder="img/food/example.jpg"></td>
+                    <td><input type="file" name="image" placeholder="img/food/example.jpg"></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -142,14 +145,14 @@
         </form>
       </div>
       <div class="modal-footer">
-            
-     
+
       </div>
     </div>
 
   </div>
 </div> <!--FIN DEL POPUP DE INSERTAR-->
 
+                
                  
     <!--MODAL DE EDITAR-->              
              <div id="modalEdit" class="modal fade" role="dialog">
