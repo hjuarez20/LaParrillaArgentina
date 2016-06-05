@@ -90,6 +90,7 @@ a,
     height: 100%;
     z-index: -1;
     position: fixed;
+    max-height: 1024px;
 }
 
 .time4 {
@@ -115,23 +116,28 @@ a,
 
 .superBig {
     min-height: 850px;
+    max-width: 1920px;
 }
 
 .big {
     min-height: 800px;
+    max-width: 1920px;
     height: 100%;
 }
 
 .medium {
     min-height: 600px;
+    max-width: 1920px;
 }
 
 .small {
     min-height: 350px;
+    max-width: 1920px;
 }
 
 .tiny {
     min-height: 170px;
+    max-width: 1920px;
 }
 
 
@@ -528,9 +534,12 @@ select {
     }
 }
 
-@media screen and (max-height: 480px) {
-    .big {
+@media screen and (max-height: 530px) {
+    .big,
+    .superBig,
+    .medium {
         min-height: 400px;
+        max-width: 600px;
         height: 70%;
     }
 }
