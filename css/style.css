@@ -116,7 +116,6 @@ a,
 
 .superBig {
     min-height: 850px;
-    max-height: 1920px;
 }
 
 .big {
@@ -532,9 +531,7 @@ select {
         -webkit-filter: drop-shadow(8px 8px 8px black);
         filter: drop-shadow(8px 8px 8px black);
     }
-    .big,
-    .superBig,
-    .medium {
+    .big {
         min-height: 200px;
         max-height: 400px;
         height: 100%;
