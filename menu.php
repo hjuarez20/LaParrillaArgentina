@@ -56,7 +56,7 @@
                         <h3 data-animation="animated flipInX">
 						This is the caption for slide 3
 					</h3>
-                        <button href="#nosotros red" class="btn btn-primary btn-lg" data-animation="animated lightSpeedIn">Button</button>
+                        <button class="red btn btn-primary btn-lg" data-animation="animated lightSpeedIn">Button</button>
                     </div>
                 </div>
             </div>
