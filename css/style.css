@@ -116,28 +116,28 @@ a,
 
 .superBig {
     min-height: 850px;
-    max-width: 1920px;
+    max-height: 1920px;
 }
 
 .big {
     min-height: 800px;
-    max-width: 1920px;
+    max-height: 1920px;
     height: 100%;
 }
 
 .medium {
     min-height: 600px;
-    max-width: 1920px;
+    max-height: 1920px;
 }
 
 .small {
     min-height: 350px;
-    max-width: 1920px;
+    max-height: 1920px;
 }
 
 .tiny {
     min-height: 170px;
-    max-width: 1920px;
+    max-height: 1920px;
 }
 
 
@@ -518,7 +518,7 @@ select {
 
 /*------Media queries--------*/
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 820px) {
     .slider-img1 {
         background-image: url("../img/sliderResponsive.jpg");
     }
@@ -532,14 +532,11 @@ select {
         -webkit-filter: drop-shadow(8px 8px 8px black);
         filter: drop-shadow(8px 8px 8px black);
     }
-}
-
-@media screen and (max-height: 530px) {
     .big,
     .superBig,
     .medium {
-        min-height: 400px;
-        max-width: 600px;
-        height: 70%;
+        min-height: 200px;
+        max-height: 400px;
+        height: 100%;
     }
 }
