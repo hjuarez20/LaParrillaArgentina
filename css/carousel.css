@@ -3,18 +3,6 @@
     width: 100%;
 }
 
-.skyblue {
-    background-color: #22c8ff;
-}
-
-.deepskyblue {
-    background-color: #00bfff;
-}
-
-.darkerskyblue {
-    background-color: #00a6dd;
-}
-
 .carousel-indicators {
     bottom: 0;
 }
@@ -34,6 +22,21 @@
 .carousel .icon-container,
 .carousel-caption button {
     background-color: #09c;
+}
+
+.red h3 {
+    background-color: rgb(191, 43, 43);
+    color: #fff;
+}
+
+.black h3 {
+    background-color: rgb(22, 22, 22);
+    color: #fff;
+}
+
+.orange h3 {
+    background-color: rgb(255, 135, 40);
+    color: #000;
 }
 
 .carousel-caption h3 {
