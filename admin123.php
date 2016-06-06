@@ -28,49 +28,56 @@ if($_POST){
         <meta charset="UTF-8">
         <title>La Parrilla Argentina</title>
         <link rel="stylesheet" href="css/login.css">
-        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
 
     </head>
 
     <body class="background-login">
+     
+        <div class="row">   
+        <section class="col-xs-12 col-md-4"></section>
 
-    <div class="header animated fadeInDown">
-        <h2>La Parrilla Argentina</h1>
-        <h4>Administración de la página</h2>
-    </div>
-       
+        <section class="col-xs-12 col-md-4"></section>
 
-                <div class="animated fadeInUp" >
+        <section class="col-xs-12 col-md-4 col-lg-4">
+        <div class="login animated fadeInLeft">
+            <div class="login__check animated zoomIn"></div>
+                <div class="login__form">
                     <form  name="useLogin" action="" method="post">
-                        
-                        <div class="group">
-                        <input type="name" name="user"  required></input>
-                        <span class="bar"></span>
-                        <label>Usuario</label>
-                        </div>
-                       
-                        <div class="group">
-                        <input type="password" name="password"  required> </input>
-                        <span class="bar"></span>
-                        <label>Contraseña</label>
-                        </div>
-                        
-                        <button type="input" class="button buttonBlue" value="Ingresar">Ingresar<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div></button>
-                    </form>
-                    
-               
-                      
-                </div>
-                <div class="otherButton" >
-                 <input class="home" type="button" value="Regresar home" onClick=" window.location.href='index.php' ">
 
-                <input class="user" type="button" value="Nuevo usuario" onClick=" window.location.href='admin456.php' ">    
-                   
-               </div>
-                 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+                        <div class="login__row group">
+                            <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
+                            <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+                            </svg>
+                            <input type="name" class="login__input name animated fadeInRight" name="user"  required/>
+                            <label>Usuario</label>
+                        </div>
+
+                        <div class="login__row group">
+                            <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
+                            <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
+                            </svg>
+                            <input type="password" class="login__input pass animated fadeInRight" name="password"  required/>
+                            <label>Contraseña</label>
+                        </div>
+                        <div>
+                            <button type="input" class="login__submit animated shake" value="Ingresar">Ingresar</button>
+
+                            <p class="login__signup">Volver al &nbsp;<a href="index.php" class="signup">Inicio</a> 
+                            <p class="login__signup">Crear  &nbsp;<a href="admin456.php" class="signup">Nuevo Usuario</a> 
+                        </div>
+                    </form>
+                </div>
+        
+        </div>
+        </section>
+        </div>
+               
+        
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
         <script src="js/login.js"></script>
-
     </body>
 
     <script>
@@ -89,4 +96,4 @@ if($_POST){
         ga('send', 'pageview');
     </script>
 
-    </html
+</html>

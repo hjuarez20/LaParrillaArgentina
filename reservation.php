@@ -1,11 +1,11 @@
 <?php
-if($database == null){ 
-  require 'db/db.php';  
+
+if($database==null){
+    require 'db/db.php';
 }
-   
+
 /*---------------------------------------time for reservation from database--------------------------*/
-    
-    $time = $database->select("tbtime",[
+$time = $database->select("tbtime",[
                         "nameTime",
                         "time",
                         "state"
@@ -13,9 +13,9 @@ if($database == null){
                         "state" => "int"
                         ]);
 
-
+if($_POST){ 
+    
     /*--------------------------------date format change for mysql date format----------------------*/
-if($_POST){
     $fecha=date("Y-m-d",strtotime($_POST["date"] ));
     
     
@@ -27,12 +27,12 @@ if($_POST){
             "clientEmail" => $_POST["email"],
             "state" => 1,
             "date" => $fecha
-        ]);  
- header ("Location: index.php#reservaciones");       
- }
-   
+        ]); 
+    header("Location: index.php#reservaciones");
+}
+
 ?>
-   
+
     <!DOCTYPE html>
     <html lang="en">
 
@@ -64,44 +64,42 @@ if($_POST){
                         <p class="labels">Nombre</p>
                         <input class="input" type="text" size="15" maxlength="30" placeholder="nombre" name="name">
                         <br></br>
-                        
-                         <!-- *************************************position for the DATE************************ -->
-                         
-                       <!--  <p class="labels">Fecha de Reservacion</p>
-                        <input onchange="serch()" id="calendar" type="text" placeholder="fecha de reservacion" name="dateReservation" class="campofecha" size="12">
-                        <!-- <br></br>  -->  
-                        
-                        <label class="labels"> Ingresar Fecha</label><br/>
-                        <input id="datePicker" name="date" onchange="mDate(date.value);" class="input"  type="date"/>          
-                        
-                         <!-- *************************************END position for the DATE************************ -->
-                        
+
+                        <!-- *************************************position for the DATE************************ -->
+
+
+                        <label class="labels"> Ingresar Fecha</label>
+                        <br/>
+                        <input id="datePicker" name="date" onchange="mDate(date.value);" class="input" type="date" />
+
+                        <!-- *************************************END position for the DATE************************ -->
+
                         <br></br>
                         <p class="labels">Correo</p>
                         <input class="input" type="text" size="15" maxlength="30" placeholder="ejemplo@gmail.com" name="email">
                     </article>
                     <article class="reserve-right col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <!-- FORM for calendar  -->
-                        
-                         <!-- *************************************position for the HOUR************************ -->
-                        
-                         <p class="labels">Hora</p>
+
+                        <!-- *************************************position for the HOUR************************ -->
+
+                        <p class="labels">Hora</p>
                         <!-- <form  name=myform> -->
-                         <select name=time id="hour-list">
+                        <select name=time id="hour-list" onchange="mTables();">
                             <option name=default value='default'> Seleccione la hora </option>
-                        <?php
+                            <?php
                             for($i=0; $i<count($time); $i++){
                              echo   "<option name=".$time[$i]["nameTime"].">".$time[$i]["time"]."</option>";
                             }    
-                        ?>   
-                        </select> 
+                        ?>
+                        </select>
                         <br></br>
                         <!--</form>-->
-                       
-                         <!-- *************************************END position for the HOUR************************ -->
+
+                        <!-- *************************************END position for the HOUR************************ -->
 
                         <!-- FORM for calendar -->
-                        <p class="labels">Mesas (max. personas 4)</p>
+                        <p class="labels">Mesa (4 personas c/u)</p>
                         <!-- <form method="post" name=myform>  -->
                         <select id="tables" name=tableAmount>
                             <option name=cero value=0 disabled>Cantidad de Mesas</option>
@@ -119,7 +117,7 @@ if($_POST){
             </div>
             <div class="container">
                 <article class="row">
-                    <article class="reserve-button col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block">
+                    <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block">
                         <button id="button-Reserv" type="submit" name="reserv" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Reservar</button>
                     </article>
                 </article>
@@ -127,7 +125,7 @@ if($_POST){
 
         </form>
         <!-- *************************************end form reservation  ************************************************************* -->
-         
+
         <!-- *************************************show the dialog after making the reservation **********************************-->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
@@ -148,67 +146,65 @@ if($_POST){
 
             </div>
         </div>
-<script src="js/jquery-2.2.4.min.js"></script>
 
+
+        <script>
+            function clearItems() {
+                $("#hour-list").find('option').remove();
+                $("#tables").find('option').remove(); //selimpia la lista
+            }
+
+            function mDate(selectedDate) {
+                clearItems();
+
+                $.ajax({
+                        method: "POST",
+                        url: "hourReserv.php",
+                        data: {
+                            param: selectedDate
+                        },
+                        dataType: "text"
+                    })
+                    .done(function (items) {
+                        items = JSON.parse(items);
+                        $("#hour-list").show();
+                        var len = items.length;
+
+                        for (var i = 0; i < len; i++) {
+                            $("#hour-list").append("<option value='" + items[i].name + "'>" + items[i].name + "</option>");
+                        }
+                    });
+            }
+
+            function mTables() {
+                var selectedHour = $('#hour-list').val();
+                var selectedDate = $('#datePicker').val();
+
+                console.log(selectedHour, selectedDate);
+
+                $.ajax({
+                        method: "POST",
+                        url: "tableReserv.php",
+                        data: {
+                            H: selectedHour,
+                            D: selectedDate
+                        },
+                        dataType: "text"
+                    })
+                    .done(function (items) {
+                        items = JSON.parse(items);
+                        $("#tables").show();
+                        var len = items.length;
+                        console.log(len); // alert(len);
+                        for (var i = 0; i < len; i++) {
+                            $("#tables").append("<option value='" + items[i].name + "'>" + items[i].name + "</option>");
+                        }
+                    });
+            }
+        </script>
+
+    </body>
     <script>
-
-        function clearItems(){
-            $("#hour-list").find('option').remove();
-            
-        }
-
-        function mDate(selectedDate){ 
-            clearItems();
-            
-            var selectedHour= $('#hour-list').val();
-            var selectedDate= $('#datePicker').val();
-            
-            console.log(selectedHour,selectedDate);
-            
-            $.ajax({
-                method: "POST",
-                url: "hourReserv.php",
-                data: { param: selectedDate },
-                dataType: "text"
-            })
-                .done(function( items ) {
-                    items= JSON.parse(items);
-                    $("#hour-list").show();
-                    var len = items.length;
-                    
-                    for(var i=0; i<len; i++){
-                         $("#hour-list").append("<option value='"+items[i].name+"'>"+items[i].name+"</option>");
-                    }
-            });
-        }
-        
-        function mTables(){
-            var selectedHour= $('#hour-list').val();
-            var selectedDate= $('#datePicker').val();
-            
-            console.log(selectedHour,selectedDate);
-            
-           $.ajax({
-                method: "POST",
-                url: "tableReserv.php",
-                data: { param: selectedHour,selectedDate },
-                dataType: "text"
-            })
-                .done(function( items ) {
-                    items= JSON.parse(items);
-                    $("#hour-list").show();
-                    var len = items.length;
-                    
-                    for(var i=0; i<len; i++){
-                         $("#hour-list").append("<option value='"+items[i].name+"'>"+items[i].name+"</option>");
-                    }
-            });
-        }
-
-</script>
-        
-</body>
-    <script>   
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function () {
