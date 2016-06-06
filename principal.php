@@ -11,6 +11,9 @@ session_start();
 /*  Administracion de Platillos */
 /*METODO PARA INGRESAR PLATILLOS*/
 if($_POST){
+    
+    echo($_POST['image']); 
+    
     if($_POST['insert']=="agregar"){ /*BOTON AGREGAR PRESIONADO*/
       if(isset($_POST['nameDish']) && ($_POST['nameDish'])!=null && 
          isset($_POST['category']) && ($_POST['category'])!=null && 
@@ -20,7 +23,6 @@ if($_POST){
          isset($_POST['image']) && ($_POST['image'])!=null
         ){/*TODO ESTE IF ANTERIOR ES POR SEGURIDAD*/
      
-    
     $database->insert("tbmenu", [
         "idUserMod" => $_SESSION['idUser'],
         "nameDish" => $_POST["nameDish"],
@@ -57,22 +59,19 @@ if($_POST){
            <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <!--Importar hojas de estilo -->
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link href="css/principal.css" rel="stylesheet" type="text/css">
-        <script src="js/backend.js"></script>
-        <script src="js/jquery.min.js"></script>
+        
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500' rel='stylesheet' type='text/css'>
         
     </head>
 
     <body>
 
-        <div class="container menuSize">
+        <div class=" StickyMenu container menuSize">
             <section class="rigth">
                 <p class="font-style_1 welcome">Bienvenido,
                   <?php echo $_SESSION['user'] ?>, <a href="admin123.php">Cerrar sesión</a></p>
@@ -81,11 +80,11 @@ if($_POST){
             <section class="left ">
                 <nav>
                     <ul class="font-style_1">
-                        <li><a href="index.php">Inicio</a></li>
-                        <li><a href="#contReservation">Reservación</a></li>
-                        <li><a href="#contClient">Clientes</a></li>
-                        <li><a href="#contMenu">Menu</a></li>
-                        <li><a href="#contContact">Contactenos</a></li>
+                        <li><a class="page-scroll" href="index.php">Inicio</a></li>
+                        <li><a class="page-scroll" href="#contReservation">Reservación</a></li>
+                        <li><a class="page-scroll" href="#contClient">Clientes</a></li>
+                        <li><a class="page-scroll" href="#contMenu">Platillos</a></li>
+                        <li><a class="page-scroll"href="#contContact">Contactenos</a></li>
                     </ul>
                 </nav>
             </section>
@@ -138,6 +137,12 @@ if($_POST){
                 ga('create', 'UA-77610408-2', 'auto');
                 ga('send', 'pageview');
             </script>
+             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+              <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+              <script src="js/backend.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/main.js" ></script>
+        <script src="js/jquery.easing.min.js"></script>
         </body>
 
     </html>
