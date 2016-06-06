@@ -23,17 +23,6 @@ if($_POST){
          isset($_POST['image']) && ($_POST['image'])!=null
         ){/*TODO ESTE IF ANTERIOR ES POR SEGURIDAD*/
      
-          /*--------------------section just for saving the image in the system----------
-        $name= $_FILES['image']['name'];
-          echo($name);
-        $tmp= $_FILES['image']['tmp_name'];
-        $folder='dbImgs';
-        //the files are saved in a temp folder
-        move_uploaded_file($tmp,$folder.'/'.$name);
-        $imagePath=($folder.'/'.$name);
-       // echo $imagePath;
-        /*******************************************************************************/
-    
     $database->insert("tbmenu", [
         "idUserMod" => $_SESSION['idUser'],
         "nameDish" => $_POST["nameDish"],
