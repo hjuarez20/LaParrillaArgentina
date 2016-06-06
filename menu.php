@@ -49,40 +49,40 @@
             </div>
             <div class="item fill slider-img4">
                 <div class="container">
-                    <div class="carousel-caption center-carousel-caption ">
-                        <h3 class="icon-container" data-animation="animated zoomInLeft">
+                    <div class="carousel-caption red center-carousel-caption ">
+                        <h3 class="red" data-animation="animated zoomInLeft">
 						<span class=""></span>
-					</h3>
+					    </h3>
                         <h3 data-animation="animated flipInX">
 						This is the caption for slide 3
 					</h3>
-                        <button href="#nosotros" class="btn btn-primary btn-lg" data-animation="animated lightSpeedIn">Button</button>
+                        <button class="red btn btn-primary btn-lg" data-animation="animated lightSpeedIn">Button</button>
                     </div>
                 </div>
             </div>
             <div class="item fill slider-img2">
                 <div class="container">
-                    <div class="carousel-caption center-carousel-caption">
+                    <div class="carousel-caption black center-carousel-caption">
                         <h3 data-animation="animated bounceInLeft">
-						This is the caption for slide 1
-					</h3>
+						Con el mejor estilo Argentino
+					    </h3>
+                        <br>
                         <h3 data-animation="animated bounceInRight">
-						This is the caption for slide 1
+						Date un verdadero gustazo
 					</h3>
-                        <button href="#nosotros" class="btn btn-primary btn-lg" data-animation="animated zoomInUp">Button</button>
+                        <button href="#nosotros" class="btn btn-primary black btn-lg" data-animation="animated zoomInUp">Button</button>
                     </div>
                 </div>
             </div>
             <div class="item fill slider-img3">
                 <div class="container">
-                    <div class="carousel-caption center-carousel-caption ">
-                        <h3 class="icon-container" data-animation="animated bounceInDown">
-						<span class=""></span>
-					</h3>
-                        <h3 data-animation="animated bounceInUp">
-						This is the caption for slide 2
-					</h3>
-                        <button href="#nosotros" class="btn btn-primary btn-lg" data-animation="animated zoomInRight">Button</button>
+                    <div class="carousel-caption orange center-carousel-caption ">
+                        <h3 data-animation="animated fadeIn">
+						 Especialidad en Cortes
+					    </h3>
+                        <h3 data-animation="animated fadeInUp">
+						Contamos con la mejor carne del pais
+					    </h3>
                     </div>
                 </div>
             </div>
