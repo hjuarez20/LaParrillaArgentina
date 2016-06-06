@@ -11,6 +11,9 @@ session_start();
 /*  Administracion de Platillos */
 /*METODO PARA INGRESAR PLATILLOS*/
 if($_POST){
+    
+    echo($_POST['image']); 
+    
     if($_POST['insert']=="agregar"){ /*BOTON AGREGAR PRESIONADO*/
       if(isset($_POST['nameDish']) && ($_POST['nameDish'])!=null && 
          isset($_POST['category']) && ($_POST['category'])!=null && 
@@ -20,7 +23,6 @@ if($_POST){
          isset($_POST['image']) && ($_POST['image'])!=null
         ){/*TODO ESTE IF ANTERIOR ES POR SEGURIDAD*/
      
-    
     $database->insert("tbmenu", [
         "idUserMod" => $_SESSION['idUser'],
         "nameDish" => $_POST["nameDish"],

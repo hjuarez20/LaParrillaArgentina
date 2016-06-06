@@ -35,7 +35,7 @@
             <!-- /.container-fluid -->
         </div>
     </nav>
-    <div id="carousel-example-generic" class="carousel slide slider-img" data-ride="carousel">
+    <div id="carousel-example-generic" class="col-sm-12 col-md-12 col-xs-12 padding-remove carousel slide slider-img" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
             <div class="item active fill slider-img1">
                 <div class="container">
