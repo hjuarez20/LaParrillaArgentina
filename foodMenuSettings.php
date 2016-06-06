@@ -1,9 +1,12 @@
 <?php 
 require 'db/db.php';
 
+$imagePath="";
+
 if($_GET){
     $id=$_GET["id"];
     
+    $imagePath="";
 }
 
 if(isset($_POST['saveChanges'])){
