@@ -11,6 +11,9 @@ session_start();
 /*  Administracion de Platillos */
 /*METODO PARA INGRESAR PLATILLOS*/
 if($_POST){
+    
+    echo($_POST['image']); 
+    
     if($_POST['insert']=="agregar"){ /*BOTON AGREGAR PRESIONADO*/
       if(isset($_POST['nameDish']) && ($_POST['nameDish'])!=null && 
          isset($_POST['category']) && ($_POST['category'])!=null && 
@@ -21,13 +24,14 @@ if($_POST){
         ){/*TODO ESTE IF ANTERIOR ES POR SEGURIDAD*/
      
           /*--------------------section just for saving the image in the system----------
-        $name= $_FILES['txtImage']['name'];
-        $tmp= $_FILES['txtImage']['tmp_name'];
+        $name= $_FILES['image']['name'];
+          echo($name);
+        $tmp= $_FILES['image']['tmp_name'];
         $folder='dbImgs';
         //the files are saved in a temp folder
         move_uploaded_file($tmp,$folder.'/'.$name);
         $imagePath=($folder.'/'.$name);
-        echo $imagePath;
+       // echo $imagePath;
         /*******************************************************************************/
     
     $database->insert("tbmenu", [

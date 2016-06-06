@@ -152,7 +152,9 @@
   </div>
 </div> <!--FIN DEL POPUP DE INSERTAR-->
 
-                
+           <script>
+               
+        </script>     
                  
     <!--MODAL DE EDITAR-->              
              <div id="modalEdit" class="modal fade" role="dialog">
