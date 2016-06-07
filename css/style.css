@@ -401,12 +401,14 @@ a,
 
 .containerReserve {
     padding: 10% 0 0 0;
+    
 }
 
 .containerReserve p {
     font-family: 'Roboto', serif;
     font-size: 20px;
     text-align: center;
+
 }
 
 .labels {
@@ -448,7 +450,7 @@ select {
 }
 
 
-/* ---------------------------------------------------------end style de reservaciones --------------------------------------------- */
+/* ---------------------------------------------------------end style reservation --------------------------------------------- */
 
 .footer {
     padding-top: 10px;

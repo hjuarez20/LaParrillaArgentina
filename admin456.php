@@ -33,82 +33,74 @@ if($_POST){
     <head>
         <meta charset="UTF-8">
         <title>La Parrilla Argentina</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" href="css/login.css">
         <link rel="stylesheet" href="css/animate.min.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
     </head>>
 
     <body class="background-newUser">
-        <div class="row">
-            <section class="col-xs-12 col-md-4"></section>
+        <div class="container">
+            <div class="row">    
+                <div class="newUser animated fadeInLeft col-xs-12 col-sm-12 col-md-4 col-md-offset-8" style=" max-height: 1024px; min-height: 800px;">
+                    <div class="newUser__form">
+                        <form name="userlogin" action="admin456.php" method="post">
+                            <div class="login__row group">
+                                <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
+                                <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+                                </svg>
+                                <input type="text" name="name" class="login__input name animated fadeInRight" name="user"  required/>
+                                <label for="nom_Usuario">Nombre</label>
+                            </div>
 
-           
+                            <div class="login__row group">
+                                <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
+                                <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+                                </svg>
+                                <input type="text" name="identification" class="login__input name animated fadeInRight" name="user"  required/>
+                                <label for="correo_usu">Cédula</label>
+                            </div>
 
-            <section class="col-xs-12 col-md-4">
-                <div class="newUser animated fadeInLeft">
-                <div class="newUser__form">
-                    <form name="userlogin" action="admin456.php" method="post">
-                        <div class="login__row group">
-                            <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
-                            <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
-                            </svg>
-                            <input type="text" name="name" class="login__input name animated fadeInRight" name="user"  required/>
-                            <label for="nom_Usuario">Nombre</label>
-                        </div>
+                             <div class="login__row group">
+                                <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
+                                <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+                                </svg>
+                                <input type="text" name="username" class="login__input name animated fadeInRight" name="user"  required/>
+                                <label for="clave_usu">Nombre de Usuario</label>
+                            </div>
 
-                        <div class="login__row group">
-                            <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
-                            <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
-                            </svg>
-                            <input type="text" name="identification" class="login__input name animated fadeInRight" name="user"  required/>
-                            <label for="correo_usu">Cédula</label>
-                        </div>
+                            <div class="login__row group">
+                                <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
+                                <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
+                                </svg>
+                                <input type="password" name="password" class="login__input name animated fadeInRight" name="user"  required/>
+                                <label for="clave_usu">Contraseña</label>
+                            </div>
 
-                         <div class="login__row group">
-                            <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
-                            <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
-                            </svg>
-                            <input type="text" name="username" class="login__input name animated fadeInRight" name="user"  required/>
-                            <label for="clave_usu">Nombre de Usuario</label>
-                        </div>
+                            <div class="login__row group">
+                               <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
+                                <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
+                                </svg>
+                                <input type="password" name="conpassword" class="login__input name animated fadeInRight" name="user"  required/>
+                                <label for="clave_usu">Confirmar Contraseña</label>
+                            </div>
 
-                        <div class="login__row group">
-                            <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
-                            <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
-                            </svg>
-                            <input type="password" name="password" class="login__input name animated fadeInRight" name="user"  required/>
-                            <label for="clave_usu">Contraseña</label>
-                        </div>
+                            <div>
+                                <button type="submit" class="login__submit animated shake" value="Agregar Usuario">Agregar Usuario</button>
 
-                        <div class="login__row group">
-                           <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
-                            <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
-                            </svg>
-                            <input type="password" name="conpassword" class="login__input name animated fadeInRight" name="user"  required/>
-                            <label for="clave_usu">Confirmar Contraseña</label>
-                        </div>
+                                <p class="login__signup">Volver al &nbsp;<a href="admin123.php" class="signup">Login</a> 
 
-                        <div>
-                            <button type="submit" class="login__submit animated shake" value="Agregar Usuario">Agregar Usuario</button>
-
-                             <p class="login__signup">Volver al &nbsp;<a href="admin123.php" class="signup">Login</a> 
-
-                              <p class="login__signup">Volver al &nbsp;<a href="index.php" class="signup">Inicio</a> 
-
-
-                        </div>
-
-                    </form>
+                                <p class="login__signup">Volver al &nbsp;<a href="index.php" class="signup">Inicio</a> 
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            </section>
-
-             <section class="col-xs-12 col-md-4"></section>
+            </div>    
         </div>
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
+        
         <script src="js/login.js"></script>
-    </body>
+</body>
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
