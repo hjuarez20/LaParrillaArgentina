@@ -94,8 +94,9 @@ a,
     left: 0%;
     height: 100%;
     z-index: -1;
-    position: fixed;
+    position: absolute;
     max-height: 1024px;
+    display: block;
 }
 
 .time4 {
@@ -114,6 +115,7 @@ a,
     position: relative;
     width: 100%;
     background-color: rgb(23, 23, 23);
+    display: block;
 }
 
 
@@ -401,14 +403,12 @@ a,
 
 .containerReserve {
     padding: 10% 0 0 0;
-    
 }
 
 .containerReserve p {
     font-family: 'Roboto', serif;
     font-size: 20px;
     text-align: center;
-
 }
 
 .labels {
