@@ -18,7 +18,7 @@
 
                 <div id="AdministrationDishes" class="containerCenter tableSize ">
     <!--ESTE ES EL BOTON PARA ABRIR EL POPUP DE AGREGAR-->
-           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalInsertDish">Insertar</button>
+   <!--        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalInsertDish">Insertar</button>
     <!---->
             <section>
                 <div class="row">
@@ -50,32 +50,19 @@
                                     <td>".$dataFood[$e]["category"]."</td>
                                     <td>".$dataFood[$e]["description"]."</td><td>".$dataFood[$e]["price"]."</td>
                                     <td>".$dataFood[$e]["state"]."</td>
-                                    <td>".$dataFood[$e]["image"]."</td>
+                        
+                                    <td> <img src= ".$dataFood[$e]["image"]." width='100' height='100'  style='-webkit-border-radius: 100%;-moz-border-radius: 100%;border-radius: 100%;padding:0px;' > </td>
+                                    
                                     <td>
           
-                                    <a data-toggle='modal' data-target='#modalEdit' href='principal.php?id=".$dataFood[$e]["idDish"]."'>Editar</a> 
+                                    <a href='foodMenuSettings.php?id=".$dataFood[$e]["idDish"]."'>Editar</a> 
                                     
-                                    <a data-toggle='modal' data-target='#modalDelete'
-                                    id=".$dataFood[$e]["idDish"]."'>Eliminar</a>
+                                    <a href='foodMenuSettings.php?id=".$dataFood[$e]["idDish"]."'>Eliminar</a>
                                     
                                     </td></tr>";
                 }
-                    /*EN LOS DOS BOTONES ANTERIORES ES DONDE RESIDE EL PRINCIPAL PROBLEMA
-                        QUE DEBEN CUMPLIR ELLOS?
-                            -REFRESCAR LA PAGINA
-                            -ENVIAR EL ID DEL PLATILLO
-                            -Y ABRIR EL POPUP DE EDITAR,(ABRIR ES MUY DIFERENTE DE IR A UNA SECCION).
-                            
-                    NOTA> SE PUEDE INTENTAR 
-                        data-target='#popupID'
-                        target='#popupID'
-                        href='ejemplo.php#seccion'
-                        
-                        
-                    CON LO LOGRADO EL <a> DE editar SE PASA EL ID, SE ABRE EL POPUP PERO LA PAGINA ES CARGADA DENTRO DEL MISMO, LO QUE NO ESTA CORRECTO.
-                    */
+                 
             ?>
-
 
                                 </table>
                             </div>
