@@ -31,12 +31,39 @@ if(isset($_POST['saveChanges'])){
     <title>Calendario</title>
 </head>
 <body>
-     
-       
         <form method="post" action="foodMenuSettings.php" enctype="multipart/form-data">
-           </br>
+           </br><br/>
+           <label>Nombre Platillo</label>
+           <input type="text" name="nameDish" placeholder="Ingresa un nombre"><br/><br/>
+           
+           <label>Categoria</label>
+           <select name="category" id="" >
+                <option value="drinks">Bebidas</option>
+                <option value="wines">Vinos</option>
+                <option value="mains">Plato fuerte</option>
+                <option value="salads">Ensalada</option>
+                <option value="desserts">Postre</option>
+           </select><br/><br/>
+           
+           <label>Descripcion</label>
+           <textarea name="description" id="" cols="30" rows="5" placeholder="Coloca una descripcion"></textarea><br/><br/>
+           
+           <label>Precio ($ USDolar)</label>
+           <input type="text" name="price" placeholder="0"><br/><br/>
+           
+           <label>Estado</label>
+           <select name="state" id="">
+                <option value="active">Activo</option>
+                <option value="inactive">Inactivo</option>
+           </select><br/><br/>
+           
+           
            <label>Seleccione una imagen</label>
     <input type="file" name="txtImage"/><br/><br/>
+           
+           
             <button type="submit" name="saveChanges">Guardar Cambios</button>
+            
+            
         </form>
 </body>
