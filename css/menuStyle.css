@@ -67,7 +67,7 @@
     height: 100%;
     position: absolute;
     padding: 30px;
-    box-shadow: inset 0 0 0 16px #5F5959, inset 0 0 0 17px #FF8728, inset 0 0 0 18px #5F5959, inset 0 0 0 19px #FF8728, inset 0 0 0 20px #5F5959, inset 0 0 0 21px #FF8728;
+    box-shadow: inset 0 0 0 16px #000, inset 0 0 0 17px #FF8728, inset 0 0 0 18px #5F5959, inset 0 0 0 19px #FF8728, inset 0 0 0 20px #5F5959, inset 0 0 0 21px #FF8728;
 }
 
 .rm-container .rm-front,
@@ -224,7 +224,7 @@ a.rm-viewdetails:before {
     top: 50%;
     padding: 40px;
     background: #fff url(../img/gray_paperboard.jpg);
-    box-shadow: inset 0 0 0 16px #5F5959, inset 0 0 0 17px #FF8728, inset 0 0 0 18px #5F5959, inset 0 0 0 19px #FF8728, inset 0 0 0 20px #5F5959, inset 0 0 0 21px #FF8728, 0 4px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 0 0 16px #000, inset 0 0 0 17px #FF8728, inset 0 0 0 18px #5F5959, inset 0 0 0 19px #FF8728, inset 0 0 0 20px #5F5959, inset 0 0 0 21px #FF8728, 0 4px 20px rgba(0, 0, 0, 0.4);
     opacity: 0;
     pointer-events: none;
     -webkit-transform: translateZ(1000px);
@@ -406,7 +406,7 @@ a.rm-viewdetails:hover,
 
 .no-csstransforms3d .rm-wrapper > div > div {
     margin-bottom: 10px;
-    box-shadow: inset 0 0 0 16px #5F5959, inset 0 0 0 17px #FF8728, inset 0 0 0 18px #5F5959, inset 0 0 0 19px #FF8728, inset 0 0 0 20px #5F5959, inset 0 0 0 21px #FF8728, 0 3px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 0 16px #000, inset 0 0 0 17px #FF8728, inset 0 0 0 18px #5F5959, inset 0 0 0 19px #FF8728, inset 0 0 0 20px #5F5959, inset 0 0 0 21px #FF8728, 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .no-csstransforms3d .rm-container .rm-back {
@@ -478,7 +478,7 @@ a.rm-viewdetails:hover,
     }
     .rm-wrapper > div > div {
         margin-bottom: 10px;
-        box-shadow: inset 0 0 0 16px #5F5959, inset 0 0 0 17px #FF8728, inset 0 0 0 18px #5F5959, inset 0 0 0 19px #FF8728, inset 0 0 0 20px #5F5959, inset 0 0 0 21px #FF8728, 0 3px 5px rgba(0, 0, 0, 0.2);
+        box-shadow: inset 0 0 0 16px #000, inset 0 0 0 17px #FF8728, inset 0 0 0 18px #5F5959, inset 0 0 0 19px #FF8728, inset 0 0 0 20px #5F5959, inset 0 0 0 21px #FF8728, 0 3px 5px rgba(0, 0, 0, 0.2);
     }
     .rm-container .rm-back,
     .rm-container.rm-open .rm-cover,
