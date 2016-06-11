@@ -48,7 +48,7 @@ if($_GET){
    if($value == 1){
    echo "<form action='edittable.php' method='post'>
         <label>Nombre</label>
-        <input name='' value=".$data[0]["clientName"]."><br>
+        <input readonly=”readonly” name='' value=".$data[0]["clientName"]."><br>
         <label>Cantidad mesas</label>
         <input name='peopleAmount' value=".$data[0]["peopleAmount"]."><br>
         <label>Hora de reservation</label>
@@ -66,11 +66,11 @@ if($_GET){
     $password= md5($data[0]["password"]);
    echo "<form  action='edittable.php' method='post'>
         <label>Nombre</label>
-        <input name='' value=".$data[0]["name"]."><br>
+        <input readonly='readonly' name='' value=".$data[0]["name"]."><br>
         <label>Cantidad mesas</label>
         <input name='password' value=".$password."><br>
         <label>Hora de reservation</label>
-        <input name='' value=".$data[0]["identification"]."><br>
+        <input readonly='readonly' name='' value=".$data[0]["identification"]."><br>
         <label>Nombre Usuario</label>
         <input name='login' value=".$data[0]["login"].">
         <input type='hidden' name='id' value=".$data[0]["idUser"].">
