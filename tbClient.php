@@ -29,7 +29,7 @@
                                     <?php
                                     $len = count($data);
                                     for($i=0; $i<$len; $i++){
-                                    echo  "<tr><td>".$data[$i]["name"]."</td><td>".$data[$i]["identification"]."</td><td>".$data[$i]["login"]."</td><td>"."</td><td><a href='editar.php?id=".$data[$i]["idUser"]."'>Editar</a> <a href='delete.php?id=".$data[$i]["idUser"]."'>Eliminar</a></td></tr>";
+                                    echo  "<tr><td>".$data[$i]["name"]."</td><td>".$data[$i]["identification"]."</td><td>".$data[$i]["login"]."</td><td>"."</td><td><a href='edittable.php?type=3&id=".$data[$i]["idUser"]."'>Editar</a> <a href='delete.php?id=".$data[$i]["idUser"]."'>Eliminar</a></td></tr>";
                 }
             ?>
                                 </table>

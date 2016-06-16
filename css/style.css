@@ -82,10 +82,11 @@ a,
 /*CAROUSEL SLIDER IMAGES*/
 
 .fill {
-    background-position: center;
     background-size: cover;
-    -o-background-size: cover;
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
 }
 
 .slider-img {
@@ -93,8 +94,9 @@ a,
     left: 0%;
     height: 100%;
     z-index: -1;
-    position: fixed;
+    position: absolute;
     max-height: 1024px;
+    display: block;
 }
 
 .time4 {
@@ -113,6 +115,7 @@ a,
     position: relative;
     width: 100%;
     background-color: rgb(23, 23, 23);
+    display: block;
 }
 
 
@@ -183,7 +186,7 @@ a,
 }
 
 .img2 {
-    background-image: url("../img/back.jpg");
+    background-image: url("../img/login3.jpg");
 }
 
 
@@ -400,14 +403,12 @@ a,
 
 .containerReserve {
     padding: 10% 0 0 0;
-    
 }
 
 .containerReserve p {
     font-family: 'Roboto', serif;
     font-size: 20px;
     text-align: center;
-
 }
 
 .labels {

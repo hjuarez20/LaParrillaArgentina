@@ -33,7 +33,7 @@ $data = $database->select("tbreservations", "*");
                                     <?php
                                     $len = count($data);
                                     for($i=0; $i<$len; $i++){
-                                    echo  "<tr><td>".$data[$i]["clientName"]."</td><td>".$data[$i]["clientPhone"]."</td><td>".$data[$i]["clientEmail"]."</td><td>".$data[$i]["date"]."</td><td>".$data[$i]["peopleAmount"]."</td><td><a href='editar.php?id=".$data[$i]["idReservation"]."'>Editar</a> <a href='delete.php?id=".$data[$i]["idReservation"]."'>Eliminar</a></td></tr>";
+                                    echo  "<tr><td>".$data[$i]["clientName"]."</td><td>".$data[$i]["clientPhone"]."</td><td>".$data[$i]["clientEmail"]."</td><td>".$data[$i]["date"]."</td><td>".$data[$i]["peopleAmount"]."</td><td><a href='edittable.php?type=1&id=".$data[$i]["idReservation"]."'>Editar</a> <a href='delete.php?id=".$data[$i]["idReservation"]."'>Eliminar</a></td></tr>";
                 }
             ?>
                                 </table>

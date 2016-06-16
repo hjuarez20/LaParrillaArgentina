@@ -1,29 +1,35 @@
 <?php
 require 'PHPMailer/PHPMailerAutoload.php';
+
+if($database==null){
+      require 'db/db.php';
+
+}
+
+
 $mail = new PHPMailer;
 $to = "nelguaro@gmail.com";
-
-
+      
+    
 
 if($_POST){
-  
+
     
-    $name = $_POST['contact-name'];
+     $name = $_POST['contact-name'];
     $email = $_POST['contact-email'];
-    $subject = $_POST['LaParrillaArgentina email'];
+    $subj_user=$_POST['contact-subject'];
+    $subj ="LaParrillaArgentina email: " . $subj_user;
     $messaje = nl2br($_POST['contact-comment']);
     
-    if($name == "" || $email == "" || $messaje == ""){
-        echo '<div class="alert alert-danger"> Todos los campos son requeridos para enviar el mensaje</div>';
-        echo "puta diablo";
+    $data=$database->insert('tbContact',[
+                            'name' => $_POST['contact_name'],
+                            'email' => $_POST['contact_email']]);
+    
+    
 
-            header("location: index.php#contacto");
-
-    }else{
-      require 'db/db.php';
         $mail->From = $email;
         $mail->addAddress($to);
-        $mail->Subject= $subject;
+        $mail->Subject= $subj;
         $mail->isHtml(true);
         $mail->Body = '<strong>'.$name.'</strong> ha enviado un mensaje desde la pagina LaParrillaArgentina.esy.es, el cual dice lo siguiente: <br><p>'.$messaje.'</p>. </br></br> Puedes contactarl@ mediante el siguiente correo electronico: </br>'.$email;
         $mail-> CharSetv = 'UTF-8';
@@ -33,15 +39,29 @@ if($_POST){
         "name" => $_POST["contact-name"],
         "email" => $_POST["contact-email"]
                             ]);
-        header("location:index.php");
-    }
- }
+    
+    
+    
+        header("Location: index.php#contacto");
+
+    
+    
+}
+
+
+    
+    
+
+
+
+
 ?>
 
     <html lang="en">
 
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
     <body>
@@ -51,24 +71,34 @@ if($_POST){
 
                     <h2>Contactenos</h2>
                     <div class="contact-input">
-                        <form action="contact.php" method="post">
-                            <label for="">Nombre (*) </label>
-                            <br>
-                            <input type="text" size="30" name="contact-name" value="" aria-required="true" aria-invalid="false">
-                            <br>
-                            <br>
-                            <label for="">Email(*)</label>
-                            <br>
-                            <input type="email" size="30" name="contact-email" value="" aria-required="true" aria-invalid="false" placeholder="alguien@ejemplo.com">
-                            <br>
-                            <label for="">Mensaje </label>
-                            <br>
-                            <textarea name="contact-comment" id="" cols="30" rows="10" placeholder="Su opinión es muy importante para nosotros."></textarea>
-                            <br>
-                            <button type="submit" class="buttons">Enviar</button>
-                        </form>
+                        <form method="POST" name="contact-form" id="contact-form" action="contact.php"  >
+					<div class="row">
+						<div class="col-md-6">
+							<label>Nombre:</label>
+							<input type="text" name="contact-name" class="form-control" required>
+                        </div>
+
+						<div class="col-md-6">
+							<label>Email:</label>
+							<input type="email" name="contact-email" class="form-control" placeholder="ejemplo@correo.com" required>
+						</div>
+                        
+                        <div class="col-md-12">
+							<label>Asunto:</label>
+							<input type="text" name="contact-subject" class="form-control" required>
+						</div>
+					</div>
+					
+					<label>Mensaje:</label>
+					<textarea name="contact-comment"  cols="30" rows="10" class="form-control" placeholder="Su opinión es muy importante para nosotros." minlength="20" required></textarea>
+					<button type="submit" class="buttons" data-toggle="modal" data-target="#test">Enviar</button>            
+
+
+     
+				</form>
                     </div>
                 </div>
+                
                 <!--end contact-user-->
 
                 <div class="contact-location hidden-sm hidden-xs col-md-6">
@@ -79,6 +109,28 @@ if($_POST){
 
             </div>
         </div>
+<!--
+<div class="modal fade" id="test" role="dialog">
+            <div class="modal-dialog">
+
+                 Modal content
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Comprobante de Rerservacion</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+-->
+
     </body>
     <script>
         (function (i, s, o, g, r, a, m) {
