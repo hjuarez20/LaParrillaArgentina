@@ -2,7 +2,7 @@
 require "db/db.php";
 
 if($_POST){
-    
+ /* updates the selected data on the reservation  */
     if($_POST["value"] == 1){
         $database->update("tbreservations",
                           ["date" => $_POST["date"],
@@ -11,7 +11,7 @@ if($_POST){
                          ["idReservation" => $_POST["id"]]);
         header ("Location: principal.php#contReservation");
    }
-
+ /* updates the selected data on the users  */
    if($_POST["num"] == 3){
         $password = md5($_POST["password"]);
         $database->update("tbusers",
@@ -22,6 +22,9 @@ if($_POST){
    }
     
 }
+
+/*url variables are obtained to compare what type it is and upload the data to show the user, 
+depending on the reservations table and users.*/
 if($_GET){
     $type = $_GET["type"]; 
     $id = $_GET["id"];
@@ -45,6 +48,9 @@ if($_GET){
 ?>
 <html>
 <body>
+
+<!--the variable $ value, serves to identify where the data
+   and show the user . because they are different forms.-->
    <?php
    if($value == 1){
    echo "<form action='edittable.php' method='post'>
