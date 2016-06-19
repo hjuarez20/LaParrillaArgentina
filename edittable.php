@@ -6,15 +6,17 @@ if($_POST){
     if($_POST["value"] == 1){
         $database->update("tbreservations",
                           ["date" => $_POST["date"],
-                           "peopleAmount" => $_POST["peopleAmount"]],
+                           "peopleAmount" => $_POST["peopleAmount"],
+                           "reservationHour" => $_POST["reservationHour"]],
                          ["idReservation" => $_POST["id"]]);
         header ("Location: principal.php#contReservation");
    }
 
-   if($_POST["value"] == 3){
+   if($_POST["num"] == 3){
+        $password = md5($_POST["password"]);
         $database->update("tbusers",
                           ["login" => $_POST["login"],
-                           "peopleAmount" => $_POST["password"]],
+                           "password" => $password],
                          ["idUser" => $_POST["id"]]);
         header ("Location: principal.php#contClient");
    }
@@ -30,7 +32,6 @@ if($_GET){
                                    "reservationHour", 
                                    "clientName",
                                    "idReservation"], [ "idReservation" => $id ]);
-
      $value=1;
     }
 
@@ -52,7 +53,7 @@ if($_GET){
         <label>Cantidad mesas</label>
         <input name='peopleAmount' value=".$data[0]["peopleAmount"]."><br>
         <label>Hora de reservation</label>
-        <input name='' value=".$data[0]["reservationHour"]."><br>
+        <input name='reservationHour' value=".$data[0]["reservationHour"]."><br>
         <label>Fecha</label>
         <input name='date' value=".$data[0]["date"].">
         <input type='hidden' name='id' value=".$data[0]["idReservation"].">
@@ -63,18 +64,21 @@ if($_GET){
    }
  
    if($value == 3){
-    $password= md5($data[0]["password"]);
+    $m = $data[0]['password'];
+    echo $m;
+    echo md5($m);
+       $password= md5($data[0]['password']);
    echo "<form  action='edittable.php' method='post'>
         <label>Nombre</label>
         <input readonly='readonly' name='' value=".$data[0]["name"]."><br>
-        <label>Cantidad mesas</label>
-        <input name='password' value=".$password."><br>
-        <label>Hora de reservation</label>
+        <label>Identificacion</label>
         <input readonly='readonly' name='' value=".$data[0]["identification"]."><br>
-        <label>Nombre Usuario</label>
+        <label>Contraseña</label>
+        <input name='password' value=".$password."><br>
+        <label>Login</label>
         <input name='login' value=".$data[0]["login"].">
         <input type='hidden' name='id' value=".$data[0]["idUser"].">
-        <input type='hidden' name='value' value=3>
+        <input type='hidden' name='num' value=3>
         <input type='submit' value='EDITAR'>
         <input type='button' value='CANCELAR' onclick='history.back();'>
     </form>";
