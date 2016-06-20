@@ -44,7 +44,7 @@ if($_POST){
     <body class="background-newUser">
         <div class="container">
             <div class="row">    
-                <div class="newUser animated fadeInLeft col-xs-12 col-sm-12 col-md-4 col-md-offset-8" style=" max-height: 1024px; min-height: 800px;">
+                <div class="newUser animated fadeInLeft col-xs-12 col-sm-6  col-sm-offset-3 col-md-4 col-md-offset-8 redimention">
                     <div class="newUser__form">
                         <form name="userlogin" action="admin456.php" method="post">
                             <div class="login__row group">
