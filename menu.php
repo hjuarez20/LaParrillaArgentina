@@ -54,9 +54,8 @@
 						<span class=""></span>
 					    </h3>
                         <h3 data-animation="animated flipInX">
-						This is the caption for slide 3
+						Ambiente cálido le espera en nuestra Parrilla Argentina
 					</h3>
-                        <button class="red btn btn-primary btn-lg" data-animation="animated lightSpeedIn">Button</button>
                     </div>
                 </div>
             </div>
@@ -70,7 +69,6 @@
                         <h3 data-animation="animated bounceInRight">
 						Date un verdadero gustazo
 					</h3>
-                        <button href="#nosotros" class="btn btn-primary black btn-lg" data-animation="animated zoomInUp">Button</button>
                     </div>
                 </div>
             </div>
