@@ -25,17 +25,17 @@
 }
 
 .red h3 {
-    background-color: rgb(191, 43, 43);
+    background-color: rgba(191, 43, 43, 0.3);
     color: #fff;
 }
 
 .black h3 {
-    background-color: rgb(22, 22, 22);
+    background-color: rgba(22, 22, 22, 0.3);
     color: #fff;
 }
 
 .orange h3 {
-    background-color: rgb(255, 135, 40);
+    background-color: rgba(255, 135, 40, 0.3);
     color: #000;
 }
 
