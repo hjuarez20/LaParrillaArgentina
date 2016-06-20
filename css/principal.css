@@ -4,7 +4,7 @@
     padding: 0;
 }
 body{
-	background-image: url(../img/madera.jpg);
+	background-image: url(../img/madera1.jpg);
 }
 
 .containerCenter{
@@ -295,3 +295,28 @@ width: 22%;
     border-color: black;
 }
 
+/*Cambia los botones editar y eliminar*/
+td a{
+      color: rgb(255,255,255);
+    padding-right: 5px;
+     display: block; 
+    text-align: center;
+    border: 1px solid #fff;
+    width: 60px;
+    padding: 5px;
+    
+    margin: 3px 0px 0px 20px;
+    background: none;
+}
+
+td a:hover{
+  color: rgb(166, 12, 0);
+  }
+
+p a {
+  color: rgb(166, 12, 0);
+}
+
+p a:hover{
+  color: rgb(255,255,255);
+  }
