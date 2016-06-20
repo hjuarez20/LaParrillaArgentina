@@ -26,7 +26,6 @@ html {
 .container-data{
     width: 50%;
     height: 30%;
-    background-color: rgba(255, 135, 40, 0.2);
     padding: 10% 5%;
     margin: 0 auto;
     border-radius: 6px;
@@ -43,24 +42,30 @@ html {
     color: white;
     font-family: 'Roboto', serif;
     font-size: 13px;
+    margin: 60px 0px 0px 0px;
 }
 
 .inputStyle{
     width: 30%;
     height: 30px;
+    font-size: 18px;
     background-color: transparent;
     border-color: #fff;
     border-radius: 6px;
-    margin: 10px;
-   
+    margin: 15px 0px 15px -60px;
+    text-align: center;
+    color: #fff;
 }
 
 .labelStyle{
      font-family: 'Roboto', serif;
-    font-size: 20px;
-    text-align: center;
+    font-size: 23px;
+    text-align: left;
     display: block;
     float: left;
+    margin: 0px 70px;
+    padding: 10px;
+     color: #fff;
 }
 
 .footerStyle{

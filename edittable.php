@@ -48,6 +48,7 @@ if($_GET){
 ?>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="css/edittable.css">
     
 </head>
@@ -61,16 +62,24 @@ if($_GET){
    <?php
    if($value == 1){
    echo "<form action='edittable.php' method='post'>
-        <label class='labelStyle'>Nombre</label>
+        <div class='labelStyle'>
+        <label>Nombre</label>
+         <br></br>
+        <label>Cantidad mesas</label>
+         <br></br>
+        <label>Hora de reservacion</label>
+         <br></br>
+        <label>Fecha</label>
+        </div>
+        <div>
         <input class='inputStyle' readonly=”readonly” name='' value=".$data[0]["clientName"]."><br>
-        <label class='labelStyle'>Cantidad mesas</label>
         <input class='inputStyle' name='peopleAmount' value=".$data[0]["peopleAmount"]."><br>
-        <label class='labelStyle'>Hora de reservation</label>
         <input class='inputStyle' name='reservationHour' value=".$data[0]["reservationHour"]."><br>
-        <label class='labelStyle'>Fecha</label>
         <input class='inputStyle' name='date' value=".$data[0]["date"].">
         <input class='inputStyle' type='hidden' name='id' value=".$data[0]["idReservation"].">
         <input class='inputStyle' type='hidden' name='value' value=1>
+        </div>
+        <br></br>
         <input id='buttom' type='submit' value='EDITAR'>
         <input id='buttom' type='button' value='CANCELAR' onclick='history.back();'>
     </form>";
