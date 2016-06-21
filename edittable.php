@@ -73,9 +73,16 @@ if($_GET){
         </div>
         <div>
         <input class='inputStyle' readonly=”readonly” name='' value=".$data[0]["clientName"]."><br>
+        
         <input class='inputStyle' name='peopleAmount' value=".$data[0]["peopleAmount"]."><br>
+        
         <input class='inputStyle' name='reservationHour' value=".$data[0]["reservationHour"]."><br>
+        
         <input class='inputStyle' name='date' value=".$data[0]["date"].">
+    
+        
+        
+        
         <input class='inputStyle' type='hidden' name='id' value=".$data[0]["idReservation"].">
         <input class='inputStyle' type='hidden' name='value' value=1>
         </div>
