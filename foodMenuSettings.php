@@ -219,8 +219,7 @@ if($_POST){
                 <div class='col-md-6'>
                 <label>Categoria</label>
                 <select class='foodMenu-select' name='category' >"
-                 $len = count($dataCategories);
-                        for($i=0; $i<$len; $i++){
+                        for($i=0; $i<count($dataCategories); $i++){
                         if($dataCategories[$i]['category'] == $dataFood[0]['category']){
                         
                         echo '<option value=".$dataCategories[$i]['category']." selected>".$dataCategories[$i]['category']."</option>'
