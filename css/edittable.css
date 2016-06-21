@@ -26,6 +26,7 @@ html {
 .container-data{
     width: 50%;
     height: 30%;
+    background-color: rgba(83, 86, 94, 0.3);
     padding: 10% 5%;
     margin: 0 auto;
     border-radius: 6px;
@@ -54,7 +55,7 @@ html {
     border-radius: 6px;
     margin: 15px 0px 15px -60px;
     text-align: center;
-    color: #fff;
+   
 }
 
 .labelStyle{
@@ -65,7 +66,6 @@ html {
     float: left;
     margin: 0px 70px;
     padding: 10px;
-     color: #fff;
 }
 
 .footerStyle{
