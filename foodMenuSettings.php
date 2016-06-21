@@ -222,12 +222,12 @@ if($_POST){
                         for($i=0; $i<count($dataCategories); $i++){
                         if($dataCategories[$i]['category'] == $dataFood[0]['category']){
                         
-                        echo '<option value=".$dataCategories[$i]['category']." selected>".$dataCategories[$i]['category']."</option>'
+                        echo "<option value=".$dataCategories[$i]['category']." selected>".$dataCategories[$i]['category']."</option>"
                         
                         
                         }else{
                             
-                         echo   '<option value=".$dataCategories[$i]['category'].">".$dataCategories[$i]['category']."</option>'
+                         echo   "<option value=".$dataCategories[$i]['category'].">".$dataCategories[$i]['category']."</option>"
                         
                         }
                         }
