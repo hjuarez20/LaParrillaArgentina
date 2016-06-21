@@ -98,18 +98,27 @@ if($_GET){
     echo md5($m);
        $password= md5($data[0]['password']);
    echo "<form  action='edittable.php' method='post'>
+        <div class='labelStyle'>
         <label>Nombre</label>
-        <input readonly='readonly' name='' value=".$data[0]["name"]."><br>
+        <br></br>
         <label>Identificacion</label>
-        <input readonly='readonly' name='' value=".$data[0]["identification"]."><br>
+        <br></br>
         <label>Contraseña</label>
-        <input name='password' value=".$password."><br>
+        <br></br>
         <label>Login</label>
-        <input name='login' value=".$data[0]["login"].">
-        <input type='hidden' name='id' value=".$data[0]["idUser"].">
-        <input type='hidden' name='num' value=3>
-        <input type='submit' value='EDITAR'>
-        <input type='button' value='CANCELAR' onclick='history.back();'>
+        </div>
+        
+        <div>
+        <input class='inputStyle' readonly='readonly' name='' value=".$data[0]["name"]."><br>
+        <input class='inputStyle' readonly='readonly' name='' value=".$data[0]["identification"]."><br>
+        <input class='inputStyle' name='password' value=".$password."><br>
+        <input class='inputStyle' name='login' value=".$data[0]["login"].">
+        <input class='inputStyle' type='hidden' name='id' value=".$data[0]["idUser"].">
+        <input class='inputStyle' type='hidden' name='num' value=3>
+        </div>
+        <br></br>
+        <input id='buttom' type='submit' value='EDITAR'>
+        <input id='buttom' type='button' value='CANCELAR' onclick='history.back();'>
     </form>";
    }
  ?>
