@@ -227,7 +227,7 @@ if($_POST){
                         
                         }else{
                             
-                            '<option value=".$dataCategories[$i]['category'].">".$dataCategories[$i]['category']."</option>'
+                         echo   '<option value=".$dataCategories[$i]['category'].">".$dataCategories[$i]['category']."</option>'
                         
                         }
                         }
