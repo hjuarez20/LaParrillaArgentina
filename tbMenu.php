@@ -12,6 +12,7 @@
     
     <head>
     <meta charset="UTF-8">
+
 </head>
 
     <body>
@@ -24,6 +25,10 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="table-responsive">
+                            <p class="font-style_1 title_table">Menú de Platillos</p>    
+                               <a class="a-insert" href="foodMenuSettings.php?option=1&id=">Insertar</a>
+                               
+                                           
                             <article class="tbl-header">
                                 <table cellpadding="0" cellspacing="0" border="0">
                                     <tr>
@@ -55,9 +60,9 @@
                                     
                                     <td>
           
-                                    <a href='foodMenuSettings.php?id=".$dataFood[$e]["idDish"]."'>Editar</a> 
+                                    <a href='foodMenuSettings.php?option=2&id=".$dataFood[$e]["idDish"]."'>Editar</a>  
                                     
-                                    <a href='foodMenuSettings.php?id=".$dataFood[$e]["idDish"]."'>Eliminar</a>
+                                    <a href='foodMenuSettings.php?option=3&id=".$dataFood[$e]["idDish"]."'>Eliminar</a>
                                     
                                     </td></tr>";
                 }
