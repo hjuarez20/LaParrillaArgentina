@@ -2,6 +2,7 @@
 session_start();
 require 'db/db.php';
 
+
 $dataCategories = $database->select("tbmenu", [
                                     "category"]);
 /*
