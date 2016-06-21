@@ -26,7 +26,7 @@ if($_POST){
                             'email' => $_POST['contact_email']]);
     
     
-
+ 
         $mail->From = $email;
         $mail->addAddress($to);
         $mail->Subject= $subj;
