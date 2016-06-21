@@ -82,8 +82,8 @@ if($_POST){
                     <ul class="font-style_1">
                         <li><a class="page-scroll" href="index.php">Inicio</a></li>
                         <li><a class="page-scroll" href="#contReservation">Reservación</a></li>
-                        <li><a class="page-scroll" href="#contClient">Clientes</a></li>
                         <li><a class="page-scroll" href="#contMenu">Platillos</a></li>
+                        <li><a class="page-scroll" href="#contClient">Clientes</a></li>
                         <li><a class="page-scroll"href="#contContact">Contactenos</a></li>
                     </ul>
                 </nav>

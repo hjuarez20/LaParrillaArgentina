@@ -47,25 +47,48 @@ if($_GET){
 
 ?>
 <html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/edittable.css">
+    
+</head>
 <body>
 
 <!--the variable $ value, serves to identify where the data
    and show the user . because they are different forms.-->
+   <div class=" col-xs-12 col-sm-12 col-md-4">
+    <div class="container img1">
+    <div class="container-data"> 
    <?php
    if($value == 1){
    echo "<form action='edittable.php' method='post'>
+        <div class='labelStyle'>
         <label>Nombre</label>
-        <input readonly=”readonly” name='' value=".$data[0]["clientName"]."><br>
+         <br></br>
         <label>Cantidad mesas</label>
-        <input name='peopleAmount' value=".$data[0]["peopleAmount"]."><br>
-        <label>Hora de reservation</label>
-        <input name='reservationHour' value=".$data[0]["reservationHour"]."><br>
+         <br></br>
+        <label>Hora de reservacion</label>
+         <br></br>
         <label>Fecha</label>
-        <input name='date' value=".$data[0]["date"].">
-        <input type='hidden' name='id' value=".$data[0]["idReservation"].">
-        <input type='hidden' name='value' value=1>
-        <input type='submit' value='EDITAR'>
-        <input type='button' value='CANCELAR' onclick='history.back();'>
+        </div>
+        <div>
+        <input class='inputStyle' readonly=”readonly” name='' value=".$data[0]["clientName"]."><br>
+        
+        <input class='inputStyle' name='peopleAmount' value=".$data[0]["peopleAmount"]."><br>
+        
+        <input class='inputStyle' name='reservationHour' value=".$data[0]["reservationHour"]."><br>
+        
+        <input class='inputStyle' name='date' value=".$data[0]["date"].">
+    
+        
+        
+        
+        <input class='inputStyle' type='hidden' name='id' value=".$data[0]["idReservation"].">
+        <input class='inputStyle' type='hidden' name='value' value=1>
+        </div>
+        <br></br>
+        <input id='buttom' type='submit' value='EDITAR'>
+        <input id='buttom' type='button' value='CANCELAR' onclick='history.back();'>
     </form>";
    }
  
@@ -90,5 +113,11 @@ if($_GET){
     </form>";
    }
  ?>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 footerStyle">
+           <p>®Todos los derechos reservados - Proyecto Multimedios 2016</p>     
+    </div>
+    </div>
+    </div>
 </body>
 </html

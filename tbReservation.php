@@ -7,7 +7,9 @@ $data = $database->select("tbreservations", "*");
 ?>
  <html>
 
-    <head>    </head>
+    <head>    
+<link href="css/principal.css" rel="stylesheet" type="text/css">
+    </head>
 
     <body>
 
@@ -17,7 +19,7 @@ $data = $database->select("tbreservations", "*");
                     <div class="col-xs-12">
                         <div class="table-responsive">
                             <article class="tbl-header">
-                                <table cellpadding="0" cellspacing="0" border="0">
+                                <table cellpadding="0" cellspacing="0" border="0" >
                                     <tr>
                                         <th>Nombre</th>
                                         <th>Teléfono</th>
