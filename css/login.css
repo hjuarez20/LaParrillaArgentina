@@ -1,3 +1,6 @@
+/**This css manage the design of the login page and the new user page**/
+
+/*Global attributes*/
 *, *:before, *:after {
 	  box-sizing: border-box;
 	  margin: 0;
@@ -147,7 +150,7 @@ input, button {
 	  color: #DF3030;
 	  cursor: pointer;
 	}
-
+/**************new user desing**/
 .newUser__form {
 	  position: absolute;
 	  top: 1%;
