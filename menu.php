@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!---->
 <head>
     <meta charset="UTF-8">
 
@@ -25,8 +25,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a class="page-scroll" href="#home">Home</a></li>
                         <li><a class="page-scroll" href="#nosotros">Nosotros</a></li>
-                        <li><a class="page-scroll" href="#menu">Menu</a></li>
-                        <li><a class="page-scroll" href="#reservaciones">Reservacion</a></li>
+                        <li><a class="page-scroll" href="#menu">Menú</a></li>
+                        <li><a class="page-scroll" href="#reservaciones">Reservación</a></li>
                         <li><a class="page-scroll" href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
@@ -50,11 +50,8 @@
             <div class="item fill slider-img4">
                 <div class="container">
                     <div class="carousel-caption red center-carousel-caption ">
-                        <h3 class="red" data-animation="animated zoomInLeft">
-						<span class=""></span>
-					    </h3>
                         <h3 data-animation="animated flipInX">
-						Ambiente cálido le espera en nuestra Parrilla Argentina
+						Ambiente cálido le espera en nuestro restaurante
 					</h3>
                     </div>
                 </div>
@@ -79,7 +76,7 @@
 						 Especialidad en Cortes
 					    </h3>
                         <h3 data-animation="animated fadeInUp">
-						Contamos con la mejor carne del pais
+						Contamos con la mejor carne del país
 					    </h3>
                     </div>
                 </div>

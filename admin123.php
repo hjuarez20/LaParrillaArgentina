@@ -1,6 +1,6 @@
 <?php
  require 'db/db.php';
-/*function that searches the database to find if the user exists */
+/*the function is search in the database to find if the user exists */
 if($_POST){
  $data = $database->select("tbusers",[
                             'idUser',
