@@ -27,7 +27,7 @@ html {
 .container-data{
     width: 50%;
     height: 30%;
-    background-color: rgba(83, 86, 94, 0.3);
+    background-color: rgba(83, 86, 94, 0.4);
     padding: 10% 5%;
     margin: 0 auto;
     border-radius: 6px;
@@ -51,6 +51,7 @@ html {
     width: 30%;
     height: 30px;
     font-size: 18px;
+    font-weight: bolder;
     background-color: transparent;
     border-color: #fff;
     border-radius: 6px;
@@ -62,6 +63,7 @@ html {
 .labelStyle{
      font-family: 'Roboto', serif;
     font-size: 23px;
+    font-weight: bold;
     text-align: left;
     display: block;
     float: left;
