@@ -90,7 +90,7 @@ if($_GET){
         <div>
         <input class='inputStyle' readonly='readonly' value=".$data[0]["clientName"]."><br>
         
-        <select class='inputStyle'>
+        <select class='inputStyle' name='peopleAmount'>
                             <option name=cero value=0 disabled>Cantidad de Mesas</option>
                             <option name=uno value=1 ";if($selected == '1'){echo("selected");};echo"> 1 mesa </option>
                             <option name=dos value=2 ";if($selected == '2'){echo("selected");};echo"> 2 mesas </option>
@@ -98,8 +98,8 @@ if($_GET){
                             <option name=cuatro value=4 ";if($selected == '4'){echo("selected");};echo"> 4 mesas </option>
                         </select><br>
         
-        <select class='inputStyle' id='hour-list' onchange='mTables();'>
-                            <option>".$data[0]["reservationHour"]."</option>";
+        <select class='inputStyle' name='reservationHour' onchange='mTables();'>
+                            <option >".$data[0]["reservationHour"]."</option>";
                                
                             for($i=0; $i<count($time); $i++){
                              echo   '<option name='.$time[$i]['nameTime'].'>'.$time[$i]['time'].'</option>';
@@ -109,7 +109,7 @@ if($_GET){
                  
                  
         
-        <input class='inputStyle' value=".$data[0]["date"]." onchange='mDate(date.value);' type='date'/>
+        <input class='inputStyle' name='date' value=".$data[0]["date"]." onchange='mDate(date.value);' type='date'/>
 
         
         
@@ -148,7 +148,7 @@ if($_GET){
  ?>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-4 footerStyle">
-           <p>Â®Todos los derechos reservados - Proyecto Multimedios 2016</p>     
+           <p>®Todos los derechos reservados - Proyecto Multimedios 2016</p>     
     </div>
     </div>
     </div>
