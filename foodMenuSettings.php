@@ -1,10 +1,21 @@
 <?php 
 session_start();
 require 'db/db.php';
+            
+
+/*$dataCategories = $database->select("tbmenu", [
+                                    "category"]);  */
+
+$dataCategories = $database->query("SELECT DISTINCT category
+FROM tbmenu;")->fetchAll(PDO::FETCH_ASSOC);
+
+$dataState=$database->query("SELECT DISTINCT state
+FROM tbmenu;")->fetchAll(PDO::FETCH_ASSOC);
+
+$dataFood="";
+$action=0;
 
 
-$dataCategories = $database->select("tbmenu", [
-                                    "category"]);
 /*
 $imagePath="";
 
@@ -17,8 +28,8 @@ if($_GET){
 if(isset($_POST['saveChanges'])){
      /*--------------------section just for saving the image in the system----------*/
 /*
-        $name= $_FILES['txtImage']['name'];
-        $tmp= $_FILES['txtImage']['tmp_name'];
+        $name= $_FILES['image']['name'];
+        $tmp= $_FILES['image']['tmp_name'];
         $folder='dbImgs';
         //the files are saved in a temp folder
         move_uploaded_file($tmp,$folder.'/'.$name);
@@ -26,7 +37,28 @@ if(isset($_POST['saveChanges'])){
         /*******************************************************************************/
 if($_POST){
     
+    /*-------------------------images section---------------------------------*/
+    /* $name= $_FILES['txtImage']['name'];
+        $tmp= $_FILES['txtImage']['tmp_name'];
+        $folder='img/food';
+        //the files are saved in a temp folder
+        
+    move_uploaded_file($tmp,$folder.'/'.$name);
+        $imagePath=($folder.'/'.$name);
+         echo $imagePath;
+   */
+    /*---------------------------------------end----------------------------------------*/
+    
     if($_POST["value"] == 1){
+        
+        $name= $_FILES['txtImage']['name'];
+        $tmp= $_FILES['txtImage']['tmp_name'];
+        $folder='img/food';
+        //the files are saved in a temp folder
+        
+        move_uploaded_file($tmp,$folder.'/'.$name);
+        $imagePath=($folder.'/'.$name);
+        
         $database->insert("tbmenu", [
         "idUserMod" => $_SESSION['idUser'],
         "nameDish" => $_POST["nameDish"],
@@ -35,10 +67,10 @@ if($_POST){
         "price" => $_POST["price"],
         "state" => $_POST["state"],
         "dayMod" => date("Y/m/d"),
-        "image" => $_POST["image"]
+        "image" => $imagePath /*$_POST["image"]*/
     ]);
         
-        header ("Location: principal.php#contMenu");
+        header ("Location: foodMenuSettings.php");
     }
     
     if($_POST["value"] == 2){
@@ -53,7 +85,7 @@ if($_POST){
         "image" => $_POST["image"]], 
                                 ["idDish" => $_POST["idDish"]]);
         
-        header ("Location: principal.php#contMenu");
+        header ("Location: foodMenuSettings.php");
     }
     
     if($_POST["value"] == 3){
@@ -136,7 +168,7 @@ if($_POST){
                    <div class="foodMenu-input">
        <?php
     if($action == 1){
-       echo "<form method='post' action='foodMenuSettings.php'>
+       echo "<form method='post' action=''>
           
            </br><br/>
            
@@ -183,7 +215,7 @@ if($_POST){
            <div class='row'>
            <div class='col-md-6'>
            <label>Seleccione una imagen</label>
-           <input class='form-control' type='text' name='image' placeholder='img/food/example.jgp' required>
+           <input id='inputPhoto' type='file' name='txtImage' required>
            </div>
            </div>
            
@@ -200,12 +232,12 @@ if($_POST){
         </form>";
                     }
     
-    /* <input type='file' name='txtImage'/><br/><br/> */
+    
     
     
     if($action == 2){
         echo $dataCategories[0]["category"];
-       echo "<form method='post' action='foodMenuSettings.php'>
+       echo "<form method='post' action=''>
           
            
            
@@ -249,21 +281,30 @@ if($_POST){
            
            <div class='col-md-6'>
            <label>Estado</label>
-           <select class='foodMenu-select' name='state' value=".$dataFood[0]["state"].">
-                <option value='active'>Activo</option>
-                <option value='inactive'>Inactivo</option>
-           </select>
+           <select class='foodMenu-select' name='state' >";
+                        for($i=0; $i<count($dataState); $i++){
+                        if($dataState[$i]['state'] == $dataFood[0]['state']){
+                        
+                        echo "<option value=".$dataState[$i]['state']." selected>".$dataState[$i]['state']."</option>";
+                        
+                        
+                        }else{
+                            
+                         echo   "<option value=".$dataState[$i]['state'].">".$dataState[$i]['state']."</option>";
+                        
+                        }
+                        }
+             echo   "</select>
            </div>
            </div>
            
            <div class='row'>
            <div class='col-md-6'>
            <label>Seleccione una imagen</label>
-           <input class='form-control' type='text' name='image' placeholder='img/food/example.jgp' value=".$dataFood[0]["image"]." required>
+           <input id='inputPhoto' type='file' name='image' value=".$dataFood[0]["image"]." required>
            </div>
            </div>
-           
-           
+          
            <input type='hidden' name='idDish' value=".$dataFood[0]["idDish"].">
            
         <input type='hidden' name='value' value=2>
@@ -291,7 +332,12 @@ if($_POST){
         <input  class='foodMenu-buttons' type='submit' value='CONTINUAR'>
         <input  class='foodMenu-buttons' type='button' value='CANCELAR' onclick='history.back();'>
             
-        </form>";
+        </form>
+        
+        
+        
+        
+        ";
                     }
             
             ?>
@@ -301,7 +347,9 @@ if($_POST){
                 <div class="foodMenu-user hidden-sm hidden-xs col-md-6">
                 
                 <a href="index.php#menu">Visualizar el MENÚ</a>
-                  <iframe src="//giphy.com/embed/SGnyBMvLCbJ9S" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                  <?php 
+                 //   echo "<img src=".$dataFood[0]["image"].">"
+                    ?>
                 </div>
                 
                </div>

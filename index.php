@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!--the function is call every class, is the principal page, show everything to the user will gonna see when he go inside the page, also make the reference to all css docs-->
 <head>
     <meta charset="UTF-8">
     <title>La Parrilla Argentina</title>
@@ -37,7 +37,7 @@
     <section id="contacto" class="color3 contact parallax small">
         <?php include ('contact.php');?>
     </section>
-    <section id="pie" class="colorBlack footer parallax tiny ">
+    <section id="footer" class="colorBlack footer-center parallax tiny ">
         <?php include ('footer.php');?>
     </section>
     <script src="js/jquery-latest.js"></script>

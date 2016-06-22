@@ -1,3 +1,5 @@
+/**This css manage the design of the all sections  of the principal page**/
+
 /*Global Attributes*/
 
 * {
@@ -48,6 +50,9 @@ a,
     font-size: 13px;
     margin: 34px 0px 0px 15px;
     background: none;
+    font-family: 'Roboto', serif;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
 .rigth {
@@ -142,7 +147,7 @@ a,
 }
 
 .tiny {
-    min-height: 170px;
+    min-height: 128px;
     max-height: 1920px;
 }
 
@@ -442,33 +447,17 @@ select {
     border-color: dimgrey;
 }
 
-#button-Reserv {
-    margin: 0% 0% 0% 46%;
-    background-color: #000;
-    border-bottom-color: #fff;
-    border-color: #fff;
-}
-
-
 /* ---------------------------------------------------------end style reservation --------------------------------------------- */
 
-.footer {
+.footer-center {
     padding-top: 10px;
     text-align: center;
 }
 
-#pie p {
+#footer p {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     color: white;
-    font-size: 13px;
-    margin: 10px 0px;
-}
-
-#pie p:hover {
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    color: #FF8728;
     font-size: 13px;
     margin: 10px 0px;
 }
@@ -478,20 +467,11 @@ select {
   vertical-align: top;
   overflow: hidden;
   margin: 4px;
-  width: 96px;
-  height: 96px;
+  width: 70px;
+  height: 71px;
   font-size: 0;
   text-indent: -9999px;
 }
-
-#pie h6 {
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    color: #FF8728;
-    font-size: 15px;
-    margin: 10px 0px;
-}
-
 
 .icon-cube {
   position: relative;
@@ -509,7 +489,8 @@ select {
   width: 100%;
   height: 100%;
   background: url("../img/social/icons5.png");
-  background-image: url("../img/social/icons5.svg"), none;
+  
+  
   content: "";
   -webkit-transition: all 0.3s;
           transition: all 0.3s;
@@ -645,4 +626,8 @@ select {
         max-height: 400px;
         height: 100%;
     }
+    .buttons, .contact-input button {
+    margin: 5% 0% 5% 25%;
+  }
 }
+
