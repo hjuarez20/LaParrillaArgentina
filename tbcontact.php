@@ -1,4 +1,5 @@
 <?php
+/*In this section there are a table who show all the data charge from the data base of the table tbContact*/
 //require 'db/db.php';
 $data= $database->select('tbContact',['name','email']                        
                         );

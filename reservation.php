@@ -1,5 +1,5 @@
 <?php
-
+/**/
 if($database==null){
     require 'db/db.php';
 }
@@ -42,7 +42,7 @@ if($_POST){
     </head>
 
     <body>
-        <!-- CODIGO DE RESERVACIONES -->
+        <!--reseration code-->
         <div class="container">
             <article class="row">
                 <article class="containerReserve col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -55,7 +55,7 @@ if($_POST){
                     </p>
                 </article>
         </div>
-        <!-- *********************************************************form to add the information of reservation************************ -->
+        <!-- ***************************form to add the information of reservation************************ -->
         <form method="post" action="reservation.php" enctype="multipart/form-data">
 
             <div class="container">
@@ -124,9 +124,9 @@ if($_POST){
             </div>
 
         </form>
-        <!-- *************************************end form reservation  ************************************************************* -->
+        <!-- *********************end form reservation  ********************************** -->
 
-        <!-- *************************************show the dialog after making the reservation **********************************-->
+        <!-- ********************show the dialog after making the reservation ************************-->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
 

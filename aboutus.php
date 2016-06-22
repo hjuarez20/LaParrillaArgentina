@@ -1,3 +1,5 @@
+<!--this class is about the restaurant, the best dishes, our history and the promos that we have-->
+
 <html lang="en">
 
 <head>
@@ -27,7 +29,7 @@
                     <img class="img-responsive img" src="img/aboutimg1.jpg" alt="">
                 </div>
                 <h3>Premios</h3>
-                <p>Hemos sido galardonas tres anios consecutivos con el premio al mejor restaurante parrillero de Centro America</p>
+                <p>Hemos sido galardonas tres años consecutivos con el premio al mejor restaurante parrillero de Centro America</p>
             </div>
         </article>
     </article>

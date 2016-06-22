@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!--the function is call every class, is the principal page, show everything to the user will gonna see when he go inside the page, also make the reference to all css docs-->
 <head>
     <meta charset="UTF-8">
     <title>La Parrilla Argentina</title>

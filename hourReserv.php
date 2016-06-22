@@ -1,4 +1,5 @@
 <?php 
+/*The function is make the reservation*/
 require 'db/db.php';
 
      if($_POST){

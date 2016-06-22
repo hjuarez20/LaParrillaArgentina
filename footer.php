@@ -1,5 +1,5 @@
 <html>
-
+<!--In this class show the social media icons -->
 <head> 
 
 </head>

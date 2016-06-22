@@ -1,4 +1,6 @@
 <?php
+
+/*In this section there are a table who show all the data charge from the data base of the table tbMenu*/
      
     $dataFood = $database->select("tbmenu", "*",[
                                             "ORDER" => "category"
