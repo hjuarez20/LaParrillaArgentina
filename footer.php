@@ -18,7 +18,7 @@
                             <a href="https://plus.google.com/" class="icon icon-cube googleplus">google+</a>
                             <a href="https://github.com/harold20/LaParrillaArgentina" class="icon icon-cube github">github</a>
                             <a href="http://postrss.com/" class="icon icon-cube rss">rss</a>
-                           
+                         
                      
                 </div>
 
