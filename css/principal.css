@@ -7,6 +7,12 @@ body{
 	background-image: url(../img/madera1.jpg);
 }
 
+
+#inputPhoto{
+    font-size=60%;
+    width: 160%;
+}
+
 .containerCenter{
     width: 80%;
     margin: 0 auto;
@@ -104,6 +110,10 @@ section nav ul li a:hover {
 
 
 /*table designe*/
+
+.title_table{
+    text-align: center;
+}
 table{
   width:100%;
   table-layout: fixed;
@@ -297,9 +307,9 @@ width: 22%;
 
 /*Cambia los botones editar y eliminar*/
 td a{
-      color: rgb(255,255,255);
+    color: rgb(255,255,255);
     padding-right: 5px;
-     display: block; 
+    display: block; 
     text-align: center;
     border: 1px solid #fff;
     width: 60px;
@@ -320,3 +330,130 @@ p a {
 p a:hover{
   color: rgb(255,255,255);
   }
+
+.a-insert{
+     color: rgb(255,255,255);
+    padding-right: 5px;
+    display: block; 
+    text-align: center;
+    border: 1px solid #fff;
+    width: 60px;
+    padding: 5px;
+    margin: 3px 0px 8px 20px;
+    background: none; 
+    
+}
+
+.a-insert:hover{
+    background-color:  rgb(166, 12, 0);
+    color: white;
+}
+
+/*foodMenuSettings*/
+#foodMenuSettings{
+    background-color: black;
+}
+
+.foodMenu {
+    color: #fff;
+    background-image: url(../img/food/foodMenuSettings.jpeg);
+    background-size: cover;
+    display: block;
+    height: 100%;
+}
+
+.foodMenu h2 {
+    margin: 0px 0px 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-transform: none;
+    color: white;
+}
+
+.foodMenu h3 {
+    margin: 0px 0px 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    text-transform: none;
+    color: white;
+    text-align: center;
+}
+
+.foodMenu-user{
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(200, 200, 200, 0.2);
+    
+}
+
+.foodMenu-input label,
+.foodMenu-user a {
+    width: 365px;
+    float: left;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    text-transform: none;
+}
+
+.foodMenu-input button {
+    margin: 0px 0px 40px;
+    background-color: rgba(100, 100, 100, 0.0);
+    color: #fff;
+    border-color: #fff;
+    margin: 12px 0px 9px 0px;
+}
+
+.foodMenu-input input {
+    width: 80%;
+    height: 25px;
+    margin: 0px 0px 40px;
+    background-color: rgba(255, 255, 255, 0.0);
+    color: #fff;
+    border-color: #fff;
+    margin: 12px 0px 9px 0px;
+}
+
+.foodMenu-input textarea {
+    width: 80%;
+    height: 80px;
+    margin: 0px 0px 40px;
+    background-color: rgba(255, 255, 255, 0.0);
+    color: #fff;
+    border-color: #fff;
+    margin: 12px 0px 9px 0px;
+}
+
+.foodMenu-input a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+    border-color: #fff;
+    width: 105px;
+}
+
+.foodMenu-select{
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    text-transform: none; 
+ 
+}
+
+.foodMenu-buttons{
+    margin: 10px 0px 0px 55px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    text-transform: none;
+    border-color: white;
+    background-color: transparent;
+    color: #fff;
+}
+
+.foodMenu-buttons:hover{
+    background-color: firebrick;
+    color: #fff;
+}
+
+
+

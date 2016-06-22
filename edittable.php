@@ -1,11 +1,26 @@
 <?php
 require "db/db.php";
 
+/*---------------------------------------time for reservation from database--------------------------*/
+$time = $database->select("tbtime",[
+                        "nameTime",
+                        "time",
+                        "state"
+                        ],[
+                        "state" => "int"
+                        ]);
+
+
 if($_POST){
+    
+ /*--------------------------------date format change for mysql date format----------------------*/
+    $fecha=date("Y-m-d",strtotime($_POST["date"] ));
+    
+    
  /* updates the selected data on the reservation  */
     if($_POST["value"] == 1){
         $database->update("tbreservations",
-                          ["date" => $_POST["date"],
+                          ["date" => $fecha,
                            "peopleAmount" => $_POST["peopleAmount"],
                            "reservationHour" => $_POST["reservationHour"]],
                          ["idReservation" => $_POST["id"]]);
@@ -48,6 +63,7 @@ if($_GET){
 ?>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="css/edittable.css">
     
 </head>
@@ -61,16 +77,45 @@ if($_GET){
    <?php
    if($value == 1){
    echo "<form action='edittable.php' method='post'>
-        <label class='labelStyle'>Nombre</label>
+        <div class='labelStyle'>
+        <label>Nombre</label>
+         <br></br>
+        <label>Cantidad mesas</label>
+         <br></br>
+        <label>Hora de reservacion</label>
+         <br></br>
+        <label>Fecha</label>
+        </div>
+        <div>
         <input class='inputStyle' readonly=”readonly” name='' value=".$data[0]["clientName"]."><br>
-        <label class='labelStyle'>Cantidad mesas</label>
-        <input class='inputStyle' name='peopleAmount' value=".$data[0]["peopleAmount"]."><br>
-        <label class='labelStyle'>Hora de reservation</label>
-        <input class='inputStyle' name='reservationHour' value=".$data[0]["reservationHour"]."><br>
-        <label class='labelStyle'>Fecha</label>
-        <input class='inputStyle' name='date' value=".$data[0]["date"].">
+        
+        <select class='inputStyle' id='tables' name='peopleAmount' value=".$data[0]["peopleAmount"].">
+                            <option name=cero value=0 disabled>Cantidad de Mesas</option>
+                            <option name=uno value=1> 1 mesa </option>
+                            <option name=dos value=2> 2 mesas </option>
+                            <option name=tres value=3> 3 mesas </option>
+                            <option name=cuatro value=4> 4 mesas </option>
+                        </select><br>
+        
+        <select class='inputStyle' name='reservationHour' id='hour-list' onchange='mTables();'>";
+                               
+                            for($i=0; $i<count($time); $i++){
+                             echo   '<option name='.$time[$i]['nameTime'].'>'.$time[$i]['time'].'</option>';
+                            }    
+                           
+               ; echo"   </select><br>
+                 
+                 
+        
+        <input class='inputStyle' id='datePicker' name='date' onchange='mDate(date.value);' type='date' />
+
+        
+        
+        
         <input class='inputStyle' type='hidden' name='id' value=".$data[0]["idReservation"].">
         <input class='inputStyle' type='hidden' name='value' value=1>
+        </div>
+        <br></br>
         <input id='buttom' type='submit' value='EDITAR'>
         <input id='buttom' type='button' value='CANCELAR' onclick='history.back();'>
     </form>";
@@ -82,18 +127,27 @@ if($_GET){
     echo md5($m);
        $password= md5($data[0]['password']);
    echo "<form  action='edittable.php' method='post'>
+        <div class='labelStyle'>
         <label>Nombre</label>
-        <input readonly='readonly' name='' value=".$data[0]["name"]."><br>
+        <br></br>
         <label>Identificacion</label>
-        <input readonly='readonly' name='' value=".$data[0]["identification"]."><br>
+        <br></br>
         <label>Contraseña</label>
-        <input name='password' value=".$password."><br>
+        <br></br>
         <label>Login</label>
-        <input name='login' value=".$data[0]["login"].">
-        <input type='hidden' name='id' value=".$data[0]["idUser"].">
-        <input type='hidden' name='num' value=3>
-        <input type='submit' value='EDITAR'>
-        <input type='button' value='CANCELAR' onclick='history.back();'>
+        </div>
+        
+        <div>
+        <input class='inputStyle' readonly='readonly' name='' value=".$data[0]["name"]."><br>
+        <input class='inputStyle' readonly='readonly' name='' value=".$data[0]["identification"]."><br>
+        <input class='inputStyle' name='password' value=".$password."><br>
+        <input class='inputStyle' name='login' value=".$data[0]["login"].">
+        <input class='inputStyle' type='hidden' name='id' value=".$data[0]["idUser"].">
+        <input class='inputStyle' type='hidden' name='num' value=3>
+        </div>
+        <br></br>
+        <input id='buttom' type='submit' value='EDITAR'>
+        <input id='buttom' type='button' value='CANCELAR' onclick='history.back();'>
     </form>";
    }
  ?>
@@ -103,5 +157,55 @@ if($_GET){
     </div>
     </div>
     </div>
+    
+    <script>
+     function mTables() {
+                var selectedHour = $('#hour-list').val();
+                var selectedDate = $('#datePicker').val();
+
+                console.log(selectedHour, selectedDate);
+
+                $.ajax({
+                        method: "POST",
+                        url: "tableReserv.php",
+                        data: {
+                            H: selectedHour,
+                            D: selectedDate
+                        },
+                        dataType: "text"
+                    })
+                    .done(function (items) {
+                        items = JSON.parse(items);
+                        $("#tables").show();
+                        var len = items.length;
+                        console.log(len); // alert(len);
+                        for (var i = 0; i < len; i++) {
+                            $("#tables").append("<option value='" + items[i].name + "'>" + items[i].name + "</option>");
+                        }
+                    });
+            }
+        function mDate(selectedDate) {
+                clearItems();
+
+                $.ajax({
+                        method: "POST",
+                        url: "hourReserv.php",
+                        data: {
+                            param: selectedDate
+                        },
+                        dataType: "text"
+                    })
+                    .done(function (items) {
+                        items = JSON.parse(items);
+                        $("#hour-list").show();
+                        var len = items.length;
+
+                        for (var i = 0; i < len; i++) {
+                            $("#hour-list").append("<option value='" + items[i].name + "'>" + items[i].name + "</option>");
+                        }
+                    });
+            }
+
+    </script>
 </body>
-</html
+</html>

@@ -22,7 +22,7 @@ h2 {
     font-weight: 700px;
     padding: 10% 0 0 0
 }
-
+ 
 h4,
 h3,
 h2,
@@ -142,7 +142,7 @@ a,
 }
 
 .tiny {
-    min-height: 170px;
+    min-height: 128px;
     max-height: 1920px;
 }
 
@@ -473,10 +473,15 @@ select {
     margin: 10px 0px;
 }
 
-.icons {
-    margin: 10px;
-    -webkit-transition: all 2s ease;
-    transition: all 2s ease;
+.icon {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  margin: 4px;
+  width: 70px;
+  height: 71px;
+  font-size: 0;
+  text-indent: -9999px;
 }
 
 #pie h6 {
@@ -485,6 +490,104 @@ select {
     color: #FF8728;
     font-size: 15px;
     margin: 10px 0px;
+}
+
+
+.icon-cube {
+  position: relative;
+  -webkit-perspective: 800px;
+          perspective: 800px;
+  overflow: visible;
+}
+
+.icon-cube::before,
+.icon-cube::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/social/icons5.png");
+  
+  
+  content: "";
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+}
+
+.icon-cube::before {
+  z-index: 2;
+  background-color: #595959;
+}
+
+.icon-cube::after {
+  z-index: 1;
+  opacity: 0;
+  -webkit-transform: translateY(48px) rotateX(-90deg);
+          transform: translateY(48px) rotateX(-90deg);
+}
+
+.icon-cube:hover::before {
+  opacity: 0;
+  -webkit-transform: translateY(-48px) rotateX(90deg);
+          transform: translateY(-48px) rotateX(90deg);
+}
+
+.icon-cube:hover::after {
+  opacity: 1;
+  -webkit-transform: rotateX(0);
+          transform: rotateX(0);
+}
+
+/* facebook */
+.icon-cube.facebook::before,
+.icon-cube.facebook::after {
+  background-position: 0 0;
+}
+
+.icon-cube.facebook::after {
+  background-color: #3b5998;
+}
+
+/* twitter */
+.icon-cube.twitter::before,
+.icon-cube.twitter::after {
+  background-position: -96px 0;
+}
+
+.icon-cube.twitter::after {
+  background-color: #4099ff;
+}
+
+/* google plus */
+.icon-cube.googleplus::before,
+.icon-cube.googleplus::after {
+  background-position: -192px 0;
+}
+
+.icon-cube.googleplus::after {
+  background-color: #d34836;
+}
+
+/* github */
+.icon-cube.github::before,
+.icon-cube.github::after {
+  background-position: -288px 0;
+}
+
+.icon-cube.github::after {
+  background-color: #333333;
+}
+
+/* rss */
+.icon-cube.rss::before,
+.icon-cube.rss::after {
+  background-position: -384px 0;
+}
+
+.icon-cube.rss::after {
+  background-color: #ee802f;
 }
 
 
