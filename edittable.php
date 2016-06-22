@@ -89,7 +89,7 @@ if($_GET){
         <div>
         <input class='inputStyle' readonly=”readonly” name='' value=".$data[0]["clientName"]."><br>
         
-        <select class='inputStyle' id='tables' name='peopleAmount' value=".$data[0]["peopleAmount"].">
+        <select class='inputStyle' id='tables' name='peopleAmount'>
                             <option name=cero value=0 disabled>Cantidad de Mesas</option>
                             <option name=uno value=1> 1 mesa </option>
                             <option name=dos value=2> 2 mesas </option>
@@ -97,17 +97,17 @@ if($_GET){
                             <option name=cuatro value=4> 4 mesas </option>
                         </select><br>
         
-        <select class='inputStyle' name='reservationHour' id='hour-list' onchange='mTables();'>";
+        <select class='inputStyle' value=".$data[0]["reservationHour"]." name='reservationHour' id='hour-list' onchange='mTables();'>";
                                
                             for($i=0; $i<count($time); $i++){
                              echo   '<option name='.$time[$i]['nameTime'].'>'.$time[$i]['time'].'</option>';
                             }    
                            
-               ; echo"   </select><br>
+                echo "   </select><br>
                  
                  
         
-        <input class='inputStyle' id='datePicker' name='date' onchange='mDate(date.value);' type='date' />
+        <input class='inputStyle' value=".$data[0]["date"]." id='datePicker' name='date' onchange='mDate(date.value);' type='date' />
 
         
         
