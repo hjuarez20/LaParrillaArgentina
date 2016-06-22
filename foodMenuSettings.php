@@ -1,10 +1,6 @@
 <?php 
 session_start();
 require 'db/db.php';
-            
-
-/*$dataCategories = $database->select("tbmenu", [
-                                    "category"]);  */
 
 $dataCategories = $database->query("SELECT DISTINCT category
 FROM tbmenu;")->fetchAll(PDO::FETCH_ASSOC);
@@ -51,13 +47,13 @@ if($_POST){
     
     if($_POST["value"] == 1){
         
-        $name= $_FILES['txtImage']['name'];
-        $tmp= $_FILES['txtImage']['tmp_name'];
+        $name= $_FILES['image']['name'];
+        $tmp= $_FILES['image']['tmp_name'];
         $folder='img/food';
         //the files are saved in a temp folder
         
         move_uploaded_file($tmp,$folder.'/'.$name);
-        $imagePath=($folder.'/'.$name);
+        $imagePath=($folder.'/'.$tmp);
         
         $database->insert("tbmenu", [
         "idUserMod" => $_SESSION['idUser'],
@@ -74,6 +70,14 @@ if($_POST){
     }
     
     if($_POST["value"] == 2){
+        $name= $_FILES['image']['name'];
+        $tmp= $_FILES['image']['tmp_name'];
+        $folder='img/food';
+        //the files are saved in a temp folder
+        
+        move_uploaded_file($tmp,$folder.'/'.$name);
+        $imagePath=($folder.'/'.$name);
+        
         $database->update("tbmenu", [
         "idUserMod" => $_SESSION['idUser'],
         "nameDish" => $_POST["nameDish"],
@@ -82,8 +86,8 @@ if($_POST){
         "price" => $_POST["price"],
         "state" => $_POST["state"],
         "dayMod" => date("Y/m/d"),
-        "image" => $_POST["image"]], 
-                                ["idDish" => $_POST["idDish"]]);
+        "image" =>$imagePath, /* $_POST["image"]], */
+                                "idDish" => $_POST["idDish"]]);
         
         header ("Location: foodMenuSettings.php");
     }
@@ -215,7 +219,7 @@ if($_POST){
            <div class='row'>
            <div class='col-md-6'>
            <label>Seleccione una imagen</label>
-           <input id='inputPhoto' type='file' name='txtImage' required>
+           <input id='inputPhoto' type='file' name='image' required>
            </div>
            </div>
            
