@@ -11,39 +11,7 @@ FROM tbmenu;")->fetchAll(PDO::FETCH_ASSOC);
 $dataFood="";
 $action=0;
 
-
-/*
-$imagePath="";
-
-if($_GET){
-    $id=$_GET["id"];
-    
-    $imagePath="";
-}
-
-if(isset($_POST['saveChanges'])){
-     /*--------------------section just for saving the image in the system----------*/
-/*
-        $name= $_FILES['image']['name'];
-        $tmp= $_FILES['image']['tmp_name'];
-        $folder='dbImgs';
-        //the files are saved in a temp folder
-        move_uploaded_file($tmp,$folder.'/'.$name);
-        $imagePath=($folder.'/'.$name);
-        /*******************************************************************************/
 if($_POST){
-    
-    /*-------------------------images section---------------------------------*/
-    /* $name= $_FILES['txtImage']['name'];
-        $tmp= $_FILES['txtImage']['tmp_name'];
-        $folder='img/food';
-        //the files are saved in a temp folder
-        
-    move_uploaded_file($tmp,$folder.'/'.$name);
-        $imagePath=($folder.'/'.$name);
-         echo $imagePath;
-   */
-    /*---------------------------------------end----------------------------------------*/
     
     if($_POST["value"] == 1){
         
@@ -53,7 +21,7 @@ if($_POST){
         //the files are saved in a temp folder
         
         move_uploaded_file($tmp,$folder.'/'.$name);
-        $imagePath=($folder.'/'.$tmp);
+        $imagePath=($folder.'/'.$name);
         
         $database->insert("tbmenu", [
         "idUserMod" => $_SESSION['idUser'],
@@ -66,7 +34,7 @@ if($_POST){
         "image" => $imagePath /*$_POST["image"]*/
     ]);
         
-        header ("Location: foodMenuSettings.php");
+        header ("Location: principal.php#contMenu");
     }
     
     if($_POST["value"] == 2){
@@ -89,7 +57,7 @@ if($_POST){
         "image" =>$imagePath, /* $_POST["image"]], */
                                 "idDish" => $_POST["idDish"]]);
         
-        header ("Location: foodMenuSettings.php");
+        header ("Location: principal.php#contMenu");
     }
     
     if($_POST["value"] == 3){
@@ -172,7 +140,7 @@ if($_POST){
                    <div class="foodMenu-input">
        <?php
     if($action == 1){
-       echo "<form method='post' action=''>
+       echo "<form method='post' action='' enctype='multipart/form-data'>
           
            </br><br/>
            
@@ -235,13 +203,10 @@ if($_POST){
             
         </form>";
                     }
-    
-    
-    
-    
+
     if($action == 2){
         echo $dataCategories[0]["category"];
-       echo "<form method='post' action=''>
+       echo "<form method='post' action='' enctype='multipart/form-data'>
           
            
            
@@ -325,7 +290,7 @@ if($_POST){
                     }
     
      if($action == 3){
-       echo "<form method='post' action='foodMenuSettings.php'>
+       echo "<form method='post' action='foodMenuSettings.php' enctype='multipart/form-data'>
          <h2>Seguro que desea eliminar este elemento?</h2>
          <p>".$dataFood[0]["nameDish"]."<p>
          
@@ -338,9 +303,6 @@ if($_POST){
             
         </form>
         
-        
-        
-        
         ";
                     }
             
@@ -352,7 +314,12 @@ if($_POST){
                 
                 <a href="index.php#menu">Visualizar el MENÚ</a>
                   <?php 
-                 //   echo "<img src=".$dataFood[0]["image"].">"
+                    if($dataFood==""){
+                        echo "<img src='img/food/parrillaExample.jpg'>";
+                    }else{
+                        echo "<img src=".$dataFood[0]["image"].">";
+                    }
+                    
                     ?>
                 </div>
                 
