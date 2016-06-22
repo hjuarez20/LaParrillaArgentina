@@ -88,7 +88,7 @@ if($_GET){
         <label>Fecha</label>
         </div>
         <div>
-        <input class='inputStyle' readonly=â€readonlyâ€ value=".$data[0]["clientName"]."><br>
+        <input class='inputStyle' readonly='readonly' value=".$data[0]["clientName"]."><br>
         
         <select class='inputStyle'>
                             <option name=cero value=0 disabled>Cantidad de Mesas</option>
@@ -98,7 +98,8 @@ if($_GET){
                             <option name=cuatro value=4 ";if($selected == '4'){echo("selected");};echo"> 4 mesas </option>
                         </select><br>
         
-        <select class='inputStyle' value=".$data[0]["reservationHour"]." id='hour-list' onchange='mTables();'>";
+        <select class='inputStyle' id='hour-list' onchange='mTables();'>
+                            <option>".$data[0]["reservationHour"]."</option>";
                                
                             for($i=0; $i<count($time); $i++){
                              echo   '<option name='.$time[$i]['nameTime'].'>'.$time[$i]['time'].'</option>';
@@ -161,7 +162,7 @@ if($_GET){
 
                 $.ajax({
                         method: "POST",
-                        url: "tableReserv.php",
+                        url: "tbReserv.php",
                         data: {
                             H: selectedHour,
                             D: selectedDate
