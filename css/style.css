@@ -50,6 +50,9 @@ a,
     font-size: 13px;
     margin: 34px 0px 0px 15px;
     background: none;
+    font-family: 'Roboto', serif;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
 .rigth {
@@ -444,14 +447,6 @@ select {
     border-color: dimgrey;
 }
 
-#button-Reserv {
-    margin: 0% 0% 0% 46%;
-    background-color: #000;
-    border-bottom-color: #fff;
-    border-color: #fff;
-}
-
-
 /* ---------------------------------------------------------end style reservation --------------------------------------------- */
 
 .footer-center {
@@ -631,4 +626,8 @@ select {
         max-height: 400px;
         height: 100%;
     }
+    .buttons, .contact-input button {
+    margin: 5% 0% 5% 25%;
+  }
 }
+
