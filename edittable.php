@@ -147,7 +147,7 @@ if($_GET){
  ?>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-4 footerStyle">
-           <p>Â®Todos los derechos reservados - Proyecto Multimedios 2016</p>     
+           <p>®Todos los derechos reservados - Proyecto Multimedios 2016</p>     
     </div>
     </div>
     </div>
