@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!---->
+<!--this class contains the menu of the page, also contains the text in the next section -->
 <head>
     <meta charset="UTF-8">
 
