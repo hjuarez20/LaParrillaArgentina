@@ -123,17 +123,11 @@ if($_GET){
    }
  
    if($value == 3){
-    $m = $data[0]['password'];
-    echo $m;
-    echo md5($m);
-       $password= md5($data[0]['password']);
    echo "<form  action='edittable.php' method='post'>
         <div class='labelStyle'>
         <label>Nombre</label>
         <br></br>
         <label>Identificacion</label>
-        <br></br>
-        <label>ContraseÃ±a</label>
         <br></br>
         <label>Login</label>
         </div>
@@ -141,7 +135,6 @@ if($_GET){
         <div>
         <input class='inputStyle' readonly='readonly' name='' value=".$data[0]["name"]."><br>
         <input class='inputStyle' readonly='readonly' name='' value=".$data[0]["identification"]."><br>
-        <input class='inputStyle' name='password' value=".$password."><br>
         <input class='inputStyle' name='login' value=".$data[0]["login"].">
         <input class='inputStyle' type='hidden' name='id' value=".$data[0]["idUser"].">
         <input class='inputStyle' type='hidden' name='num' value=3>
