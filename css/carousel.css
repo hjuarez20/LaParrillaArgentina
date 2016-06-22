@@ -1,3 +1,5 @@
+/**/
+
 .main-container {
     padding: 40px 15px;
     width: 100%;
@@ -25,17 +27,19 @@
 }
 
 .red h3 {
-    background-color: rgba(191, 43, 43, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
     color: #fff;
+    text-shadow: 4px 2px 9px rgba(0, 0, 0, 1);
 }
 
 .black h3 {
-    background-color: rgba(22, 22, 22, 0.3);
+    background-color: rgba(191, 43, 43, 0.4);
     color: #fff;
+    text-shadow: 4px 2px 9px rgba(0, 0, 0, 1);
 }
 
 .orange h3 {
-    background-color: rgba(255, 135, 40, 0.3);
+    background-color: rgba(255, 135, 40, 0.4);
     color: #000;
 }
 
