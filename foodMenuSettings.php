@@ -2,11 +2,9 @@
 session_start();
 require 'db/db.php';
 
-$dataCategories = $database->select("tbmenu", [
-                                    "category"],[
-    "DISTINCT"
-]);
 
+$dataCategories = $database->select("tbmenu", [
+                                    "category"]);
 /*
 $imagePath="";
 
@@ -206,6 +204,7 @@ if($_POST){
     
     
     if($action == 2){
+        echo $dataCategories[0]["category"];
        echo "<form method='post' action='foodMenuSettings.php'>
           
            
@@ -218,13 +217,20 @@ if($_POST){
                 
                 <div class='col-md-6'>
                 <label>Categoria</label>
-                <select class='foodMenu-select' name='category' >
-                <option value='drinks'>Bebidas</option>
-                <option value='wines'>Vinos</option>
-                <option value='mains'>Plato fuerte</option>
-                <option value='salads'>Ensalada</option>
-                <option value='desserts'>Postre</option>
-                </select>
+                <select class='foodMenu-select' name='category' >";
+                        for($i=0; $i<count($dataCategories); $i++){
+                        if($dataCategories[$i]['category'] == $dataFood[0]['category']){
+                        
+                        echo "<option value=".$dataCategories[$i]['category']." selected>".$dataCategories[$i]['category']."</option>";
+                        
+                        
+                        }else{
+                            
+                         echo   "<option value=".$dataCategories[$i]['category'].">".$dataCategories[$i]['category']."</option>";
+                        
+                        }
+                        }
+             echo   "</select>
                 </div>
            </div>
            
