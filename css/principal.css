@@ -7,6 +7,12 @@ body{
 	background-image: url(../img/madera1.jpg);
 }
 
+
+#inputPhoto{
+    font-size=60%;
+    width: 160%;
+}
+
 .containerCenter{
     width: 80%;
     margin: 0 auto;
