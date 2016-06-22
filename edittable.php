@@ -76,7 +76,7 @@ if($_GET){
     <div class="container-data"> 
    <?php
    if($value == 1){
-   echo "<form action='edittable.php' method='post'>
+       echo "<form action='edittable.php' method='post'>
         <div class='labelStyle'>
         <label>Nombre</label>
          <br></br>
@@ -87,9 +87,9 @@ if($_GET){
         <label>Fecha</label>
         </div>
         <div>
-        <input class='inputStyle' readonly=”readonly” name='' value=".$data[0]["clientName"]."><br>
+        <input class='inputStyle' readonly=”readonly” value=".$data[0]["clientName"]."><br>
         
-        <select class='inputStyle' id='tables' name='peopleAmount' value=".$data[0]["peopleAmount"].">
+        <select class='inputStyle' value=".$data[0]["peopleAmount"].">
                             <option name=cero value=0 disabled>Cantidad de Mesas</option>
                             <option name=uno value=1> 1 mesa </option>
                             <option name=dos value=2> 2 mesas </option>
@@ -97,7 +97,7 @@ if($_GET){
                             <option name=cuatro value=4> 4 mesas </option>
                         </select><br>
         
-        <select class='inputStyle' name='reservationHour' id='hour-list' onchange='mTables();'>";
+        <select class='inputStyle' value=".$data[0]["reservationHour"]." id='hour-list' onchange='mTables();'>";
                                
                             for($i=0; $i<count($time); $i++){
                              echo   '<option name='.$time[$i]['nameTime'].'>'.$time[$i]['time'].'</option>';
@@ -107,7 +107,7 @@ if($_GET){
                  
                  
         
-        <input class='inputStyle' id='datePicker' name='date' onchange='mDate(date.value);' type='date' />
+        <input class='inputStyle' value=".$data[0]["date"]." onchange='mDate(date.value);' type='date'/>
 
         
         
