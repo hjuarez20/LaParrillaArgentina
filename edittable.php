@@ -1,11 +1,26 @@
 <?php
 require "db/db.php";
 
+/*---------------------------------------time for reservation from database--------------------------*/
+$time = $database->select("tbtime",[
+                        "nameTime",
+                        "time",
+                        "state"
+                        ],[
+                        "state" => "int"
+                        ]);
+
+
 if($_POST){
+    
+ /*--------------------------------date format change for mysql date format----------------------*/
+    $fecha=date("Y-m-d",strtotime($_POST["date"] ));
+    
+    
  /* updates the selected data on the reservation  */
     if($_POST["value"] == 1){
         $database->update("tbreservations",
-                          ["date" => $_POST["date"],
+                          ["date" => $fecha,
                            "peopleAmount" => $_POST["peopleAmount"],
                            "reservationHour" => $_POST["reservationHour"]],
                          ["idReservation" => $_POST["id"]]);
@@ -74,12 +89,26 @@ if($_GET){
         <div>
         <input class='inputStyle' readonly=”readonly” name='' value=".$data[0]["clientName"]."><br>
         
-        <input class='inputStyle' name='peopleAmount' value=".$data[0]["peopleAmount"]."><br>
+        <select class='inputStyle' id='tables' name='peopleAmount' value=".$data[0]["peopleAmount"].">
+                            <option name=cero value=0 disabled>Cantidad de Mesas</option>
+                            <option name=uno value=1> 1 mesa </option>
+                            <option name=dos value=2> 2 mesas </option>
+                            <option name=tres value=3> 3 mesas </option>
+                            <option name=cuatro value=4> 4 mesas </option>
+                        </select><br>
         
-        <input class='inputStyle' name='reservationHour' value=".$data[0]["reservationHour"]."><br>
+        <select class='inputStyle' name='reservationHour' id='hour-list' onchange='mTables();'>";
+                               
+                            for($i=0; $i<count($time); $i++){
+                             echo   '<option name='.$time[$i]['nameTime'].'>'.$time[$i]['time'].'</option>';
+                            }    
+                           
+               ; echo"   </select><br>
+                 
+                 
         
-        <input class='inputStyle' name='date' value=".$data[0]["date"].">
-    
+        <input class='inputStyle' id='datePicker' name='date' onchange='mDate(date.value);' type='date' />
+
         
         
         
@@ -128,5 +157,55 @@ if($_GET){
     </div>
     </div>
     </div>
+    
+    <script>
+     function mTables() {
+                var selectedHour = $('#hour-list').val();
+                var selectedDate = $('#datePicker').val();
+
+                console.log(selectedHour, selectedDate);
+
+                $.ajax({
+                        method: "POST",
+                        url: "tableReserv.php",
+                        data: {
+                            H: selectedHour,
+                            D: selectedDate
+                        },
+                        dataType: "text"
+                    })
+                    .done(function (items) {
+                        items = JSON.parse(items);
+                        $("#tables").show();
+                        var len = items.length;
+                        console.log(len); // alert(len);
+                        for (var i = 0; i < len; i++) {
+                            $("#tables").append("<option value='" + items[i].name + "'>" + items[i].name + "</option>");
+                        }
+                    });
+            }
+        function mDate(selectedDate) {
+                clearItems();
+
+                $.ajax({
+                        method: "POST",
+                        url: "hourReserv.php",
+                        data: {
+                            param: selectedDate
+                        },
+                        dataType: "text"
+                    })
+                    .done(function (items) {
+                        items = JSON.parse(items);
+                        $("#hour-list").show();
+                        var len = items.length;
+
+                        for (var i = 0; i < len; i++) {
+                            $("#hour-list").append("<option value='" + items[i].name + "'>" + items[i].name + "</option>");
+                        }
+                    });
+            }
+
+    </script>
 </body>
-</html
+</html>
