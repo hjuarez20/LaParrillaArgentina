@@ -1,3 +1,4 @@
+/**This css manage the design of the backend and  all the tables **/
 /*General class*/
 *{
     margin:0;
@@ -5,6 +6,12 @@
 }
 body{
 	background-image: url(../img/madera1.jpg);
+}
+
+
+#inputPhoto{
+    font-size=60%;
+    width: 160%;
 }
 
 .containerCenter{
@@ -448,6 +455,5 @@ p a:hover{
     background-color: firebrick;
     color: #fff;
 }
-
 
 

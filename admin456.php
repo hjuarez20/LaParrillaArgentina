@@ -1,7 +1,7 @@
 <?php
 require 'db/db.php';
 
-/*function that searches the database to find if the user exists , if there is recorded*/
+/*the function is search in the database to find if the user exists , if there is recorded*/
 if($_POST){
     $data = $database->select('tbusers',['login'],['login'=>$_POST["username"]]);
     
@@ -36,7 +36,7 @@ if($_POST){
         <meta charset="UTF-8">
         <title>La Parrilla Argentina</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/backend.css">
         <link rel="stylesheet" href="css/animate.min.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
     </head>>
