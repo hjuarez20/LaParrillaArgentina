@@ -60,7 +60,7 @@ if($_POST){
     <body>
         <div class="container">
             <div class="row">
-                <div class="contact-user  col-xs-12 col-sm-12 col-md-6">
+                <div class="contact-user  col-xs-12 col-sm-12 col-md-6 ">
 
                     <h2>Contactenos</h2>
                     <div class="contact-input">
@@ -84,7 +84,7 @@ if($_POST){
 					
 					<label>Mensaje:</label>
 					<textarea name="contact-comment"  cols="30" rows="10" class="form-control" placeholder="Su opinión es muy importante para nosotros." minlength="20" required></textarea>
-					<button type="submit" class="buttons" data-toggle="modal" data-target="#test">Enviar</button>            
+					<button type="submit" class="buttons" data-toggle="modal" data-target="#test">ENVIAR</button>            
 				</form>
                     </div>
                 </div>
