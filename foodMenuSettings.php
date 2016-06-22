@@ -172,7 +172,7 @@ if($_POST){
                    <div class="foodMenu-input">
        <?php
     if($action == 1){
-       echo "<form method='post' action=''>
+       echo "<form method='post' action='' enctype='multipart/form-data'>
           
            </br><br/>
            
@@ -241,7 +241,7 @@ if($_POST){
     
     if($action == 2){
         echo $dataCategories[0]["category"];
-       echo "<form method='post' action=''>
+       echo "<form method='post' action='' enctype='multipart/form-data'>
           
            
            
@@ -325,7 +325,7 @@ if($_POST){
                     }
     
      if($action == 3){
-       echo "<form method='post' action='foodMenuSettings.php'>
+       echo "<form method='post' action='foodMenuSettings.php' enctype='multipart/form-data'>
          <h2>Seguro que desea eliminar este elemento?</h2>
          <p>".$dataFood[0]["nameDish"]."<p>
          
