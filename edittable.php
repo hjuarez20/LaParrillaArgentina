@@ -89,7 +89,7 @@ if($_GET){
         <div>
         <input class='inputStyle' readonly=”readonly” name='' value=".$data[0]["clientName"]."><br>
         
-        <select class='inputStyle' id='tables' name='peopleAmount' value=".$data[0]["peopleAmount"].">
+        <select class='inputStyle' id='tables' name='peopleAmount'>
                             <option name=cero value=0 disabled>Cantidad de Mesas</option>
                             <option name=uno value=1> 1 mesa </option>
                             <option name=dos value=2> 2 mesas </option>
@@ -103,7 +103,7 @@ if($_GET){
                              echo   '<option name='.$time[$i]['nameTime'].'>'.$time[$i]['time'].'</option>';
                             }    
                            
-               ; echo"   </select><br>
+                echo "   </select><br>
                  
                  
         
