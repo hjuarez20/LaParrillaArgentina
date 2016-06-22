@@ -54,7 +54,7 @@ if($_POST){
         "price" => $_POST["price"],
         "state" => $_POST["state"],
         "dayMod" => date("Y/m/d"),
-        "image" =>$imagePath, /* $_POST["image"]], */
+        "image" =>$imagePath ],[ /* $_POST["image"]], */
                                 "idDish" => $_POST["idDish"]]);
         
         header ("Location: principal.php#contMenu");
@@ -270,7 +270,7 @@ if($_POST){
            <div class='row'>
            <div class='col-md-6'>
            <label>Seleccione una imagen</label>
-           <input id='inputPhoto' type='file' name='image' value=".$dataFood[0]["image"]." required>
+           <input id='inputPhoto' type='file' name='image' value=".$dataFood[0]["image"].">
            </div>
            </div>
           
@@ -315,7 +315,7 @@ if($_POST){
                 <a href="index.php#menu">Visualizar el MENÚ</a>
                   <?php 
                     if($dataFood==""){
-                        echo "<img src='img/food/parrillaExample.jpg'>";
+                        echo "<img src=''>";
                     }else{
                         echo "<img src=".$dataFood[0]["image"].">";
                     }
@@ -329,7 +329,7 @@ if($_POST){
              
          <div class="row">
                  <div class="foodMenu-user col-xs-12 col-sm-12 col-md-6">
-                          <h3>Imposible is Nothing.</h3>
+                          <h3>Todos los derechos reservados®.</h3>
                     </div>
         </div> 
     </div>
