@@ -97,7 +97,7 @@ if($_GET){
                             <option name=cuatro value=4> 4 mesas </option>
                         </select><br>
         
-        <select class='inputStyle' name='reservationHour' id='hour-list' onchange='mTables();'>";
+        <select class='inputStyle' value=".$data[0]["reservationHour"]." name='reservationHour' id='hour-list' onchange='mTables();'>";
                                
                             for($i=0; $i<count($time); $i++){
                              echo   '<option name='.$time[$i]['nameTime'].'>'.$time[$i]['time'].'</option>';
@@ -107,7 +107,7 @@ if($_GET){
                  
                  
         
-        <input class='inputStyle' id='datePicker' name='date' onchange='mDate(date.value);' type='date' />
+        <input class='inputStyle' value=".$data[0]["date"]." id='datePicker' name='date' onchange='mDate(date.value);' type='date' />
 
         
         
