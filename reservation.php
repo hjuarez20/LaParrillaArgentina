@@ -184,7 +184,7 @@ if($_POST){
 
                 $.ajax({
                         method: "POST",
-                        url: "tableReserv.php",
+                        url: "tbReserv.php",
                         data: {
                             H: selectedHour,
                             D: selectedDate
