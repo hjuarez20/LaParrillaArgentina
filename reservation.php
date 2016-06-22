@@ -1,5 +1,5 @@
 <?php
-
+/**/
 if($database==null){
     require 'db/db.php';
 }
@@ -42,7 +42,7 @@ if($_POST){
     </head>
 
     <body>
-        <!-- CODIGO DE RESERVACIONES -->
+        <!--reseration code-->
         <div class="container">
             <article class="row">
                 <article class="containerReserve col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -55,14 +55,14 @@ if($_POST){
                     </p>
                 </article>
         </div>
-        <!-- *********************************************************form to add the information of reservation************************ -->
+        <!-- ***************************form to add the information of reservation************************ -->
         <form method="post" action="reservation.php" enctype="multipart/form-data">
 
             <div class="container">
                 <article class="row">
                     <article class="reserve-left col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <p class="labels">Nombre</p>
-                        <input class="input" type="text" size="15" maxlength="30" placeholder="nombre" name="name">
+                        <input class="input" type="text" size="15" maxlength="30" placeholder="Nombre" name="name">
                         <br></br>
 
                         <!-- *************************************position for the DATE************************ -->
@@ -111,44 +111,22 @@ if($_POST){
                         <!-- </form> -->
                         <br></br>
                         <p class="labels">Telefono</p>
-                        <input class="input" type="text" size="15" maxlength="30" placeholder="teléfono" name="phone">
+                        <input class="input" type="text" size="15" maxlength="30" placeholder="Teléfono" name="phone">
                     </article>
                 </article>
             </div>
             <div class="container">
                 <article class="row">
-                    <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block">
-                        <button id="button-Reserv" type="submit" name="reserv" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Reservar</button>
+                    <article class="col-xs-12 col-sm-12  col-md-4 col-md-offset-5 col-sm-offset-2">
+                        <button  type="submit" name="reserv" class=" buttons" data-toggle="modal" data-target="#myModal">RESERVAR</button>
                     </article>
                 </article>
             </div>
 
         </form>
-        <!-- *************************************end form reservation  ************************************************************* -->
+        <!-- *********************end form reservation  ********************************** -->
 
-        <!-- *************************************show the dialog after making the reservation **********************************-->
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Comprobante de Rerservacion</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Some text in the modal.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-
-        <script>
+           <script>
             function clearItems() {
                 $("#hour-list").find('option').remove();
                 $("#tables").find('option').remove(); //selimpia la lista

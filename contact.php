@@ -1,4 +1,7 @@
 <?php
+
+/*The function is that the user may consult through the page and then send the questions to the administrator's email*/
+
 require 'PHPMailer/PHPMailerAutoload.php';
 
 if($database==null){
@@ -43,17 +46,7 @@ if($_POST){
     
     
         header("Location: index.php#contacto");
-
-    
-    
 }
-
-
-    
-    
-
-
-
 
 ?>
 
@@ -67,7 +60,7 @@ if($_POST){
     <body>
         <div class="container">
             <div class="row">
-                <div class="contact-user  col-xs-12 col-sm-12 col-md-6">
+                <div class="contact-user  col-xs-12 col-sm-12 col-md-6 ">
 
                     <h2>Contactenos</h2>
                     <div class="contact-input">
@@ -91,10 +84,7 @@ if($_POST){
 					
 					<label>Mensaje:</label>
 					<textarea name="contact-comment"  cols="30" rows="10" class="form-control" placeholder="Su opinión es muy importante para nosotros." minlength="20" required></textarea>
-					<button type="submit" class="buttons" data-toggle="modal" data-target="#test">Enviar</button>            
-
-
-     
+					<button type="submit" class="buttons" data-toggle="modal" data-target="#test">ENVIAR</button>            
 				</form>
                     </div>
                 </div>
@@ -109,28 +99,6 @@ if($_POST){
 
             </div>
         </div>
-<!--
-<div class="modal fade" id="test" role="dialog">
-            <div class="modal-dialog">
-
-                 Modal content
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Comprobante de Rerservacion</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Some text in the modal.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
--->
-
     </body>
     <script>
         (function (i, s, o, g, r, a, m) {
