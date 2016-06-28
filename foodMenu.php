@@ -142,7 +142,7 @@
                             </div>
 
                             <div class="rm-back">
-                                <span class="rm-close">Close</span>
+                                <span class="rm-close">Cerrar</span>
                                 <div class="rm-content">
 
                                     <!-- SALADS -->
