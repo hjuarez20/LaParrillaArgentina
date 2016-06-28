@@ -16,7 +16,7 @@ html {
 }
 
 .img1{
-     background-image: url(../img/edittable2.jpg);
+     background-image: url(../img/madera1.jpg);
      background-size: cover;
      background-position: center;
      filter: blur(20px);
@@ -27,7 +27,6 @@ html {
 .container-data{
     width: 50%;
     height: 30%;
-    background-color: rgba(83, 86, 94, 0.3);
     padding: 10% 5%;
     margin: 0 auto;
     border-radius: 6px;
@@ -51,22 +50,26 @@ html {
     width: 30%;
     height: 30px;
     font-size: 18px;
+    font-weight: bolder;
     background-color: transparent;
     border-color: #fff;
     border-radius: 6px;
     margin: 15px 0px 15px -60px;
     text-align: center;
+    color: white;
    
 }
 
 .labelStyle{
      font-family: 'Roboto', serif;
     font-size: 23px;
+    font-weight: bold;
     text-align: left;
     display: block;
     float: left;
     margin: 0px 70px;
     padding: 10px;
+    color: white;
 }
 
 .footerStyle{

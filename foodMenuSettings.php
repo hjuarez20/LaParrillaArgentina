@@ -1,10 +1,6 @@
 <?php 
 session_start();
 require 'db/db.php';
-            
-
-/*$dataCategories = $database->select("tbmenu", [
-                                    "category"]);  */
 
 $dataCategories = $database->query("SELECT DISTINCT category
 FROM tbmenu;")->fetchAll(PDO::FETCH_ASSOC);
@@ -15,44 +11,12 @@ FROM tbmenu;")->fetchAll(PDO::FETCH_ASSOC);
 $dataFood="";
 $action=0;
 
-
-/*
-$imagePath="";
-
-if($_GET){
-    $id=$_GET["id"];
-    
-    $imagePath="";
-}
-
-if(isset($_POST['saveChanges'])){
-     /*--------------------section just for saving the image in the system----------*/
-/*
-        $name= $_FILES['image']['name'];
-        $tmp= $_FILES['image']['tmp_name'];
-        $folder='dbImgs';
-        //the files are saved in a temp folder
-        move_uploaded_file($tmp,$folder.'/'.$name);
-        $imagePath=($folder.'/'.$name);
-        /*******************************************************************************/
 if($_POST){
-    
-    /*-------------------------images section---------------------------------*/
-    /* $name= $_FILES['txtImage']['name'];
-        $tmp= $_FILES['txtImage']['tmp_name'];
-        $folder='img/food';
-        //the files are saved in a temp folder
-        
-    move_uploaded_file($tmp,$folder.'/'.$name);
-        $imagePath=($folder.'/'.$name);
-         echo $imagePath;
-   */
-    /*---------------------------------------end----------------------------------------*/
     
     if($_POST["value"] == 1){
         
-        $name= $_FILES['txtImage']['name'];
-        $tmp= $_FILES['txtImage']['tmp_name'];
+        $name= $_FILES['image']['name'];
+        $tmp= $_FILES['image']['tmp_name'];
         $folder='img/food';
         //the files are saved in a temp folder
         
@@ -70,10 +34,18 @@ if($_POST){
         "image" => $imagePath /*$_POST["image"]*/
     ]);
         
-        header ("Location: foodMenuSettings.php");
+        header ("Location: principal.php#contMenu");
     }
     
     if($_POST["value"] == 2){
+        $name= $_FILES['image']['name'];
+        $tmp= $_FILES['image']['tmp_name'];
+        $folder='img/food';
+        //the files are saved in a temp folder
+        
+        move_uploaded_file($tmp,$folder.'/'.$name);
+        $imagePath=($folder.'/'.$name);
+        
         $database->update("tbmenu", [
         "idUserMod" => $_SESSION['idUser'],
         "nameDish" => $_POST["nameDish"],
@@ -82,10 +54,10 @@ if($_POST){
         "price" => $_POST["price"],
         "state" => $_POST["state"],
         "dayMod" => date("Y/m/d"),
-        "image" => $_POST["image"]], 
-                                ["idDish" => $_POST["idDish"]]);
+        "image" =>$imagePath ],[ /* $_POST["image"]], */
+                                "idDish" => $_POST["idDish"]]);
         
-        header ("Location: foodMenuSettings.php");
+        header ("Location: principal.php#contMenu");
     }
     
     if($_POST["value"] == 3){
@@ -168,7 +140,7 @@ if($_POST){
                    <div class="foodMenu-input">
        <?php
     if($action == 1){
-       echo "<form method='post' action=''>
+       echo "<form method='post' action='' enctype='multipart/form-data'>
           
            </br><br/>
            
@@ -215,7 +187,7 @@ if($_POST){
            <div class='row'>
            <div class='col-md-6'>
            <label>Seleccione una imagen</label>
-           <input id='inputPhoto' type='file' name='txtImage' required>
+           <input id='inputPhoto' type='file' name='image' required>
            </div>
            </div>
            
@@ -231,13 +203,10 @@ if($_POST){
             
         </form>";
                     }
-    
-    
-    
-    
+
     if($action == 2){
         echo $dataCategories[0]["category"];
-       echo "<form method='post' action=''>
+       echo "<form method='post' action='' enctype='multipart/form-data'>
           
            
            
@@ -301,7 +270,7 @@ if($_POST){
            <div class='row'>
            <div class='col-md-6'>
            <label>Seleccione una imagen</label>
-           <input id='inputPhoto' type='file' name='image' value=".$dataFood[0]["image"]." required>
+           <input id='inputPhoto' type='file' name='image' value=".$dataFood[0]["image"].">
            </div>
            </div>
           
@@ -321,7 +290,7 @@ if($_POST){
                     }
     
      if($action == 3){
-       echo "<form method='post' action='foodMenuSettings.php'>
+       echo "<form method='post' action='foodMenuSettings.php' enctype='multipart/form-data'>
          <h2>Seguro que desea eliminar este elemento?</h2>
          <p>".$dataFood[0]["nameDish"]."<p>
          
@@ -334,9 +303,6 @@ if($_POST){
             
         </form>
         
-        
-        
-        
         ";
                     }
             
@@ -348,7 +314,12 @@ if($_POST){
                 
                 <a href="index.php#menu">Visualizar el MENÚ</a>
                   <?php 
-                 //   echo "<img src=".$dataFood[0]["image"].">"
+                    if($dataFood==""){
+                        echo "<img src=''>";
+                    }else{
+                        echo "<img src=".$dataFood[0]["image"].">";
+                    }
+                    
                     ?>
                 </div>
                 
@@ -358,7 +329,7 @@ if($_POST){
              
          <div class="row">
                  <div class="foodMenu-user col-xs-12 col-sm-12 col-md-6">
-                          <h3>Imposible is Nothing.</h3>
+                          <h3>Todos los derechos reservados®.</h3>
                     </div>
         </div> 
     </div>

@@ -357,7 +357,7 @@ p a:hover{
 
 .foodMenu {
     color: #fff;
-    background-image: url(../img/food/foodMenuSettings.jpeg);
+    background-image: url(../img/madera1.jpg);
     background-size: cover;
     display: block;
     height: 100%;
@@ -383,7 +383,7 @@ p a:hover{
 .foodMenu-user{
     margin-top: 30px;
     padding: 20px;
-    background-color: rgba(200, 200, 200, 0.2);
+    
     
 }
 

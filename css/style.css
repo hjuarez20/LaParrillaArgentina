@@ -147,7 +147,7 @@ a,
 }
 
 .tiny {
-    min-height: 128px;
+    min-height: 85px;
     max-height: 1920px;
 }
 
@@ -175,7 +175,7 @@ a,
 /*Images*/
 
 .slider-img1 {
-    background-image: url("../img/slider1.gif");
+    background-image: url("../img/slider1.jpg");
 }
 
 .slider-img4 {
@@ -448,6 +448,11 @@ select {
 }
 
 /* ---------------------------------------------------------end style reservation --------------------------------------------- */
+.icons {
+    margin: 10px;
+    -webkit-transition: all 2s ease;
+    transition: all 2s ease;
+}
 
 .footer-center {
     padding-top: 10px;
