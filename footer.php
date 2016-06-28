@@ -13,11 +13,15 @@
                     
                            
                            
-                            <a href="https://www.facebook.com/La-Parrilla-Argentina-1354162611267584/?skip_nax_wizard=true" class="icon icon-cube facebook">facebook</a>
-                            <a href="https://twitter.com/?request_context=signup" class="icon icon-cube twitter">twitter</a>
-                            <a href="https://plus.google.com/" class="icon icon-cube googleplus">google+</a>
-                            <a href="https://github.com/harold20/LaParrillaArgentina" class="icon icon-cube github">github</a>
-                            <a href="http://postrss.com/" class="icon icon-cube rss">rss</a>
+                            <div class="col-xs-12">
+                        <div class="table-responsive " style="border:none;">
+                            <a class="icons" href="https://www.facebook.com/La-Parrilla-Argentina-1354162611267584/?skip_nax_wizard=true" target="_blank"><img alt="siguenos en facebook" height="30" src="img/social/facebook.png" title="siguenos en facebook" width="30" /></a>
+                            <a class="icons" href="https://twitter.com/?request_context=signup" target="_blank"><img alt="siguenos en Twitter" height="30" src="img/social/twitter.png" title="siguenos en Twitter" width="30" /></a>
+                            <a class="icons" href="https://youtube.com" target="_blank"><img alt="siguenos en Twitter" height="30" src="img/social/youtube.png" title="siguenos en Youtube" width="30" /></a>
+                            <a class="icons" href="https://pinterest.com" target="_blank"><img alt="siguenos en Pinterest" height="30" src="img/social/pinterest.png" title="siguenos en Twitter" width="30" /></a>
+                            <a class="icons" href="https://linkedin.com" target="_blank"><img alt="siguenos en LinkedIn" height="30" src="img/social/linkedin.png" title="siguenos en Twitter" width="30" /></a>
+                        </div>
+                    </div>
                          
                      
                 </div>
