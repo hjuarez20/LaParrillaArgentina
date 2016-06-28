@@ -187,7 +187,7 @@ if($_POST){
            <div class='row'>
            <div class='col-md-6'>
            <label>Seleccione una imagen</label>
-           <input id='inputPhoto' type='file' name='image' required>
+           <input id='inputPhoto' type='file' name='image' onchange='return ShowImagePreview( this.files );' required>
            </div>
            </div>
            
@@ -270,7 +270,7 @@ if($_POST){
            <div class='row'>
            <div class='col-md-6'>
            <label>Seleccione una imagen</label>
-           <input id='inputPhoto' type='file' name='image' value=".$dataFood[0]["image"].">
+           <input id='inputPhoto' type='file' name='image' onchange='return ShowImagePreview( this.files );' value=".$dataFood[0]["image"].">
            </div>
            </div>
           
@@ -313,6 +313,11 @@ if($_POST){
                 <div class="foodMenu-user hidden-sm hidden-xs col-md-6">
                 
                 <a href="index.php#menu">Visualizar el MENÚ</a>
+                 <br/><br/>
+                 <div id="previewcanvascontainer">
+                    <canvas id="previewcanvas">
+                    </canvas>
+                </div>
                   <?php 
                     if($dataFood==""){
                         echo "<img src=''>";
@@ -334,6 +339,83 @@ if($_POST){
         </div> 
     </div>
            
-    </div>   
-            
+    </div>
+              
+    <script>
+function ShowImagePreview( files )
+{
+    if( !( window.File && window.FileReader && window.FileList && window.Blob ) )
+    {
+      alert('The File APIs are not fully supported in this browser.');
+      return false;
+    }
+
+    if( typeof FileReader === "undefined" )
+    {
+        alert( "Filereader undefined!" );
+        return false;
+    }
+
+    var file = files[0];
+
+    if( !( /image/i ).test( file.type ) )
+    {
+        alert( "File is not an image." );
+        return false;
+    }
+
+    reader = new FileReader();
+    reader.onload = function(event) 
+            { var img = new Image; 
+              img.onload = UpdatePreviewCanvas; 
+              img.src = event.target.result;  }
+    reader.readAsDataURL( file );
+}
+
+function UpdatePreviewCanvas()
+{
+    var img = this;
+    var canvas = document.getElementById( 'previewcanvas' );
+
+    if( typeof canvas === "undefined" 
+        || typeof canvas.getContext === "undefined" )
+        return;
+
+    var context = canvas.getContext( '2d' );
+
+    var world = new Object();
+    world.width = canvas.offsetWidth;
+    world.height = canvas.offsetHeight;
+
+    canvas.width = world.width;
+    canvas.height = world.height;
+
+    if( typeof img === "undefined" )
+        return;
+
+    var WidthDif = img.width - world.width;
+    var HeightDif = img.height - world.height;
+
+    var Scale = 0.0;
+    if( WidthDif > HeightDif )
+    {
+        Scale = world.width / img.width;
+    }
+    else
+    {
+        Scale = world.height / img.height;
+    }
+    if( Scale > 1 )
+        Scale = 1;
+
+    var UseWidth = Math.floor( img.width * Scale );
+    var UseHeight = Math.floor( img.height * Scale );
+
+    var x = Math.floor( ( world.width - UseWidth ) / 2 );
+    var y = Math.floor( ( world.height - UseHeight ) / 2 );
+
+    context.drawImage( img, x, y, UseWidth, UseHeight );  
+}
+</script>
+        
 </body>
