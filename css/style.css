@@ -55,6 +55,12 @@ a,
     text-transform: uppercase;
 }
 
+.buttons:hover {
+    
+    border: 3px solid #CB2027;
+    
+}
+
 .rigth {
     float: right;
     padding-right: 8%;
