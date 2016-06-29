@@ -181,10 +181,6 @@ a.buttons:hover,button.buttons:hover {
 
 /*Images*/
 
-.slider-img1 {
-    background-image: url("../img/slider1.jpg");
-}
-
 .slider-img4 {
     background-image: url("../img/slider4.jpg");
 }
@@ -631,13 +627,16 @@ select {
         filter: drop-shadow(8px 8px 8px black);
     }
     .big {
-        min-height: 200px;
-        max-height: 400px;
+        min-height: 250px;
+        max-height: 485px;
         height: 100%;
     }
     .buttons, .contact-input button {
     margin: 5% 0% 5% 25%;
   }
+  .slider-img1 {
+    background-image: url("../img/slider1.jpg");
+}
 }
 @media only screen and (orientation: landscape) {
         .big {
@@ -645,5 +644,4 @@ select {
         max-height: 700px;
         height: 100%;
     }
-
 }
