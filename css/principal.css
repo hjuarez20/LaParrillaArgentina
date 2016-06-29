@@ -355,6 +355,7 @@ background: linear-gradient(to left, #000000 , #434343); /* W3C, IE 10+/ Edge, F
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     text-transform: none;
+    color: #fff;
 }
 
 .foodMenu-input button {

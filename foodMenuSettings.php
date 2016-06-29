@@ -205,7 +205,7 @@ if($_POST){
                     }
 
     if($action == 2){
-        echo $dataCategories[0]["category"];
+       
        echo "<form method='post' action='' enctype='multipart/form-data'>
           
            
