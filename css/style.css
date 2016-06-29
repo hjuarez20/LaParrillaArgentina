@@ -631,8 +631,8 @@ select {
         filter: drop-shadow(8px 8px 8px black);
     }
     .big {
-        min-height: 300px;
-        max-height: 500px;
+        min-height: 200px;
+        max-height: 400px;
         height: 100%;
     }
     .buttons, .contact-input button {
@@ -645,4 +645,5 @@ select {
         max-height: 700px;
         height: 100%;
     }
+
 }
