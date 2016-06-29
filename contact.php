@@ -9,10 +9,8 @@ if($database==null){
 
 }
 
-
 $mail = new PHPMailer;
-$to = "nelguaro@gmail.com";
-      
+$to = "Llaparrillaa@gmail.com";
     
 
 if($_POST){

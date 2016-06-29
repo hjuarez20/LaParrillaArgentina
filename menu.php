@@ -49,6 +49,7 @@
                     </div>    
                 </div>
             </div>
+<!--
             <div class="item fill slider-img4">
                 <div class="container">
                     <div class="carousel-caption red center-carousel-caption ">
@@ -58,6 +59,8 @@
                     </div>
                 </div>
             </div>
+-->
+<!--
             <div class="item fill slider-img2">
                 <div class="container">
                     <div class="carousel-caption black center-carousel-caption">
@@ -71,6 +74,8 @@
                     </div>
                 </div>
             </div>
+-->
+<!--
             <div class="item fill slider-img3">
                 <div class="container">
                     <div class="carousel-caption orange center-carousel-caption ">
@@ -83,6 +88,7 @@
                     </div>
                 </div>
             </div>
+-->
         </div>
     </div>
     </div>
