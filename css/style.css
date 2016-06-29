@@ -132,23 +132,21 @@ a,
 
 .big {
     min-height: 800px;
-    max-height: 1920px;
     height: 100%;
 }
 
 .medium {
-    min-height: 600px;
-    max-height: 1920px;
+    min-height: 700px;
+    height: 100%;
 }
 
 .small {
     min-height: 350px;
-    max-height: 1920px;
+    height: 90%;
 }
 
 .tiny {
     min-height: 85px;
-    max-height: 1920px;
 }
 
 
@@ -613,9 +611,6 @@ select {
 /*------Media queries--------*/
 
 @media screen and (max-width: 820px) {
-    .slider-img1 {
-        background-image: url("../img/sliderResponsive.jpg");
-    }
     .center-carousel-caption {
         width: 63%;
         height: 95%;
