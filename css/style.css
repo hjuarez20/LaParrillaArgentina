@@ -11,7 +11,6 @@ body,
 html {
     height: 100%;
 }
-
 h1 {
     padding-top: 8px;
     font-size: 20px;
@@ -29,13 +28,12 @@ h4,
 h3,
 h2,
 h1,
-a,
-#nosotros article div a {
+a{
     font-family: 'Roboto', serif;
     font-weight: 900;
     text-transform: uppercase;
-    color: #000;
     text-decoration: none;
+    color: #000;
 }
 
 
@@ -44,7 +42,7 @@ a,
 .buttons {
     display: block;
     text-align: center;
-    border: 3px solid #000;
+    border: 3px solid #000; 
     width: 154px;
     padding: 8px;
     font-size: 13px;
@@ -53,14 +51,19 @@ a,
     font-family: 'Roboto', serif;
     font-weight: 900;
     text-transform: uppercase;
+    color: #000;
 }
 
-.buttons:hover {
-    
-    border: 3px solid #CB2027;
-    
+a.buttons:hover,button.buttons:hover {
+  background-color: #000;
+  color:#fff;
+  text-decoration: none;
 }
-
+#contacto button:hover{
+  background-color: #fff;
+  color:#000;
+  text-decoration: none;
+}
 .rigth {
     float: right;
     padding-right: 8%;
@@ -86,9 +89,12 @@ a,
 
 .center-carousel-caption {
     width: 63%;
-    height: 87%;
+    height: 84%;
 }
-
+.center-logo-carousel{
+    width: 63%;
+    height: 93%;
+}
 
 /*CAROUSEL SLIDER IMAGES*/
 
@@ -137,7 +143,7 @@ a,
 }
 
 .big {
-    min-height: 800px;
+    min-height: 700px;
     height: 100%;
 }
 
@@ -161,17 +167,15 @@ a,
 
 /*Logo*/
 
-.logo {
-    padding: 5% 0 0 0;
-}
-
 .logo img {
     width: 344px;
     height: 440px;
     -webkit-filter: drop-shadow(8px 8px 8px black);
     filter: drop-shadow(8px 8px 8px black);
 }
-
+.arrow-colocation a{
+    margin: 0 1% 0 0;
+}
 
 /*--------------*/
 
@@ -593,10 +597,10 @@ select {
 
 @keyframes arrowDown {
     from {
-        top: 50px;
+        top: 30px;
     }
     to {
-        top: 100px;
+        top: 60px;
     }
 }
 
@@ -628,12 +632,18 @@ select {
         filter: drop-shadow(8px 8px 8px black);
     }
     .big {
-        min-height: 200px;
-        max-height: 400px;
+        min-height: 300px;
+        max-height: 500px;
         height: 100%;
     }
     .buttons, .contact-input button {
     margin: 5% 0% 5% 25%;
   }
 }
-
+@media only screen and (orientation: landscape) {
+        .big {
+        min-height: 500px;
+        max-height: 700px;
+        height: 100%;
+    }
+}

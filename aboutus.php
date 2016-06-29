@@ -15,7 +15,7 @@
                 <h2>Especialidad de la casa</h2>
                 <h4>Descubre nuestros increibles platillos</h4>
                 <p>La mejor calidad en carnes, y variedad de cortes solo los puedes conseguir con nosotros, hecha un vistazo a nuestra variedad de platillos.</p>
-                <a class="buttons page-scroll" href="#menu">Descubre el Menu</a>
+                <a class="buttons page-scroll hvr-float-shadow" href="#menu">Descubre el Menu</a>
             </div>
             <div class="padding-columns col-xs-12 col-sm-6 col-md-4 ">
                 <div class="div-img hiddenN">

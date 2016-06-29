@@ -71,6 +71,14 @@ body{
   font-size: 20px;
 }
 
+.font-style_4{
+  font-family: 'Roboto', serif;
+  font-weight: 300px;
+  font-size: 20px;
+  color: rgb(255,255,255) ;
+  padding: 50px 0px 10px 0px;
+}
+
 /*Stiky Menu*/
 
 section nav {
@@ -124,7 +132,7 @@ table{
  }
 
  .tbl-content{
-  height:300px;
+  height:395px;
   overflow-x:auto;
   margin-top: 0px;
   border: 1px solid rgba(255,255,255,0.3);}
@@ -166,7 +174,7 @@ td{
 
 .tableSize{
   height: 500px;
- padding-top: 7%;
+ padding-top: 5%;
 }
 
 /*login*/
