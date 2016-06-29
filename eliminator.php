@@ -5,7 +5,7 @@ require "db/db.php";
 if($_POST){
     
      if($_POST["value"]==3){
-        $database->query("delete from tbusers where idUser='".$_POST["id"]."';" );
+        $database->update("tbusers",["state"=>"Desactivo" ],["idUser"=>$_POST["id"]]);
 //echo $_POST["id"];
          header ("Location: principal.php#contClient");
 
