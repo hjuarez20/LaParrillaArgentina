@@ -312,7 +312,8 @@ if($_POST){
                 
                 <div class="foodMenu-user hidden-sm hidden-xs col-md-6">
                 
-                <a href="index.php#menu">Visualizar el MENÚ</a>
+                <!--<a href="index.php#menu">Visualizar el MENÚ</a>-->
+                <a class="a-insert" href="index.php#menu">Visualizar el menú</a>
                  <br/><br/>
                  <div id="previewcanvascontainer">
                     <canvas id="previewcanvas">
