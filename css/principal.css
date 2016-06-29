@@ -5,7 +5,9 @@
     padding: 0;
 }
 body{
-	background-image: url(../img/madera1.jpg);
+background: #000000; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #000000 , #434343); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #000000 , #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                
 }
 
 
@@ -32,9 +34,9 @@ body{
     z-index: 1000;
     top: 0;
     width: 100%;
-    height: 70px;
+    height: 80px;
     box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.5);
-    background-color: rgba(23, 23, 23, 0.7);
+    background-color: rgb(23, 23, 23);
     display: block;
     padding-top: 5px;
 }
@@ -82,9 +84,9 @@ body{
 /*Stiky Menu*/
 
 section nav {
-    height:40px;  
+    height:36px;  
     position:relative; 
-    background-color: rgba(0,0,0,0.0) ;
+    background-color: rgba(23, 23, 23, 0.7);
     z-index:1000;
 }
  
@@ -106,7 +108,8 @@ section nav ul li a {
 }
  
 section nav ul li a:hover {
-    color: rgb(166, 12, 0);
+    color: rgb(166,12,0);
+    text-decoration: none;
 }
 
 /*Welcomen user*/
@@ -264,56 +267,6 @@ width: 22%;
     background-color: #FFAD27;
     border-color: black;
 }
-
-/* Modal-PopUp */
-
-.modal-body{
-    background-color: gray;
-    color: white;
-}
-
-.modal-body input{
-    border-style: ridge;
-    border-color: silver;
-    background-color: gray;
-    color: white;
-    margin: 0% 0% 0% -20%;
-}
-
-.modal-body textarea{
-    color: white;
-    background-color: gray;
-}
-
-.modal-body select{
-    background-color: gray;
-    color: white;
-}
-
-.modal-body button{
-    color: white;
-    background-color: #FF8728;
-    border-color: black;
-}
-
-.modal-body button:hover{
-    color: white;
-    background-color: #FFAD27;
-    border-color: black;
-}
-
-.modal-footer button{
-    color: white;
-    background-color: #FF8728;
-    border-color: black;
-}
-
-.modal-footer button:hover{
-    color: white;
-    background-color: #FFAD27;
-    border-color: black;
-}
-
 /*Cambia los botones editar y eliminar*/
 td a{
     color: rgb(255,255,255);
@@ -364,11 +317,11 @@ p a:hover{
 }
 
 .foodMenu {
-    color: #fff;
-    background-image: url(../img/madera1.jpg);
-    background-size: cover;
-    display: block;
-    height: 100%;
+  
+background: #000000; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #000000 , #434343); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #000000 , #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                
+
 }
 
 .foodMenu h2 {
