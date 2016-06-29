@@ -6,6 +6,7 @@
     <title>La Parrilla Argentina</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/hover-min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.min.css">
     <link href="css/carousel.css" rel="stylesheet">
@@ -16,7 +17,7 @@
 </head>
 
 <body>
-    <section id="home" class=" big">
+    <section id="home" class="big">
         <?php include ('menu.php');?>
     </section>
 

@@ -35,16 +35,18 @@
             <!-- /.container-fluid -->
         </div>
     </nav>
-    <div id="carousel-example-generic" class="col-sm-12 col-md-12 col-xs-12 padding-remove carousel slide slider-img" data-ride="carousel">
+    <div id="carousel-example-generic" data-interval="7500" class="col-sm-12 col-md-12 col-xs-12 padding-remove carousel slide slider-img" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
             <div class="item active fill slider-img1">
-                <div class="container">
-                    <div class="row">
-                        <div class="logo col-md-12">
-                            <img class="img-responsive center-block" src="img/parrilla6.png" alt="">
-                        </div>
+                <video class="hidden-xs hidden-sm" controls muted autoplay loop src="img/grill-video.mp4" style="width: 100%;height: 100%;">
+                </video>
+                <div class="carousel-caption center-logo-carousel">
+                    <div class="logo">
+                        <img class="img-responsive center-block" src="img/parrilla6.png" alt="">
                     </div>
-                    <a href='#nosotros' class="page-scroll arrowCenter"><img class="arrow" src="http://www.tomnod.com/public/images/icon-chevron-big-down.png" title="Ir abajo" /></a>
+                    <div class="arrow-colocation">
+                        <a href='#nosotros' class="page-scroll arrowCenter"><img class="arrow" src="http://www.tomnod.com/public/images/icon-chevron-big-down.png" title="Ir abajo" /></a>
+                    </div>    
                 </div>
             </div>
             <div class="item fill slider-img4">
