@@ -1,8 +1,7 @@
 <?php
 /*In this section there are a table who show all the data charge from the data base of the table tbClient*/
  //require 'db/db.php';
- $data = $database->select("tbusers", "*");
-
+$data = $database->select("tbusers", "*", ["state"=>"Activo"]);
 
 
 ?>
@@ -23,6 +22,7 @@
                                         <th id="name">Nombre</th>
                                         <th id="id">Identificación</th>
                                         <th id="login">Login</th>
+                                        <th id="opciones">Opciones</th>
                                     </tr>
                                 </table>
                             </article>

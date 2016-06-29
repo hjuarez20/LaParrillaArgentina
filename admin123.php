@@ -7,7 +7,8 @@ if($_POST){
                             'name'
                             ],["AND" => [
                                 "password" => md5($_POST['password']),
-                                "login" => $_POST['user']
+                                "login" => $_POST['user'],
+                                "state" => "Activo"
                                 ]
                             ]);
  
