@@ -16,13 +16,13 @@ $data = $database->select("tbusers", "*", ["state"=>"Activo"]);
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="table-responsive">
-                        <p class="font-style_4 title_table">Login</p>   
+                        <p class="font-style_4 title_table">Usuarios</p>   
                             <article class="tbl-header">
                                 <table cellpadding="0" cellspacing="0" border="0">
                                     <tr>
                                         <th id="name">Nombre</th>
                                         <th id="id">Identificación</th>
-                                        <th id="login">Login</th>
+                                        <th id="login">Usuario</th>
                                         <th id="opciones">Opciones</th>
                                     </tr>
                                 </table>

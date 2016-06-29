@@ -1,8 +1,11 @@
 <?php
 /**/
+
 if($database==null){
     require 'db/db.php';
 }
+
+
 
 /*---------------------------------------time for reservation from database--------------------------*/
 $time = $database->select("tbtime",[
@@ -28,7 +31,7 @@ if($_POST){
             "state" => 1,
             "date" => $fecha
         ]); 
-    header("Location: index.php#reservaciones");
+            header("Location: index.php#reservaciones");
 }
 
 ?>
