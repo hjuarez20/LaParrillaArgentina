@@ -118,7 +118,7 @@ if($_POST){
             <div class="container">
                 <article class="row">
                     <article class="col-xs-12 col-sm-12  col-md-4 col-md-offset-5 col-sm-offset-2">
-                        <button  type="submit" name="reserv" class=" buttons" data-toggle="modal" data-target="#myModal">RESERVAR</button>
+                        <button  type="submit" name="reserv" class="hvr-float-shadow buttons" data-toggle="modal" data-target="#myModal">RESERVAR</button>
                     </article>
                 </article>
             </div>
