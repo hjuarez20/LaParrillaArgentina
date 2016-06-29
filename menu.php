@@ -41,12 +41,12 @@
                 <video controls muted autoplay loop src="img/grill-video.mp4">
                 </video>
                 <div class="carousel-caption center-logo-carousel">
-                <div class="logo">
-                    <img class="img-responsive center-block" src="img/parrilla6.png" alt="">
-                </div>
-                <div class="arrow-colocation">
-                    <a href='#nosotros' class="page-scroll arrowCenter"><img class="arrow" src="http://www.tomnod.com/public/images/icon-chevron-big-down.png" title="Ir abajo" /></a>
-                </div>    
+                    <div class="logo">
+                        <img class="img-responsive center-block" src="img/parrilla6.png" alt="">
+                    </div>
+                    <div class="arrow-colocation">
+                        <a href='#nosotros' class="page-scroll arrowCenter"><img class="arrow" src="http://www.tomnod.com/public/images/icon-chevron-big-down.png" title="Ir abajo" /></a>
+                    </div>    
                 </div>
             </div>
             <div class="item fill slider-img4">
